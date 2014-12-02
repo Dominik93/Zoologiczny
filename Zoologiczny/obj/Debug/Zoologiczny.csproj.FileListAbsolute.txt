@@ -1,0 +1,12 @@
+c:\users\dslusarz\documents\visual studio 2012\Projects\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe.config
+c:\users\dslusarz\documents\visual studio 2012\Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.csprojResolveAssemblyReference.cache
+c:\users\dslusarz\documents\visual studio 2012\Projects\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe
+c:\users\dslusarz\documents\visual studio 2012\Projects\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.pdb
+c:\users\dslusarz\documents\visual studio 2012\Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.exe
+c:\users\dslusarz\documents\visual studio 2012\Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.pdb
+C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.csprojResolveAssemblyReference.cache
+C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.exe
+C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.pdb
+C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe.config
+C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe
+C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.pdb
