@@ -11,20 +11,10 @@ namespace Zoologiczny
         static void Main(string[] args)
         {
         	Model model = new Model();
-        	View view = new View(model);
+        	//View view = new View(model);
+        	View view = new View();
          	Controller controller = new Controller(model, view);
-         	controller.showInterface();
-        	
-        	
-        	
-        	DogBreeder dogBreeder = new DogBreeder();
-        	
-
-        	dogBreeder.DogBuilder = new BulldogDogBuilder();
-        	dogBreeder.DogBuilder.createNewDog();
-        	dogBreeder.constructDog(1,5.5);
-        	Console.WriteLine(dogBreeder.Dog.display());
-        	Console.ReadKey();
+        	controller.start();
         }
     }
 }

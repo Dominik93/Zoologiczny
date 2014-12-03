@@ -10,12 +10,12 @@ using System;
 
 namespace Zoologiczny
 {
-	abstract class Animal{
+	public abstract class Animal : ICloneable{
 		protected int number;
 		protected double price;
 		
 		public Animal(){}
-		
+
 		public int Number{
 			get {return number;}
 			set {number = value;}
@@ -25,6 +25,10 @@ namespace Zoologiczny
 			get {return price;}
 			set {price = value;}
 		}
+	
+		public object Clone(){
+	        return this.MemberwiseClone();
+	    }
 		
 		public abstract string display();
 	}

@@ -10,7 +10,7 @@ using System;
 
 namespace Zoologiczny
 {
-	class Dog : Pet{
+	public class Dog : Pet{
 		protected string race;
 			
 		public Dog(){}
@@ -21,12 +21,12 @@ namespace Zoologiczny
 		}
 		
 		public override string display(){
-			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price;
+			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
 			return s;
 		}
 	}
 	
-	class Cat : Pet{
+	public class Cat : Pet{
 		protected string race;
 			
 		public Cat(){}
@@ -37,7 +37,7 @@ namespace Zoologiczny
 		}
 		
 		public override string display(){
-			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price;
+			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
 			return s;
 		}
 	}

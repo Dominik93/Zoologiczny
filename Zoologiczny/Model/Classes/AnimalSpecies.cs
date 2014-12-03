@@ -10,7 +10,7 @@ using System;
 
 namespace Zoologiczny
 {
-	abstract class Pet : Animal{
+	public abstract class Pet : Animal{
 		protected string species;
 		
 		public Pet(){}
@@ -22,7 +22,7 @@ namespace Zoologiczny
 	}
 	
 	
-	abstract class Farm : Animal{
+	public abstract class Farm : Animal{
 		protected string species;
 		
 		public Farm(){}

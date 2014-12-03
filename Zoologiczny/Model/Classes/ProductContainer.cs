@@ -14,15 +14,20 @@ using System.Threading.Tasks;
 
 namespace Zoologiczny
 {
-	/// <summary>
-	/// Description of ProductContainer.
-	/// </summary>
-	class ProductContainer{ 
+	public class ProductContainer{ 
  		protected List<Animal> list;
         
  		internal List<Animal> List{
             get { return list; }
             set { list = value; }
         }
+ 		
+ 		public void addAnimal(Animal animal){
+			list.Add(animal);
+		}
+		
+		public void removeAnimal(int index){
+			list.RemoveAt(index);
+		}
     }
 }

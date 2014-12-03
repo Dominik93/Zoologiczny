@@ -20,30 +20,108 @@ namespace Zoologiczny
 			this.view = view;
 		}
 		
-		
-		public void showInterface(){
+		public void start(){
 			while(true){
-        		Console.WriteLine("0- Exit\n1- Add animal to warehouse\n2- Show warehouse status\n3- Remove from warehouse\n4- Add to basket\n5- Display basket");
-        		switch(Convert.ToInt32(Console.ReadLine())){
-        			case 0:
-        				return;
-        			case 1:
-        				break;
-        			case 2:
-        				break;
-        			case 3:
-        				break;
-        			case 4:
-        				break;
-        			case 5:
-        				break;	
-        			default:
-        				Console.WriteLine("Wrong choise");
-        				Console.ReadKey();
-        				Console.Clear();
-        				break;
-        		}
-        	}
+				view.diplayMainOptions();
+				try{
+					int choice = Convert.ToInt32(Console.ReadLine());
+					switch(choice){
+	        			case 0:
+							view.displayMasage("Exit");
+							Console.ReadKey();
+	        				Console.Clear();
+	        				return;
+	        			case 1:
+	        				view.displayAvailableAnimals();
+	        					switch(view.enterIntNumber()){
+	        						case(0):
+	        							view.displayMasage("Enter number and price");
+	        							try{
+		        							DogBreeder dogBreeder = new DogBreeder();
+		        							dogBreeder.DogBuilder = new BulldogDogBuilder();
+		        							dogBreeder.DogBuilder.createNewDog();
+		        							dogBreeder.constructDog(view.enterIntNumber(), view.enterDoubleNumber());
+		        							model.addAnimalToWarehouse(dogBreeder.Dog);
+		        							dogBreeder = null;
+	        							}catch(InvalidCastException){
+	        								view.displayError("It is not the number!");
+	        							}
+		        						break;
+	        						case(1):
+	        							view.displayMasage("Enter number and price");
+	        							try{
+		        							CatBreeder catBreeder = new CatBreeder();
+		        							catBreeder.CatBuilder = new PersianCatBuilder();
+		        							catBreeder.CatBuilder.createNewCat();
+		        							catBreeder.constructCat(view.enterIntNumber(), view.enterDoubleNumber());
+		        							model.addAnimalToWarehouse(catBreeder.Cat);
+		        							catBreeder = null;
+		        						}catch(InvalidCastException){
+	        								view.displayError("It is not the number!");
+	        							}
+	        							break;
+	        						default:
+	        							view.displayError("Wrong choise");
+	        							break;
+	        					}
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;
+	        			case 2:
+	        				view.displayWarehouseStatus(model.Warehouse);
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;
+	        			case 3:
+	        				view.displayWarehouseStatus(model.Warehouse);
+	        				try{
+	        					view.displayMasage("Enter number of animals to remove");
+	        					model.removeAnimalFromWarehouse(view.enterIntNumber(), view.enterIntNumber());
+	        				}catch(InvalidCastException){
+	        					view.displayError("It is not the number!");
+	        				}
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;
+	        			case 4:
+	        				view.displayWarehouseStatus(model.Warehouse);
+	        				try{
+		        				view.displayMasage("What animal you want to buy and how many?");
+		        				model.addAnimalToClient(view.enterIntNumber(), view.enterIntNumber());
+	        				}catch(InvalidCastException){
+	        					view.displayError("It is not the number!");
+	        				}
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;
+	        			case 5:
+	        				view.displayClientStatus(model.Client, model.Client.Sum);
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;	
+	        			case 6:
+	        				view.displayClientStatus(model.Client);
+	        				try{
+	        					view.displayMasage("Enter number of animals to remove");
+	        					model.removeAnimalFromClient(view.enterIntNumber(), view.enterIntNumber());
+	        				}catch(InvalidCastException){
+	        					view.displayError("It is not the number!");
+	        				}
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;	
+	        			default:
+	        				view.displayError("Wrong choise");
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;
+	        		}
+				}catch(InvalidCastException){
+					view.displayError("It is not the number!");
+					Console.ReadKey();
+	        		Console.Clear();
+				}
+			}
 		}
 	}
 }

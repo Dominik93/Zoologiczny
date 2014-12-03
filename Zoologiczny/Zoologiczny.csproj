@@ -61,7 +61,6 @@
   <ItemGroup>
     <Folder Include="Model" />
     <Folder Include="Builder" />
-    <Folder Include="Factory" />
     <Folder Include="Model\Classes" />
     <Folder Include="View" />
     <Folder Include="Controller" />

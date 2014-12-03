@@ -14,20 +14,24 @@ using System.Threading.Tasks;
 
 namespace Zoologiczny
 {
-	/// <summary>
-	/// Description of Client.
-	/// </summary>
-	class Client : ProductContainer{
-        double suma;
+	public class Client : ProductContainer{
+        double sum;
 
         public Client(){
         	list = new List<Animal>();
         }
         
-        public double Suma
+        public double Sum
         {
-            get { return suma; }
-            set { suma = value; }
+            get { return sum; }
+            set { sum = value; }
+        }
+        
+        public void calculateSum(){
+        	this.sum = 0;
+        	foreach(Animal animal in list){
+        		this.sum = this.sum + ( animal.Number * animal.Price);
+        	}
         }
     }
 }

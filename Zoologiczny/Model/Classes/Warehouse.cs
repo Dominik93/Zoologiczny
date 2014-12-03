@@ -14,10 +14,7 @@ using System.Threading.Tasks;
 
 namespace Zoologiczny
 {
-	/// <summary>
-	/// Description of Warehouse.
-	/// </summary>
-	class Warehouse: ProductContainer {
+	public class Warehouse: ProductContainer {
 
         public Warehouse() {
         	list = new List<Animal>();

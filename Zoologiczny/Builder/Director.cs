@@ -43,7 +43,7 @@ namespace Zoologiczny
 			get { return catBuilder.Cat; } 
 		}
  
-	    public void constructDog(int number, double price){
+	    public void constructCat(int number, double price){
 	        catBuilder.createNewCat();
 	        catBuilder.buildNumber(number);
 	        catBuilder.buildPrice(price);
