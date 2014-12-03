@@ -10,3 +10,9 @@ C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\obj\Debug\Zoologi
 C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe.config
 C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe
 C:\Users\Dominik\Dysk Google\Studia\TO\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.pdb
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe.config
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.exe
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Debug\Zoologiczny.pdb
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.csprojResolveAssemblyReference.cache
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.exe
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.pdb

@@ -30,4 +30,25 @@ namespace Zoologiczny
 	        dogBuilder.buildRace();
 	    }
 	}
+	
+	class CatBreeder{
+		private CatBuilder catBuilder;
+		
+		public CatBuilder CatBuilder{
+	        get { return catBuilder; } 
+	        set { catBuilder = value; }
+    	}
+		
+		public Cat Cat { 
+			get { return catBuilder.Cat; } 
+		}
+ 
+	    public void constructDog(int number, double price){
+	        catBuilder.createNewCat();
+	        catBuilder.buildNumber(number);
+	        catBuilder.buildPrice(price);
+	        catBuilder.buildSpecies();
+	        catBuilder.buildRace();
+	    }
+	}
 }

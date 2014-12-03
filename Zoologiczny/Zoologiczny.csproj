@@ -41,16 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="AnimalSpecies.cs" />
-    <Compile Include="Builders.cs" />
-    <Compile Include="Director.cs" />
-    <Compile Include="PetRaces.cs" />
+    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Builder\Builders.cs" />
+    <Compile Include="Builder\Director.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Classes\Animal.cs" />
+    <Compile Include="Model\Classes\AnimalSpecies.cs" />
+    <Compile Include="Model\Classes\Client.cs" />
+    <Compile Include="Model\Classes\PetRaces.cs" />
+    <Compile Include="Model\Classes\ProductContainer.cs" />
+    <Compile Include="Model\Classes\Warehouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model" />
+    <Folder Include="Builder" />
+    <Folder Include="Factory" />
+    <Folder Include="Model\Classes" />
+    <Folder Include="View" />
+    <Folder Include="Controller" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

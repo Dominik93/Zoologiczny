@@ -41,7 +41,7 @@ namespace Zoologiczny
 		}
 		
 		public override void buildSpecies() { 
-			dog.Species = "Pies"; 
+			dog.Species = "Dog"; 
 		}
 	}
 	
@@ -59,7 +59,61 @@ namespace Zoologiczny
 		}
 		
 		public override void buildSpecies() {
-			dog.Species = "Pies"; 
+			dog.Species = "Dog"; 
 		}
 	}
+
+	abstract class CatBuilder{
+		protected Cat cat;
+		
+		public Cat Cat{
+			get{ return cat; }
+		}
+		
+		public void createNewCat() { 
+			cat = new Cat();
+		}
+		
+		public abstract void buildNumber(int number);
+		public abstract void buildPrice(double price);
+		public abstract void buildSpecies();
+		public abstract void buildRace();
+	}
+	
+	class PersianCatBuilder : CatBuilder{
+		public override void buildRace() {
+			cat.Race = "Persian";
+		}
+		
+		public override void buildNumber(int number) { 
+			cat.Number = number; 
+		}
+		
+		public override void buildPrice(double price) {
+			cat.Price = price; 
+		}
+		
+		public override void buildSpecies() { 
+			cat.Species = "Cat"; 
+		}
+	}
+	
+	class SiameseCatBuilder  : CatBuilder{
+		public override void buildRace() {
+			cat.Race = "Siamese ";
+		}
+		
+		public override void buildNumber(int number) { 
+			cat.Number = number; 
+		}
+		
+		public override void buildPrice(double price) {
+			cat.Price = price; 
+		}
+		
+		public override void buildSpecies() {
+			cat.Species = "Cat"; 
+		}
+	}
+
 }

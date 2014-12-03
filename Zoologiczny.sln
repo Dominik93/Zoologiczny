@@ -1,6 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.4
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoologiczny", "Zoologiczny\Zoologiczny.csproj", "{963971A7-F101-4AA4-8F11-40F0EABC0744}"
 EndProject
 Global
