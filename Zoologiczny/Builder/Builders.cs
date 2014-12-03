@@ -98,7 +98,7 @@ namespace Zoologiczny
 		}
 	}
 	
-	class SiameseCatBuilder  : CatBuilder{
+	class SiameseCatBuilder : CatBuilder{
 		public override void buildRace() {
 			cat.Race = "Siamese ";
 		}

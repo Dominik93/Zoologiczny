@@ -29,11 +29,15 @@ namespace Zoologiczny
 		}
 		
 		public void displayAvailableAnimals(){
-			Console.WriteLine("0 - Dog\n1 - Cat");
+			int i = 0;
+			foreach(Animal.Animals element in Enum.GetValues(typeof(Animal.Animals))){
+				Console.WriteLine(i++ + " - " + element.ToString());
+			}
 		}
 		
 		public void diplayMainOptions(){
-			Console.WriteLine("0- Exit\n1- Add animal to warehouse\n2- Show warehouse status\n3- Remove from warehouse\n4- Add to basket\n5- Display basket\n6- Remove from basket");
+			Console.WriteLine("0 - Exit\n1 - Add animal to warehouse\n2 - Show warehouse status\n3 - Remove from warehouse\n" +
+			                  "4 - Add to basket\n5 - Display basket\n6 - Remove from basket\n7 - Change price\n8 - Change number");
 		}
 		
 		public void displayError(string error){
@@ -53,7 +57,7 @@ namespace Zoologiczny
 		}
 		
 		public void displayClientStatus(Client client, double sum){
-			Console.WriteLine("Client backet:");
+			Console.WriteLine("Client basket:");
 			foreach(Animal animal in client.List){
 				Console.WriteLine(animal.display());
 			}
@@ -61,7 +65,7 @@ namespace Zoologiczny
 		}
 		
 		public void displayClientStatus(Client client){
-			Console.WriteLine("Client backet:");
+			Console.WriteLine("Client basket:");
 			foreach(Animal animal in client.List){
 				Console.WriteLine(animal.display());
 			}

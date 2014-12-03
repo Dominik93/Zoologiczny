@@ -60,6 +60,22 @@ namespace Zoologiczny
 	        								view.displayError("It is not the number!");
 	        							}
 	        							break;
+	        						case(2):
+	        							view.displayMasage("Enter number and price");
+	        							try{
+		        							model.addAnimalToWarehouse(Farm.FarmFactory(Animal.Animals.Cow, view.enterIntNumber(), view.enterDoubleNumber()));
+	        							}catch(InvalidCastException){
+	        								view.displayError("It is not the number!");
+	        							}
+		        						break;
+	        						case(3):
+		        						view.displayMasage("Enter number and price");
+	        							try{
+		        							model.addAnimalToWarehouse(Farm.FarmFactory(Animal.Animals.Chicken, view.enterIntNumber(), view.enterDoubleNumber()));
+	        							}catch(InvalidCastException){
+	        								view.displayError("It is not the number!");
+	        							}
+		        						break;
 	        						default:
 	        							view.displayError("Wrong choise");
 	        							break;
@@ -102,14 +118,36 @@ namespace Zoologiczny
 	        			case 6:
 	        				view.displayClientStatus(model.Client);
 	        				try{
-	        					view.displayMasage("Enter number of animals to remove");
+	        					view.displayMasage("Chose animal and enter number of animals to remove");
 	        					model.removeAnimalFromClient(view.enterIntNumber(), view.enterIntNumber());
 	        				}catch(InvalidCastException){
 	        					view.displayError("It is not the number!");
 	        				}
 	        				Console.ReadKey();
 	        				Console.Clear();
-	        				break;	
+	        				break;
+	        			case 7:
+	        				view.displayWarehouseStatus(model.Warehouse);
+	        				try{
+		        				view.displayMasage("Which animal you want change price?");
+		        				model.changeAnimalPrice(view.enterIntNumber(), view.enterIntNumber());
+	        				}catch(InvalidCastException){
+	        					view.displayError("It is not the number!");
+	        				}
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;
+						case 8:
+	        				view.displayWarehouseStatus(model.Warehouse);
+	        				try{
+		        				view.displayMasage("Which animal you want change number?");
+		        				model.changeAnimalNumber(view.enterIntNumber(), view.enterIntNumber());
+	        				}catch(InvalidCastException){
+	        					view.displayError("It is not the number!");
+	        				}
+	        				Console.ReadKey();
+	        				Console.Clear();
+	        				break;	        				
 	        			default:
 	        				view.displayError("Wrong choise");
 	        				Console.ReadKey();
@@ -117,6 +155,11 @@ namespace Zoologiczny
 	        				break;
 	        		}
 				}catch(InvalidCastException){
+					view.displayError("It is not the number!");
+					Console.ReadKey();
+	        		Console.Clear();
+				}
+				catch(FormatException){
 					view.displayError("It is not the number!");
 					Console.ReadKey();
 	        		Console.Clear();

@@ -14,6 +14,8 @@ namespace Zoologiczny
 		protected int number;
 		protected double price;
 		
+		public enum Animals { Dog, Cat, Cow, Chicken }
+		
 		public Animal(){}
 
 		public int Number{

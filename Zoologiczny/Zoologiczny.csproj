@@ -44,6 +44,7 @@
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Builder\Builders.cs" />
     <Compile Include="Builder\Director.cs" />
+    <Compile Include="Factory\Factory.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Classes\Animal.cs" />
     <Compile Include="Model\Classes\AnimalSpecies.cs" />
@@ -62,6 +63,7 @@
     <Folder Include="Model" />
     <Folder Include="Builder" />
     <Folder Include="Model\Classes" />
+    <Folder Include="Factory" />
     <Folder Include="View" />
     <Folder Include="Controller" />
   </ItemGroup>

@@ -23,9 +23,22 @@ namespace Zoologiczny
 	
 	
 	public abstract class Farm : Animal{
+		
 		protected string species;
 		
 		public Farm(){}
+		
+		public static Farm FarmFactory(Animals farmType, int number, double price){
+			switch(farmType){
+				case(Animals.Cow):
+					return new Cow(number, price, "Farm", "Cow");
+				case(Animals.Chicken):
+					return new Chicken(number, price, "Farm", "Chicken");
+				default:
+					break;
+			}
+			throw new System.NotSupportedException("The pizza type " + farmType.ToString() + " is not recognized.");
+		}
 		
 		public string Species{
 			get {return species;}
