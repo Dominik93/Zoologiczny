@@ -14,7 +14,7 @@ namespace Zoologiczny
         	//View view = new View(model);
         	View view = new View();
          	Controller controller = new Controller(model, view);
-        	controller.start();
+        	controller.Start();
         }
     }
 }

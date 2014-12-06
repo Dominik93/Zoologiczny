@@ -32,6 +32,6 @@ namespace Zoologiczny
 	        return this.MemberwiseClone();
 	    }
 		
-		public abstract string display();
+		public abstract string Display();
 	}
 }

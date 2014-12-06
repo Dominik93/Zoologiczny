@@ -22,12 +22,12 @@ namespace Zoologiczny
 			get { return dogBuilder.Dog; } 
 		}
  
-	    public void constructDog(int number, double price){
-	        dogBuilder.createNewDog();
-	        dogBuilder.buildNumber(number);
-	        dogBuilder.buildPrice(price);
-	        dogBuilder.buildSpecies();
-	        dogBuilder.buildRace();
+	    public void ConstructDog(int number, double price){
+	        dogBuilder.CreateNewDog();
+	        dogBuilder.BuildNumber(number);
+	        dogBuilder.BuildPrice(price);
+	        dogBuilder.BuildSpecies();
+	        dogBuilder.BuildRace();
 	    }
 	}
 	
@@ -43,12 +43,12 @@ namespace Zoologiczny
 			get { return catBuilder.Cat; } 
 		}
  
-	    public void constructCat(int number, double price){
-	        catBuilder.createNewCat();
-	        catBuilder.buildNumber(number);
-	        catBuilder.buildPrice(price);
-	        catBuilder.buildSpecies();
-	        catBuilder.buildRace();
+	    public void ConstructCat(int number, double price){
+	        catBuilder.CreateNewCat();
+	        catBuilder.BuildNumber(number);
+	        catBuilder.BuildPrice(price);
+	        catBuilder.BuildSpecies();
+	        catBuilder.BuildRace();
 	    }
 	}
 }

@@ -20,60 +20,60 @@ namespace Zoologiczny
 		}
 		*/
 		
-		public void waitAndClear(){
+		public void WaitAndClear(){
 			Console.WriteLine("Press any key");
 			Console.ReadKey();
 	        Console.Clear();
 		}
 		
-		public int enterIntNumber(){
+		public int EnterIntNumber(){
 			return Convert.ToInt32(Console.ReadLine());
 		}
 		
-		public double enterDoubleNumber(){
+		public double EnterDoubleNumber(){
 			return Convert.ToDouble(Console.ReadLine());
 		}
 		
-		public void displayAvailableAnimals(){
+		public void DisplayAvailableAnimals(){
 			int i = 0;
 			foreach(Animal.Animals element in Enum.GetValues(typeof(Animal.Animals))){
 				Console.WriteLine(i++ + " - " + element.ToString());
 			}
 		}
 		
-		public void diplayMainOptions(){
+		public void DisplayMainOptions(){
 			Console.WriteLine("0 - Exit\n1 - Add animal to warehouse\n2 - Show warehouse status\n3 - Remove from warehouse\n" +
 			                  "4 - Add to basket\n5 - Display basket\n6 - Remove from basket\n7 - Change price\n8 - Change number\n9 - Buy");
 		}
 		
-		public void displayError(string error){
+		public void DisplayError(string error){
 			Console.WriteLine(" ---- " + error + " ----");
 		}
 		
-		public void displayMasage(string msg){
+		public void DisplayMasage(string msg){
 			Console.WriteLine(msg);
 		}
 		
-		public void displayWarehouseStatus(Warehouse werehouse){
+		public void DisplayWarehouseStatus(Warehouse werehouse){
 			Console.WriteLine("Warehouse status:");
 			int i = 0;
 			foreach(Animal animal in werehouse.List){
-				Console.WriteLine(i++ + "- " + animal.display());
+				Console.WriteLine(i++ + "- " + animal.Display());
 			}
 		}
 		
-		public void displayClientStatus(Client client, double sum){
+		public void DisplayClientStatus(Client client, double sum){
 			Console.WriteLine("Client basket:");
 			foreach(Animal animal in client.List){
-				Console.WriteLine(animal.display());
+				Console.WriteLine(animal.Display());
 			}
 		    Console.WriteLine("Price " + sum);
 		}
 		
-		public void displayClientStatus(Client client){
+		public void DisplayClientStatus(Client client){
 			Console.WriteLine("Client basket:");
 			foreach(Animal animal in client.List){
-				Console.WriteLine(animal.display());
+				Console.WriteLine(animal.Display());
 			}
 		}
 	}

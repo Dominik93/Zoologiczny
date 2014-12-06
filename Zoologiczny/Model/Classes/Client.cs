@@ -28,7 +28,7 @@ namespace Zoologiczny
             set { sum = value; }
         }
         
-        public void calculateSum(){
+        public void CalculateSum(){
         	this.sum = 0;
         	foreach(Animal animal in list){
         		this.sum = this.sum + ( animal.Number * animal.Price);

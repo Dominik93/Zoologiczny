@@ -17,48 +17,48 @@ namespace Zoologiczny
 			get{ return dog; }
 		}
 		
-		public void createNewDog() { 
+		public void CreateNewDog() { 
 			dog = new Dog();
 		}
 		
-		public abstract void buildNumber(int number);
-		public abstract void buildPrice(double price);
-		public abstract void buildSpecies();
-		public abstract void buildRace();
+		public abstract void BuildNumber(int number);
+		public abstract void BuildPrice(double price);
+		public abstract void BuildSpecies();
+		public abstract void BuildRace();
 	}
 	
 	class LabradorDogBuilder : DogBuilder{
-		public override void buildRace() {
+		public override void BuildRace() {
 			dog.Race = "Labrador";
 		}
 		
-		public override void buildNumber(int number) { 
+		public override void BuildNumber(int number) { 
 			dog.Number = number; 
 		}
 		
-		public override void buildPrice(double price) {
+		public override void BuildPrice(double price) {
 			dog.Price = price; 
 		}
 		
-		public override void buildSpecies() { 
+		public override void BuildSpecies() { 
 			dog.Species = "Dog"; 
 		}
 	}
 	
 	class BulldogDogBuilder : DogBuilder{
-		public override void buildRace() {
+		public override void BuildRace() {
 			dog.Race = "Bulldog";
 		}
 		
-		public override void buildNumber(int number) { 
+		public override void BuildNumber(int number) { 
 			dog.Number = number; 
 		}
 		
-		public override void buildPrice(double price) {
+		public override void BuildPrice(double price) {
 			dog.Price = price; 
 		}
 		
-		public override void buildSpecies() {
+		public override void BuildSpecies() {
 			dog.Species = "Dog"; 
 		}
 	}
@@ -70,48 +70,48 @@ namespace Zoologiczny
 			get{ return cat; }
 		}
 		
-		public void createNewCat() { 
+		public void CreateNewCat() { 
 			cat = new Cat();
 		}
 		
-		public abstract void buildNumber(int number);
-		public abstract void buildPrice(double price);
-		public abstract void buildSpecies();
-		public abstract void buildRace();
+		public abstract void BuildNumber(int number);
+		public abstract void BuildPrice(double price);
+		public abstract void BuildSpecies();
+		public abstract void BuildRace();
 	}
 	
 	class PersianCatBuilder : CatBuilder{
-		public override void buildRace() {
+		public override void BuildRace() {
 			cat.Race = "Persian";
 		}
 		
-		public override void buildNumber(int number) { 
+		public override void BuildNumber(int number) { 
 			cat.Number = number; 
 		}
 		
-		public override void buildPrice(double price) {
+		public override void BuildPrice(double price) {
 			cat.Price = price; 
 		}
 		
-		public override void buildSpecies() { 
+		public override void BuildSpecies() { 
 			cat.Species = "Cat"; 
 		}
 	}
 	
 	class SiameseCatBuilder : CatBuilder{
-		public override void buildRace() {
+		public override void BuildRace() {
 			cat.Race = "Siamese ";
 		}
 		
-		public override void buildNumber(int number) { 
+		public override void BuildNumber(int number) { 
 			cat.Number = number; 
 		}
 		
-		public override void buildPrice(double price) {
+		public override void BuildPrice(double price) {
 			cat.Price = price; 
 		}
 		
-		public override void buildSpecies() {
+		public override void BuildSpecies() {
 			cat.Species = "Cat"; 
 		}
 	}

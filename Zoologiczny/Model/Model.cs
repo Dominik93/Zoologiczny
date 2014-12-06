@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Runtime.InteropServices;
 
 namespace Zoologiczny
 {
@@ -32,20 +33,10 @@ namespace Zoologiczny
 			set { warehouse = value; }
 		}
 		
-		public void addAnimalToWarehouse(Animal animal){
-			Boolean dodaj = true;
-			foreach(Animal an in warehouse.List){
-				if(an.GetType().Equals(animal.GetType())){
-					dodaj = false;
-				}
-			}
-			if(dodaj)
-				warehouse.addAnimal(animal);
-			else
-				Console.WriteLine("Animal already exist");
-		}
-		
-		public void changeAnimalPrice(int index, int price){
+		/*
+		 * Change price
+		*/		
+		public void ChangeAnimalPrice(int index, int price){
 			try{
 				warehouse.List[index].Price = price;
 			}catch(ArgumentOutOfRangeException){
@@ -53,7 +44,10 @@ namespace Zoologiczny
 			}
 		}
 		
-		public void changeAnimalNumber(int index, int number){
+		/*
+		 * Change namber of animal
+		*/	
+		public void ChangeAnimalNumber(int index, int number){
 			try{
 				warehouse.List[index].Number = number;
 			}catch(ArgumentOutOfRangeException){
@@ -61,50 +55,87 @@ namespace Zoologiczny
 			}
 		}
 		
-		public void removeAnimalFromWarehouse(int index, int number){
+		/*
+		 * Remove item form warehouse
+		*/
+		public void RemoveAnimalFromWarehouse(int index, int number){
 			try{
-				if(warehouse.List[index].Number >= number)
-					if (warehouse.List[index].Number != 0)
-			         	warehouse.List[index].Number -= number;
-			        else
-			        	Console.WriteLine("Cannot remove more");
-				else
-					Console.WriteLine("To many number to remove");
+				if(warehouse.List[index].Number >= number){
+					if (warehouse.List[index].Number != 0){
+						warehouse.List[index].Number -= number;
+					}
+					else{
+				        //Console.WriteLine("Cannot remove more");
+					}
+				}
+				else{
+					//Console.WriteLine("To many number to remove");
+				}
 			}catch(ArgumentOutOfRangeException){
 				
 			}
        	}
 		
-		public void removeAnimalFromClient(int index, int number){
+		/*
+		 * Remove item form client's basket
+		*/
+		public void RemoveAnimalFromClient(int index, int number){
 			try{
-				if(client.List[index].Number > number)
-					if (client.List[index].Number != 0)
-			         	client.List[index].Number -= number;
-			        else
-			        	Console.WriteLine("Cannot remove more");
-				else
-					Console.WriteLine("To many number to remove");
+				if(client.List[index].Number > number){
+					if (client.List[index].Number != 0){
+						client.List[index].Number -= number;
+					}
+					else{
+						//Console.WriteLine("Cannot remove more");
+					}
+				}
+				else{
+					//Console.WriteLine("To many number to remove");
+				}
 			}catch(ArgumentOutOfRangeException){
 				
 			}
        	}
          
-		public void addAnimalToClient(int index, int number){
+		/*
+		 *  Add animal to warehouse only if list don't have animal with this type 
+		*/
+		public void AddAnimalToWarehouse(Animal animal){
+			Boolean dodaj = true;
+			foreach(Animal an in warehouse.List){
+				if(an.GetType().Equals(animal.GetType())){
+					dodaj = false;
+				}
+			}
+			if(dodaj){
+				warehouse.AddAnimal(animal);
+			}else{
+				//Console.WriteLine("Animal already exist");
+			}
+		}
+		
+		/*
+		 *  Add animal to client's basket only if list don't have animal with this type 
+		*/
+		public void AddAnimalToClient(int index, int number){
 			try{
 				if(warehouse.List[index].Number > number){
-					client.addAnimal((Animal)warehouse.List[index].Clone());
+					client.AddAnimal((Animal)warehouse.List[index].Clone());
 					client.List[client.List.Count - 1].Number = number;
-					removeAnimalFromWarehouse(index, number);
-					client.calculateSum();
+					RemoveAnimalFromWarehouse(index, number);
+					client.CalculateSum();
 				}else{
-					Console.WriteLine("Cannot add to basket");
+					//Console.WriteLine("Cannot add to basket");
 				}
 			}catch(ArgumentOutOfRangeException){
 				
 			}
 		}
 		
-		public void buyAllAnimals(){
+		/*
+		 * Create new list for client
+		*/
+		public void BuyAllAnimals(){
 			client = new Client();
 		}
 	}

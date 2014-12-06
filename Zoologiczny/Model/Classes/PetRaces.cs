@@ -20,7 +20,7 @@ namespace Zoologiczny
 			set {race = value;}
 		}
 		
-		public override string display(){
+		public override string Display(){
 			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
 			return s;
 		}
@@ -36,7 +36,7 @@ namespace Zoologiczny
 			set {race = value;}
 		}
 		
-		public override string display(){
+		public override string Display(){
 			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
 			return s;
 		}

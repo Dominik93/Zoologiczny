@@ -22,11 +22,11 @@ namespace Zoologiczny
             set { list = value; }
         }
  		
- 		public void addAnimal(Animal animal){
+ 		public void AddAnimal(Animal animal){
 			list.Add(animal);
 		}
 		
-		public void removeAnimal(int index){
+		public void RemoveAnimal(int index){
 			list.RemoveAt(index);
 		}
     }
