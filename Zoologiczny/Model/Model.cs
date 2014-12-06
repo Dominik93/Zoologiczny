@@ -14,7 +14,6 @@ namespace Zoologiczny
 	
 	public class Model
 	{
-		
 		Client client;
 		Warehouse warehouse;
 		
@@ -24,13 +23,13 @@ namespace Zoologiczny
 		}
 		
 		public Client Client{
-			get {return client;}
-			set {client = value;}
+			get { return client; }
+			set { client = value; }
 		}
 		
 		public Warehouse Warehouse{
-			get {return warehouse;}
-			set {warehouse = value;}
+			get { return warehouse; }
+			set { warehouse = value; }
 		}
 		
 		public void addAnimalToWarehouse(Animal animal){
@@ -90,7 +89,6 @@ namespace Zoologiczny
 			}
        	}
          
-		
 		public void addAnimalToClient(int index, int number){
 			try{
 				if(warehouse.List[index].Number > number){
@@ -104,7 +102,10 @@ namespace Zoologiczny
 			}catch(ArgumentOutOfRangeException){
 				
 			}
-			
+		}
+		
+		public void buyAllAnimals(){
+			client = new Client();
 		}
 	}
 }

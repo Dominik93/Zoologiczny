@@ -20,6 +20,12 @@ namespace Zoologiczny
 		}
 		*/
 		
+		public void waitAndClear(){
+			Console.WriteLine("Press any key");
+			Console.ReadKey();
+	        Console.Clear();
+		}
+		
 		public int enterIntNumber(){
 			return Convert.ToInt32(Console.ReadLine());
 		}
@@ -37,7 +43,7 @@ namespace Zoologiczny
 		
 		public void diplayMainOptions(){
 			Console.WriteLine("0 - Exit\n1 - Add animal to warehouse\n2 - Show warehouse status\n3 - Remove from warehouse\n" +
-			                  "4 - Add to basket\n5 - Display basket\n6 - Remove from basket\n7 - Change price\n8 - Change number");
+			                  "4 - Add to basket\n5 - Display basket\n6 - Remove from basket\n7 - Change price\n8 - Change number\n9 - Buy");
 		}
 		
 		public void displayError(string error){

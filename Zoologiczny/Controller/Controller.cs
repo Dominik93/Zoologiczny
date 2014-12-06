@@ -24,12 +24,10 @@ namespace Zoologiczny
 			while(true){
 				view.diplayMainOptions();
 				try{
-					int choice = Convert.ToInt32(Console.ReadLine());
-					switch(choice){
+					switch(view.enterIntNumber()){
 	        			case 0:
 							view.displayMasage("Exit");
-							Console.ReadKey();
-	        				Console.Clear();
+							view.waitAndClear();
 	        				return;
 	        			case 1:
 	        				view.displayAvailableAnimals();
@@ -80,13 +78,11 @@ namespace Zoologiczny
 	        							view.displayError("Wrong choise");
 	        							break;
 	        					}
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 	        			case 2:
 	        				view.displayWarehouseStatus(model.Warehouse);
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 	        			case 3:
 	        				view.displayWarehouseStatus(model.Warehouse);
@@ -96,8 +92,7 @@ namespace Zoologiczny
 	        				}catch(InvalidCastException){
 	        					view.displayError("It is not the number!");
 	        				}
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 	        			case 4:
 	        				view.displayWarehouseStatus(model.Warehouse);
@@ -107,13 +102,11 @@ namespace Zoologiczny
 	        				}catch(InvalidCastException){
 	        					view.displayError("It is not the number!");
 	        				}
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 	        			case 5:
 	        				view.displayClientStatus(model.Client, model.Client.Sum);
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;	
 	        			case 6:
 	        				view.displayClientStatus(model.Client);
@@ -123,46 +116,45 @@ namespace Zoologiczny
 	        				}catch(InvalidCastException){
 	        					view.displayError("It is not the number!");
 	        				}
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 	        			case 7:
 	        				view.displayWarehouseStatus(model.Warehouse);
 	        				try{
-		        				view.displayMasage("Which animal you want change price?");
+		        				view.displayMasage("Which animal you want to change price?");
 		        				model.changeAnimalPrice(view.enterIntNumber(), view.enterIntNumber());
 	        				}catch(InvalidCastException){
 	        					view.displayError("It is not the number!");
 	        				}
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 						case 8:
 	        				view.displayWarehouseStatus(model.Warehouse);
 	        				try{
-		        				view.displayMasage("Which animal you want change number?");
+		        				view.displayMasage("Which animal you want to change number?");
 		        				model.changeAnimalNumber(view.enterIntNumber(), view.enterIntNumber());
 	        				}catch(InvalidCastException){
 	        					view.displayError("It is not the number!");
 	        				}
-	        				Console.ReadKey();
-	        				Console.Clear();
-	        				break;	        				
+	        				view.waitAndClear();
+	        				break;	 
+	        			case 9:
+	        				view.displayMasage("Buy all animals");
+	        				model.buyAllAnimals();
+	        				view.waitAndClear();
+	        				break;
 	        			default:
 	        				view.displayError("Wrong choise");
-	        				Console.ReadKey();
-	        				Console.Clear();
+	        				view.waitAndClear();
 	        				break;
 	        		}
 				}catch(InvalidCastException){
 					view.displayError("It is not the number!");
-					Console.ReadKey();
-	        		Console.Clear();
+					view.waitAndClear();
 				}
 				catch(FormatException){
 					view.displayError("It is not the number!");
-					Console.ReadKey();
-	        		Console.Clear();
+					view.waitAndClear();
 				}
 			}
 		}

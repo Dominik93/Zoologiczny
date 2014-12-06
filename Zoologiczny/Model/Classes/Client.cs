@@ -19,6 +19,7 @@ namespace Zoologiczny
 
         public Client(){
         	list = new List<Animal>();
+        	sum = 0;
         }
         
         public double Sum
