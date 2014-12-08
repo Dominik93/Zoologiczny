@@ -10,9 +10,7 @@ using System;
 using System.Runtime.InteropServices;
 
 namespace Zoologiczny
-{
-	public enum Animals { Dog, Cat };
-	
+{	
 	public class Model
 	{
 		Client client;
@@ -32,6 +30,7 @@ namespace Zoologiczny
 			get { return warehouse; }
 			set { warehouse = value; }
 		}
+		
 		
 		/*
 		 * Change price
@@ -138,5 +137,7 @@ namespace Zoologiczny
 		public void BuyAllAnimals(){
 			client = new Client();
 		}
+		
+		
 	}
 }

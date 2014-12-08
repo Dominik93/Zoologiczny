@@ -10,6 +10,7 @@ using System;
 
 namespace Zoologiczny
 {
+	/*
 	class DogBreeder{
 		private DogBuilder dogBuilder;
 		
@@ -49,6 +50,23 @@ namespace Zoologiczny
 	        catBuilder.BuildPrice(price);
 	        catBuilder.BuildSpecies();
 	        catBuilder.BuildRace();
+	    }
+	}
+	*/
+	class AnimalBreeder<T>{
+		private T animalBuilder;
+		
+		public T AnimalBuilder{
+	        get { return animalBuilder; } 
+	        set { animalBuilder = value; }
+    	}
+ 
+	    public void ConstructAnimal(int number, double price){
+	        animalBuilder.CreateNewAnimal();
+	        animalBuilder.BuildNumber(number);
+	        animalBuilder.BuildPrice(price);
+	        animalBuilder.BuildSpecies();
+	        animalBuilder.BuildRace();
 	    }
 	}
 }

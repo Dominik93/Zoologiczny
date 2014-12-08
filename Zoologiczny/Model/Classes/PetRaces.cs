@@ -19,11 +19,6 @@ namespace Zoologiczny
 			get {return race;}
 			set {race = value;}
 		}
-		
-		public override string Display(){
-			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
-			return s;
-		}
 	}
 	
 	public class Cat : Pet{
@@ -34,11 +29,6 @@ namespace Zoologiczny
 		public string Race{
 			get {return race;}
 			set {race = value;}
-		}
-		
-		public override string Display(){
-			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
-			return s;
 		}
 	}
 }

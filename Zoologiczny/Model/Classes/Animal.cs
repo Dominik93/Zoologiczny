@@ -10,13 +10,13 @@ using System;
 
 namespace Zoologiczny
 {
-	public abstract class Animal : ICloneable{
+	public class Animal : ICloneable {
 		protected int number;
 		protected double price;
 		
 		public enum Animals { Dog, Cat, Cow, Chicken }
 		
-		public Animal(){}
+		public Animal(){ }
 
 		public int Number{
 			get {return number;}
@@ -31,7 +31,5 @@ namespace Zoologiczny
 		public object Clone(){
 	        return this.MemberwiseClone();
 	    }
-		
-		public abstract string Display();
 	}
 }

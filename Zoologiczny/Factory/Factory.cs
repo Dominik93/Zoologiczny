@@ -10,7 +10,6 @@ using System;
 
 namespace Zoologiczny
 {
-	
 	public class Cow : Farm{
 	    protected string race;
 		
@@ -21,10 +20,6 @@ namespace Zoologiczny
 	    	this.race = race;
 	    }
 	    
-		public override string Display(){
-			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
-			return s;
-		}
 	}
  
 	public class Chicken : Farm{
@@ -37,10 +32,6 @@ namespace Zoologiczny
 	    	this.race = race;
 	    }
 	    
-		public override string Display(){
-			string s = "I'm " + this.GetType() + " species " + this.species + " race " + this.race + " number " + this.number + " price " + this.price + "\n";
-			return s;
-		}
 	}
 	
 }

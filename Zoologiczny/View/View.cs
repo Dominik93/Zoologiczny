@@ -7,6 +7,10 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Zoologiczny
 {
@@ -19,6 +23,7 @@ namespace Zoologiczny
 			this.model = model;
 		}
 		*/
+		public enum Animals { Dog, Cat, Cow, Chicken }
 		
 		public void WaitAndClear(){
 			Console.WriteLine("Press any key");
@@ -36,7 +41,7 @@ namespace Zoologiczny
 		
 		public void DisplayAvailableAnimals(){
 			int i = 0;
-			foreach(Animal.Animals element in Enum.GetValues(typeof(Animal.Animals))){
+			foreach(Animals element in Enum.GetValues(typeof(Animals))){
 				Console.WriteLine(i++ + " - " + element.ToString());
 			}
 		}
@@ -58,22 +63,25 @@ namespace Zoologiczny
 			Console.WriteLine("Warehouse status:");
 			int i = 0;
 			foreach(Animal animal in werehouse.List){
-				Console.WriteLine(i++ + "- " + animal.Display());
+				string s ="g";// "I'm " + animal.GetType() + " species " + animal.Species + " race " + animal.race + " number " + animal.Number + " price " + animal.Price + "\n";
+				Console.WriteLine(i++ + "- " + s);
 			}
 		}
 		
-		public void DisplayClientStatus(Client client, double sum){
+		public void DisplayClientStatus(List<Animal> list, double sum){
 			Console.WriteLine("Client basket:");
-			foreach(Animal animal in client.List){
-				Console.WriteLine(animal.Display());
+			foreach(Animal animal in list){
+				string s ="j";// "I'm " + animal.GetType() + " species " + animal.species + " race " + animal.race + " number " + animal.Number + " price " + animal.Price + "\n";
+				Console.WriteLine(s);
 			}
 		    Console.WriteLine("Price " + sum);
 		}
 		
-		public void DisplayClientStatus(Client client){
+		public void DisplayClientStatus(List<Animal> list){
 			Console.WriteLine("Client basket:");
-			foreach(Animal animal in client.List){
-				Console.WriteLine(animal.Display());
+			foreach(Animal animal in list){
+				string s ="d";// "I'm " + animal.GetType() + " species " + animal.species + " race " + animal.race + " number " + animal.Number + " price " + animal.Price + "\n";
+				Console.WriteLine(s);
 			}
 		}
 	}
