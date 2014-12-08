@@ -15,6 +15,13 @@ namespace Zoologiczny
 			
 		public Dog(){}
 		
+		public Dog(int numer, double price, string species, string race){
+			this.Number = number;
+			this.Price = price;
+			this.Species = species;
+			this.Race = race;
+		}
+		
 		public string Race{
 			get {return race;}
 			set {race = value;}

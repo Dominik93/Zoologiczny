@@ -7,7 +7,10 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Zoologiczny
 {	
@@ -35,20 +38,16 @@ namespace Zoologiczny
 		/*
 		 * Change price
 		*/		
-		public void ChangeAnimalPrice(int index, int price){
-			try{
-				warehouse.List[index].Price = price;
-			}catch(ArgumentOutOfRangeException){
-				
-			}
+		public void ChangeAnimalPrice(string key, int price){
+			warehouse.Instance[key].Price = price;
 		}
 		
 		/*
 		 * Change namber of animal
 		*/	
-		public void ChangeAnimalNumber(int index, int number){
+		public void ChangeAnimalNumber(string key, int number){
 			try{
-				warehouse.List[index].Number = number;
+				warehouse.Instance[key].Number = number;
 			}catch(ArgumentOutOfRangeException){
 				
 			}
@@ -57,11 +56,11 @@ namespace Zoologiczny
 		/*
 		 * Remove item form warehouse
 		*/
-		public void RemoveAnimalFromWarehouse(int index, int number){
+		public void RemoveAnimalFromWarehouse(string key, int number){
 			try{
-				if(warehouse.List[index].Number >= number){
-					if (warehouse.List[index].Number != 0){
-						warehouse.List[index].Number -= number;
+				if(warehouse.Instance[key].Number >= number){
+					if (warehouse.Instance[key].Number != 0){
+						warehouse.Instance[key].Number -= number;
 					}
 					else{
 				        //Console.WriteLine("Cannot remove more");
@@ -78,11 +77,11 @@ namespace Zoologiczny
 		/*
 		 * Remove item form client's basket
 		*/
-		public void RemoveAnimalFromClient(int index, int number){
+		public void RemoveAnimalFromClient(string key, int number){
 			try{
-				if(client.List[index].Number > number){
-					if (client.List[index].Number != 0){
-						client.List[index].Number -= number;
+				if(client.Instance[key].Number > number){
+					if (client.Instance[key].Number != 0){
+						client.Instance[key].Number -= number;
 					}
 					else{
 						//Console.WriteLine("Cannot remove more");
@@ -99,35 +98,22 @@ namespace Zoologiczny
 		/*
 		 *  Add animal to warehouse only if list don't have animal with this type 
 		*/
-		public void AddAnimalToWarehouse(Animal animal){
-			Boolean dodaj = true;
-			foreach(Animal an in warehouse.List){
-				if(an.GetType().Equals(animal.GetType())){
-					dodaj = false;
-				}
-			}
-			if(dodaj){
-				warehouse.AddAnimal(animal);
-			}else{
-				//Console.WriteLine("Animal already exist");
-			}
+		public void AddAnimalToWarehouse(string race, Animal animal){
+			warehouse.Add(race, animal);
 		}
 		
 		/*
 		 *  Add animal to client's basket only if list don't have animal with this type 
 		*/
-		public void AddAnimalToClient(int index, int number){
-			try{
-				if(warehouse.List[index].Number > number){
-					client.AddAnimal((Animal)warehouse.List[index].Clone());
-					client.List[client.List.Count - 1].Number = number;
-					RemoveAnimalFromWarehouse(index, number);
-					client.CalculateSum();
-				}else{
-					//Console.WriteLine("Cannot add to basket");
-				}
-			}catch(ArgumentOutOfRangeException){
-				
+		public void AddAnimalToClient(string key, int number){
+			if(warehouse.Instance[key].Number > number){
+				Animal animal = (Animal)warehouse.Instance[key].Clone();
+				animal.Number = number;
+				warehouse.Instance[key].Number -= number;
+				client.Add(key, animal);
+				client.CalculateSum();
+			}else{
+				//Console.WriteLine("Cannot add to basket");
 			}
 		}
 		
@@ -135,9 +121,13 @@ namespace Zoologiczny
 		 * Create new list for client
 		*/
 		public void BuyAllAnimals(){
-			client = new Client();
+			List<string> list;
+			list = new List<string>();
+			foreach(string s in client.Instance.Keys)
+				list.Add(s);
+			foreach(string s in list)
+				client.Instance.Remove(s);
+			client.CalculateSum();
 		}
-		
-		
 	}
 }

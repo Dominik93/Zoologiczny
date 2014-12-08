@@ -14,20 +14,28 @@ using System.Threading.Tasks;
 
 namespace Zoologiczny
 {
-	public class ProductContainer{ 
- 		protected List<Animal> list;
-        
- 		internal List<Animal> List{
-            get { return list; }
-            set { list = value; }
-        }
- 		
- 		public void AddAnimal(Animal animal){
-			list.Add(animal);
+	public class ProductContainer{
+		
+		protected  Dictionary<string, Animal> instance = new Dictionary<string, Animal>();
+		
+		public Dictionary<string, Animal> GetInstance(object key){
+			return instance;
 		}
 		
-		public void RemoveAnimal(int index){
-			list.RemoveAt(index);
+		public Dictionary<string, Animal> Instance{
+			get {return instance;}
 		}
-    }
+			
+		public void Add(string race, Animal animal){
+			try{
+				instance.Add(race, animal);
+			} catch(Exception){
+				
+			}
+		}
+		
+		public Dictionary<string, Animal>.ValueCollection GetValues(){
+			return instance.Values;
+		}
+	}
 }

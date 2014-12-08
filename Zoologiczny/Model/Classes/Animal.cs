@@ -10,7 +10,7 @@ using System;
 
 namespace Zoologiczny
 {
-	public class Animal : ICloneable {
+	public abstract class Animal : ICloneable {
 		protected int number;
 		protected double price;
 		
@@ -31,5 +31,6 @@ namespace Zoologiczny
 		public object Clone(){
 	        return this.MemberwiseClone();
 	    }
+		
 	}
 }

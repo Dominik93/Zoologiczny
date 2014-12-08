@@ -10,29 +10,31 @@ using System;
 
 namespace Zoologiczny
 {
-	abstract class AnimalBuilder<T> where T : class{
-		protected T animal;
+	/*
+	abstract class AnimalBuilder{
+		protected Animal animal;
 		
-		public T Animal{
+		public Animal Animal{
 			get{ return animal; }
 		}
 		
 		public void CreateNewAnimal() { 
-			animal = (T)(new Animal());
+			animal = new Animal();
 		}
 		
 		public abstract void BuildNumber(int number);
 		public abstract void BuildPrice(double price);
+		
 		public abstract void BuildSpecies();
+		
 		public abstract void BuildRace();
+	}
+	
+	abstract class PetBuilder : AnimalBuilder{
 		
 	}
 	
-	abstract class PetBuilder<T> : AnimalBuilder<T> where T : class{
-		
-	}
-	
-	class DogBuilder<T> : PetBuilder<T> where T : class{
+	class DogBuilder : PetBuilder{
 		
 		public override void BuildRace() {
 			animal.Race = "Labrador";
@@ -51,7 +53,11 @@ namespace Zoologiczny
 		}
 	}
 
-	class CatBuilder<T>: PetBuilder<T> where T : class{
+	class CatBuilder: PetBuilder{
+		
+		public void Cast(){
+			animal = (Cat)animal;
+		}
 		public override void BuildRace() {
 			animal.Race = "Persian";
 		}
@@ -68,7 +74,7 @@ namespace Zoologiczny
 			animal.Species = "Cat"; 
 		}
 	}
-	/*
+	*/
 	abstract class DogBuilder{
 		protected Dog dog;
 		public Dog Dog{
@@ -85,7 +91,7 @@ namespace Zoologiczny
 	
 	class LabradorDogBuilder : DogBuilder{
 		public override void BuildRace() {
-			dog.Race = "Labrador";
+			dog.Race = "Dog";
 		}
 		
 		public override void BuildNumber(int number) { 
@@ -97,13 +103,13 @@ namespace Zoologiczny
 		}
 		
 		public override void BuildSpecies() { 
-			dog.Species = "Dog"; 
+			dog.Species = "Pet"; 
 		}
 	}
 	
 	class BulldogDogBuilder : DogBuilder{
 		public override void BuildRace() {
-			dog.Race = "Bulldog";
+			dog.Race = "Dog";
 		}
 		
 		public override void BuildNumber(int number) { 
@@ -115,15 +121,27 @@ namespace Zoologiczny
 		}
 		
 		public override void BuildSpecies() {
-			dog.Species = "Dog"; 
+			dog.Species = "Pet"; 
 		}
 	}
-*/	
-		
-	/*
+	
+	abstract class CatBuilder{
+		protected Cat cat;
+		public Cat Cat{
+		get{ return cat; }
+		}
+		public void CreateNewCat() {
+			cat = new Cat();
+		}
+		public abstract void BuildNumber(int number);
+		public abstract void BuildPrice(double price);
+		public abstract void BuildSpecies();
+		public abstract void BuildRace();
+	}
+	
 	class PersianCatBuilder : CatBuilder{
 		public override void BuildRace() {
-			cat.Race = "Persian";
+			cat.Race = "Cat";
 		}
 		
 		public override void BuildNumber(int number) { 
@@ -135,13 +153,13 @@ namespace Zoologiczny
 		}
 		
 		public override void BuildSpecies() { 
-			cat.Species = "Cat"; 
+			cat.Species = "Pet"; 
 		}
 	}
 	
 	class SiameseCatBuilder : CatBuilder{
 		public override void BuildRace() {
-			cat.Race = "Siamese ";
+			cat.Race = "Cat ";
 		}
 		
 		public override void BuildNumber(int number) { 
@@ -153,8 +171,8 @@ namespace Zoologiczny
 		}
 		
 		public override void BuildSpecies() {
-			cat.Species = "Cat"; 
+			cat.Species = "Pet"; 
 		}
-	}*/
+	}
 
 }

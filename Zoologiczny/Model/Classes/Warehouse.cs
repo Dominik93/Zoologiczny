@@ -16,8 +16,6 @@ namespace Zoologiczny
 {
 	public class Warehouse: ProductContainer {
 
-        public Warehouse() {
-        	list = new List<Animal>();
-        }
+        public Warehouse() {}
     }
 }

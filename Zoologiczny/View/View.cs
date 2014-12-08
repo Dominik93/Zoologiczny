@@ -35,6 +35,10 @@ namespace Zoologiczny
 			return Convert.ToInt32(Console.ReadLine());
 		}
 		
+		public string EnterString(){
+			return Console.ReadLine();
+		}
+		
 		public double EnterDoubleNumber(){
 			return Convert.ToDouble(Console.ReadLine());
 		}
@@ -59,28 +63,28 @@ namespace Zoologiczny
 			Console.WriteLine(msg);
 		}
 		
-		public void DisplayWarehouseStatus(Warehouse werehouse){
+		public void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list){
 			Console.WriteLine("Warehouse status:");
 			int i = 0;
-			foreach(Animal animal in werehouse.List){
-				string s ="g";// "I'm " + animal.GetType() + " species " + animal.Species + " race " + animal.race + " number " + animal.Number + " price " + animal.Price + "\n";
+			foreach(Animal animal in list){
+				string s = "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
 				Console.WriteLine(i++ + "- " + s);
 			}
 		}
 		
-		public void DisplayClientStatus(List<Animal> list, double sum){
+		public void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum){
 			Console.WriteLine("Client basket:");
 			foreach(Animal animal in list){
-				string s ="j";// "I'm " + animal.GetType() + " species " + animal.species + " race " + animal.race + " number " + animal.Number + " price " + animal.Price + "\n";
+				string s = "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";;
 				Console.WriteLine(s);
 			}
 		    Console.WriteLine("Price " + sum);
 		}
 		
-		public void DisplayClientStatus(List<Animal> list){
+		public void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list){
 			Console.WriteLine("Client basket:");
 			foreach(Animal animal in list){
-				string s ="d";// "I'm " + animal.GetType() + " species " + animal.species + " race " + animal.race + " number " + animal.Number + " price " + animal.Price + "\n";
+				string s ="I'm " + animal.GetType() + " number " + animal.Number + " price " + animal.Price + "\n";
 				Console.WriteLine(s);
 			}
 		}

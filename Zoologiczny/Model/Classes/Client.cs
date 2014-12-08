@@ -18,7 +18,6 @@ namespace Zoologiczny
         double sum;
 
         public Client(){
-        	list = new List<Animal>();
         	sum = 0;
         }
         
@@ -30,7 +29,7 @@ namespace Zoologiczny
         
         public void CalculateSum(){
         	this.sum = 0;
-        	foreach(Animal animal in list){
+        	foreach(Animal animal in instance.Values){
         		this.sum = this.sum + ( animal.Number * animal.Price);
         	}
         }
