@@ -8,10 +8,8 @@
  */
 using System;
 
-namespace Zoologiczny
-{
-	public class Controller
-	{
+namespace Zoologiczny{
+	public class Controller{
 		Model model;
 		View view;
 		

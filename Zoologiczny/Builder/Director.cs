@@ -8,8 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	class DogBreeder{
 		private DogBuilder dogBuilder;
 		

@@ -12,10 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoologiczny
-{	
-	public class Model
-	{
+namespace Zoologiczny{
+	public class Model{ // iobservable
 		Client client;
 		Warehouse warehouse;
 		
@@ -37,74 +35,55 @@ namespace Zoologiczny
 		
 		/*
 		 * Change price
-		*/		
+		 */
 		public void ChangeAnimalPrice(string key, int price){
-			warehouse.Instance[key].Price = price;
+			try{
+				warehouse.Instance[key].Price = price;
+			}catch(KeyNotFoundException){
+				
+			}
 		}
 		
 		/*
 		 * Change namber of animal
-		*/	
+		 */
 		public void ChangeAnimalNumber(string key, int number){
 			try{
 				warehouse.Instance[key].Number = number;
-			}catch(ArgumentOutOfRangeException){
+			}catch(KeyNotFoundException){
 				
 			}
 		}
 		
 		/*
-		 * Remove item form warehouse
-		*/
-		public void RemoveAnimalFromWarehouse(string key, int number){
+		 * Remove item form warehouse/client
+		 */
+		public void RemoveAnimal(ProductContainer pc, string key, int number){
 			try{
-				if(warehouse.Instance[key].Number >= number){
-					if (warehouse.Instance[key].Number != 0){
-						warehouse.Instance[key].Number -= number;
-					}
-					else{
-				        //Console.WriteLine("Cannot remove more");
-					}
-				}
-				else{
-					//Console.WriteLine("To many number to remove");
-				}
-			}catch(ArgumentOutOfRangeException){
-				
-			}
-       	}
-		
-		/*
-		 * Remove item form client's basket
-		*/
-		public void RemoveAnimalFromClient(string key, int number){
-			try{
-				if(client.Instance[key].Number > number){
-					if (client.Instance[key].Number != 0){
-						client.Instance[key].Number -= number;
-					}
-					else{
+				if(pc.Instance[key].Number >= number){
+					if (pc.Instance[key].Number != 0){
+						pc.Instance[key].Number -= number;
+					}else{
 						//Console.WriteLine("Cannot remove more");
 					}
-				}
-				else{
+				}else{
 					//Console.WriteLine("To many number to remove");
 				}
-			}catch(ArgumentOutOfRangeException){
+			}catch(KeyNotFoundException){
 				
 			}
-       	}
-         
+		}
+		
 		/*
-		 *  Add animal to warehouse only if list don't have animal with this type 
-		*/
+		 *  Add animal to warehouse only if list don't have animal with this type
+		 */
 		public void AddAnimalToWarehouse(string race, Animal animal){
 			warehouse.Add(race, animal);
 		}
 		
 		/*
-		 *  Add animal to client's basket only if list don't have animal with this type 
-		*/
+		 *  Add animal to client's basket only if list don't have animal with this type
+		 */
 		public void AddAnimalToClient(string key, int number){
 			if(warehouse.Instance[key].Number > number){
 				Animal animal = (Animal)warehouse.Instance[key].Clone();
@@ -119,11 +98,11 @@ namespace Zoologiczny
 		
 		/*
 		 * Create new list for client
-		*/
+		 */
 		public void BuyAllAnimals(){
 			List<string> list;
 			list = new List<string>();
-			foreach(string s in client.Instance.Keys)
+			foreach(string s in client.GetKeys())
 				list.Add(s);
 			foreach(string s in list)
 				client.Instance.Remove(s);

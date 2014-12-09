@@ -12,10 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoologiczny
-{
-	public class View
-	{
+namespace Zoologiczny{
+	public class View{ // observer
 		/*
 		Model model;
 		

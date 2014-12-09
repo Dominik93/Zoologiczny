@@ -8,8 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	public abstract class Pet : Animal{
 		protected string species;
 		

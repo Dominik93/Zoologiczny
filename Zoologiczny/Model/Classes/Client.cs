@@ -12,8 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	public class Client : ProductContainer{
         double sum;
 

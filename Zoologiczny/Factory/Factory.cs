@@ -8,8 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	public class Cow : Farm{
 	    protected string race;
 		
@@ -31,7 +30,5 @@ namespace Zoologiczny
 	    	this.species = species;
 	    	this.race = race;
 	    }
-	    
 	}
-	
 }

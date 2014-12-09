@@ -8,8 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	public abstract class Animal : ICloneable {
 		protected int number;
 		protected double price;

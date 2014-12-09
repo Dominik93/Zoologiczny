@@ -12,8 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	public class ProductContainer{
 		
 		protected  Dictionary<string, Animal> instance = new Dictionary<string, Animal>();
@@ -29,13 +28,17 @@ namespace Zoologiczny
 		public void Add(string race, Animal animal){
 			try{
 				instance.Add(race, animal);
-			} catch(Exception){
+			}catch(KeyNotFoundException){
 				
 			}
 		}
 		
 		public Dictionary<string, Animal>.ValueCollection GetValues(){
 			return instance.Values;
+		}
+		
+		public Dictionary<string, Animal>.KeyCollection GetKeys(){
+			return instance.Keys;
 		}
 	}
 }

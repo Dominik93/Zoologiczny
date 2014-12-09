@@ -8,8 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	public class Dog : Pet{
 		protected string race;
 			

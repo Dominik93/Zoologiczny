@@ -8,8 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny
-{
+namespace Zoologiczny{
 	/*
 	abstract class AnimalBuilder{
 		protected Animal animal;
