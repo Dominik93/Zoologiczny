@@ -9,9 +9,15 @@
 using System;
 
 namespace Zoologiczny{
+	
 	public class Controller{
+		Strategy strategy;
 		Model model;
 		View view;
+		
+		public Strategy Strategy{
+			get { return strategy; }
+		}
 		
 		public Model Model{
 			get { return model; }
@@ -21,9 +27,14 @@ namespace Zoologiczny{
 			get { return view; }
 		}
 		
-		public Controller(Model model, View view){
+		public Controller(Model model, View view, Strategy strategy){
 			this.model = model;
 			this.view = view;
+			this.strategy = strategy;
+		}
+		
+		public void Start(){
+			strategy.Start(model, view);
 		}
 	}
 }

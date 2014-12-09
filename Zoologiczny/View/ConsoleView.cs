@@ -15,8 +15,12 @@ using System.Threading.Tasks;
 namespace Zoologiczny{
 	public class ConsoleView : View{
 		
-		public override void Update(){
-			Console.WriteLine("View update");
+		public override void InitComponent(){
+		
+		}
+		
+		public override void Update(Model model){
+			Console.WriteLine("View was updated");
 		}
 		
 		public override void WaitAndClear(){

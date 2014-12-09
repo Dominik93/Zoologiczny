@@ -58,8 +58,11 @@
     <Compile Include="Observer\Observer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategy\ConsoleStrategy.cs" />
+    <Compile Include="Strategy\Strategy.cs" />
+    <Compile Include="Strategy\WinAppStrategy.cs" />
     <Compile Include="View\ConsoleView.cs" />
-    <Compile Include="View\MainForm.cs" />
+    <Compile Include="View\Form\MainForm.cs" />
     <Compile Include="View\View.cs" />
     <Compile Include="View\WinAppView.cs" />
   </ItemGroup>
@@ -71,9 +74,11 @@
     <Folder Include="Builder" />
     <Folder Include="Model\Classes" />
     <Folder Include="Factory" />
+    <Folder Include="Strategy" />
     <Folder Include="Observer" />
     <Folder Include="View" />
     <Folder Include="Controller" />
+    <Folder Include="View\Form" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

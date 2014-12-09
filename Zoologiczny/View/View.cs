@@ -18,15 +18,17 @@ namespace Zoologiczny{
 		
 		public enum Animals { Dog, Cat, Cow, Chicken }
 		
-		public abstract void Update();
+		public abstract void InitComponent();
+		public abstract void Update(Model model);
+		public abstract void DisplayError(string error);
+		public abstract void DisplayMasage(string msg);
+		
 		public abstract void WaitAndClear();
 		public abstract int EnterIntNumber();
 		public abstract string EnterString();
 		public abstract double EnterDoubleNumber();
 		public abstract void DisplayAvailableAnimals();
 		public abstract void DisplayMainOptions();
-		public abstract void DisplayError(string error);
-		public abstract void DisplayMasage(string msg);
 		public abstract void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list);
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum);
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);

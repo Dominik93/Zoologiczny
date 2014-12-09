@@ -18,15 +18,22 @@ namespace Zoologiczny{
 	public class WinAppView : View{
 		MainForm mainForm;
 		
+		public MainForm MainForm{
+			get { return mainForm; }
+		}
+		
 		public WinAppView(){
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			mainForm = new MainForm();
+		}
+		
+		public override void InitComponent(){
 			Application.Run(mainForm);
 		}
 		
-		public override void Update(){
-			mainForm.setLabel("up");
+		public override void Update(Model model){
+			mainForm.SetText(this.DisplayWarehouseStatus());
 		}
 		
 		public override void WaitAndClear(){
@@ -51,9 +58,19 @@ namespace Zoologiczny{
 		}
 		
 		public override void DisplayError(string error){
+			MessageBox.Show(error,
+			                "Error",
+			                MessageBoxButtons.OK,
+			                MessageBoxIcon.Exclamation,
+			                MessageBoxDefaultButton.Button1);
 		}
 		
 		public override void DisplayMasage(string msg){
+			MessageBox.Show(msg,
+			                "Message",
+			                MessageBoxButtons.OK,
+			                MessageBoxIcon.Exclamation,
+			                MessageBoxDefaultButton.Button1);
 		}
 		
 		public override void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list){

@@ -43,7 +43,7 @@ namespace Zoologiczny{
 		}
 		public void Notify(){
 			foreach (View view in views){
-				view.Update();
+				view.Update(this);
 			}
 		}
 		
