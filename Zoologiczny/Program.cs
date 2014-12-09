@@ -107,7 +107,6 @@ namespace Zoologiczny{
 						case 6: // remove number of animals form client's basket
 							controller.View.DisplayClientStatus(controller.Model.Client.GetValues());
 							try{
-								//controller.View.DisplayMasage(controller.Model.funkcja());
 								controller.View.DisplayMasage("Chose animal and enter number of animals to remove");
 								controller.Model.RemoveAnimal(controller.Model.Client, controller.View.EnterString(), controller.View.EnterIntNumber());
 							}catch(InvalidCastException){

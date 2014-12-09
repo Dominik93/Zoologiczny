@@ -81,6 +81,14 @@ namespace Zoologiczny{
 			warehouse.Add(race, animal);
 		}
 		
+		public void AddNumberOfAnimal(string race, int number){
+			try{
+				warehouse.Instance[race].Number += number;
+			}catch(KeyNotFoundException){
+				
+			}
+		}
+		
 		/*
 		 *  Add animal to client's basket only if list don't have animal with this type
 		 */
