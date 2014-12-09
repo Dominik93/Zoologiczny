@@ -7,15 +7,21 @@ using System.Threading.Tasks;
 namespace Zoologiczny{
 	class Program{
 		static void Main(string[] args){
-			View view = new View();
+			View viewConsole = new ConsoleView();
+			//View viewApp = new WinAppView();
+			
 			Model model = new Model();
-			Controller controller = new Controller(model, view);
-			/*
+			Controller controller = new Controller(model, viewConsole);
+			
+			controller.Model.Attach(viewConsole);
+			//controller.Model.Attach(viewApp);
+			
 			while(true){
 				controller.View.DisplayMainOptions();
 				try{
 					switch(controller.View.EnterIntNumber()){
 						case(-1):
+							controller.Model.Notify();
 							break;
 						case 0: // exit
 							controller.View.DisplayMasage("Exit");
@@ -29,7 +35,7 @@ namespace Zoologiczny{
 									try{
 										// dog builder
 										DogBreeder dogBreeder = new DogBreeder();
-										dogBreeder.DogBuilder = new LabradorDogBuilder();
+										dogBreeder.DogBuilder = new DogDogBuilder();
 										dogBreeder.DogBuilder.CreateNewDog();
 										dogBreeder.ConstructDog(controller.View.EnterIntNumber(), controller.View.EnterDoubleNumber());
 										
@@ -75,6 +81,7 @@ namespace Zoologiczny{
 									controller.View.DisplayError("Wrong choise");
 									break;
 							}
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						case 2: // Display warehouse
@@ -89,6 +96,7 @@ namespace Zoologiczny{
 							}catch(InvalidCastException){
 								controller.View.DisplayError("It is not the number!");
 							}
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						case 4: // add to basket
@@ -99,6 +107,7 @@ namespace Zoologiczny{
 							}catch(InvalidCastException){
 								controller.View.DisplayError("It is not the number!");
 							}
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						case 5: // Display client's basket
@@ -113,6 +122,7 @@ namespace Zoologiczny{
 							}catch(InvalidCastException){
 								controller.View.DisplayError("It is not the number!");
 							}
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						case 7: // change price
@@ -123,6 +133,7 @@ namespace Zoologiczny{
 							}catch(InvalidCastException){
 								controller.View.DisplayError("It is not the number!");
 							}
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						case 8: // change number of animal
@@ -133,11 +144,13 @@ namespace Zoologiczny{
 							}catch(InvalidCastException){
 								controller.View.DisplayError("It is not the number!");
 							}
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						case 9: // buy animals, clear all basket
 							controller.View.DisplayMasage("Buy all animals");
 							controller.Model.BuyAllAnimals();
+							controller.Model.Notify();
 							controller.View.WaitAndClear();
 							break;
 						default:
@@ -153,7 +166,7 @@ namespace Zoologiczny{
 					controller.View.DisplayError("It is not the number!");
 					controller.View.WaitAndClear();
 				}
-			}*/
+			}
 		}
 	}
 }

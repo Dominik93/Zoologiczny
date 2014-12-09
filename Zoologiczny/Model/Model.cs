@@ -13,9 +13,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Zoologiczny{
-	public class Model{ // iobservable
+	
+	public class Model : Observable {
 		Client client;
 		Warehouse warehouse;
+		
+		private readonly List<View> views = new List<View>();
 		
 		public Model(){
 			client = new Client();
@@ -32,6 +35,17 @@ namespace Zoologiczny{
 			set { warehouse = value; }
 		}
 		
+		public void Attach(View view){
+			views.Add(view);
+		}
+		public void Detach(View view){
+			views.Remove(view);
+		}
+		public void Notify(){
+			foreach (View view in views){
+				view.Update();
+			}
+		}
 		
 		/*
 		 * Change price

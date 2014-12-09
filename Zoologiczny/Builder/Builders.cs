@@ -88,9 +88,27 @@ namespace Zoologiczny{
 		public abstract void BuildRace();
 	}
 	
-	class LabradorDogBuilder : DogBuilder{
+	class DogDogBuilder : DogBuilder{
 		public override void BuildRace() {
 			dog.Race = "Dog";
+		}
+		
+		public override void BuildNumber(int number) { 
+			dog.Number = number; 
+		}
+		
+		public override void BuildPrice(double price) {
+			dog.Price = price; 
+		}
+		
+		public override void BuildSpecies() { 
+			dog.Species = "Pet"; 
+		}
+	}
+	
+	class LabradorDogBuilder : DogBuilder{
+		public override void BuildRace() {
+			dog.Race = "Labrador";
 		}
 		
 		public override void BuildNumber(int number) { 
