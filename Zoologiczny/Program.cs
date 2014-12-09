@@ -10,6 +10,7 @@ namespace Zoologiczny{
 			View view = new View();
 			Model model = new Model();
 			Controller controller = new Controller(model, view);
+			/*
 			while(true){
 				controller.View.DisplayMainOptions();
 				try{
@@ -152,7 +153,7 @@ namespace Zoologiczny{
 					controller.View.DisplayError("It is not the number!");
 					controller.View.WaitAndClear();
 				}
-			}
+			}*/
 		}
 	}
 }
