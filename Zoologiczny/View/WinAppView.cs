@@ -32,16 +32,16 @@ namespace Zoologiczny{
 			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
 		}
 		
-		public override int EnterAnimalNumber(){
-			return Convert.ToInt32(mainForm.GetNumber());
+		public override string EnterAnimalNumber(){
+			return mainForm.GetNumber();
 		}
 		
 		public override string EnterAnimal(){
 			return mainForm.GetAnimal();
 		}
 		
-		public override double EnterPrice(){
-			return Convert.ToDouble(mainForm.GetPrice());
+		public override string EnterPrice(){
+			return mainForm.GetPrice();
 		}
 		
 		public override void DisplayError(string error){
@@ -101,8 +101,8 @@ namespace Zoologiczny{
 		
 		public override void WaitAndClear(){	}
 		
-		public override int EnterOption(){
-			return 0;
+		public override string EnterOption(){
+			return "";
 		}
 	}
 }

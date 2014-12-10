@@ -33,10 +33,10 @@ namespace Zoologiczny{
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum);
 		
 		public abstract void WaitAndClear();
-		public abstract int EnterOption();
-		public abstract int EnterAnimalNumber();
+		public abstract string EnterOption();
+		public abstract string EnterAnimalNumber();
 		public abstract string EnterAnimal();
-		public abstract double EnterPrice();
+		public abstract string EnterPrice();
 		public abstract void DisplayAvailableAnimals();
 		public abstract void DisplayMainOptions();
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);

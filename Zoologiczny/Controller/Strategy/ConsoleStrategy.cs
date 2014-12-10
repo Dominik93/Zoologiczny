@@ -21,7 +21,7 @@ namespace Zoologiczny{
 			while(true){
 				view.DisplayMainOptions();
 				try{
-					switch(view.EnterOption()){
+					switch(Convert.ToInt32(view.EnterOption())){
 						case(-1):
 							break;
 						case 0: // exit
@@ -38,7 +38,7 @@ namespace Zoologiczny{
 										DogBreeder dogBreeder = new DogBreeder();
 										dogBreeder.DogBuilder = new DogDogBuilder();
 										dogBreeder.DogBuilder.CreateNewDog();
-										dogBreeder.ConstructDog(view.EnterAnimalNumber(), view.EnterPrice());
+										dogBreeder.ConstructDog(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 										
 										model.AddAnimalToWarehouse(dogBreeder.Dog.Race, dogBreeder.Dog);
 										dogBreeder = null;
@@ -52,7 +52,7 @@ namespace Zoologiczny{
 										CatBreeder catBreeder = new CatBreeder();
 										catBreeder.CatBuilder = new PersianCatBuilder();
 										catBreeder.CatBuilder.CreateNewCat();
-										catBreeder.ConstructCat(view.EnterAnimalNumber(), view.EnterPrice());
+										catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 										
 										model.AddAnimalToWarehouse(catBreeder.Cat.Race,catBreeder.Cat);
 										catBreeder = null;
@@ -64,7 +64,7 @@ namespace Zoologiczny{
 									view.DisplayMasage("Enter number and price");
 									try{
 										// factory method
-										model.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, view.EnterAnimalNumber(), view.EnterPrice()));
+										model.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, Convert.ToInt32(view.EnterAnimalNumber()),  Convert.ToDouble(view.EnterPrice())));
 									}catch(InvalidCastException){
 										view.DisplayError("It is not the number!");
 									}
@@ -73,7 +73,7 @@ namespace Zoologiczny{
 									view.DisplayMasage("Enter number and price");
 									try{
 										// factory method
-										model.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, view.EnterAnimalNumber(), view.EnterPrice()));
+										model.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, Convert.ToInt32(view.EnterAnimalNumber()),  Convert.ToDouble(view.EnterPrice())));
 									}catch(InvalidCastException){
 										view.DisplayError("It is not the number!");
 									}
@@ -93,7 +93,7 @@ namespace Zoologiczny{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Enter animals to remove");
-								model.RemoveAnimal(model.Warehouse, view.EnterAnimal(), view.EnterAnimalNumber());
+								model.RemoveAnimal(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -104,7 +104,7 @@ namespace Zoologiczny{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("What animal you want to buy and how many?");
-								model.AddAnimalToClient(view.EnterAnimal(), view.EnterAnimalNumber());
+								model.AddAnimalToClient(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -119,7 +119,7 @@ namespace Zoologiczny{
 							view.DisplayClientStatus(model.Client.GetValues());
 							try{
 								view.DisplayMasage("Chose animal and enter number of animals to remove");
-								model.RemoveAnimal(model.Client, view.EnterAnimal(), view.EnterAnimalNumber());
+								model.RemoveAnimal(model.Client, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -130,7 +130,7 @@ namespace Zoologiczny{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Which animal you want to change price?");
-								model.ChangeAnimalPrice(view.EnterAnimal(), view.EnterAnimalNumber());
+								model.ChangeAnimalPrice(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -141,7 +141,7 @@ namespace Zoologiczny{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Which animal you want to change number?");
-								model.ChangeAnimalNumber(view.EnterAnimal(), view.EnterAnimalNumber());
+								model.ChangeAnimalNumber(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}

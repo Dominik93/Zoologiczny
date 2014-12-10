@@ -39,7 +39,7 @@ namespace Zoologiczny{
 						DogBreeder dogBreeder = new DogBreeder();
 						dogBreeder.DogBuilder = new DogDogBuilder();
 						dogBreeder.DogBuilder.CreateNewDog();
-						dogBreeder.ConstructDog(view.EnterAnimalNumber(), view.EnterPrice());
+						dogBreeder.ConstructDog(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 						
 						model.AddAnimalToWarehouse(dogBreeder.Dog.Race, dogBreeder.Dog);
 						dogBreeder = null;
@@ -52,27 +52,33 @@ namespace Zoologiczny{
 						CatBreeder catBreeder = new CatBreeder();
 						catBreeder.CatBuilder = new PersianCatBuilder();
 						catBreeder.CatBuilder.CreateNewCat();
-						catBreeder.ConstructCat(view.EnterAnimalNumber(), view.EnterPrice());
+						catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 						
 						model.AddAnimalToWarehouse(catBreeder.Cat.Race,catBreeder.Cat);
 						catBreeder = null;
 					}catch(InvalidCastException){
+						view.DisplayError("It is not the number!");
+					}catch(FormatException){
 						view.DisplayError("It is not the number!");
 					}
 					break;
 				case("Cow"): // add cow
 					try{
 						// factory method
-						model.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, view.EnterAnimalNumber(), view.EnterPrice()));
+						model.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice())));
 					}catch(InvalidCastException){
+						view.DisplayError("It is not the number!");
+					}catch(FormatException){
 						view.DisplayError("It is not the number!");
 					}
 					break;
 				case("Chicken"): // add Chicken
 					try{
 						// factory method
-						model.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, view.EnterAnimalNumber(), view.EnterPrice()));
+						model.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice())));
 					}catch(InvalidCastException){
+						view.DisplayError("It is not the number!");
+					}catch(FormatException){
 						view.DisplayError("It is not the number!");
 					}
 					break;
@@ -84,21 +90,63 @@ namespace Zoologiczny{
 		}
 		
 		void Button2Click(object sender, EventArgs e){
+			try{
+				model.RemoveAnimal(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+			}catch(InvalidCastException){
+				view.DisplayError("It is not the number!");
+			}catch(FormatException){
+				view.DisplayError("It is not the number!");
+			}
+			model.Notify();
 		}
 		
 		void Button3Click(object sender, EventArgs e){
+			try{
+				model.ChangeAnimalNumber(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+			}catch(InvalidCastException){
+				view.DisplayError("It is not the number!");
+			}catch(FormatException){
+				view.DisplayError("It is not the number!");
+			}
+			model.Notify();
 		}
 		
 		void Button4Click(object sender, EventArgs e){
+			try{
+				model.ChangeAnimalPrice(view.EnterAnimal(), Convert.ToDouble(view.EnterPrice()));
+			}catch(InvalidCastException){
+				view.DisplayError("It is not the number!");
+			}catch(FormatException){
+				view.DisplayError("It is not the number!");
+			}
+			model.Notify();
 		}
 		
 		void Button5Click(object sender, EventArgs e){
+			try{
+				model.AddAnimalToClient(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+			}catch(InvalidCastException){
+				view.DisplayError("It is not the number!");
+			}catch(FormatException){
+				view.DisplayError("It is not the number!");
+			}
+			model.Notify();
 		}
 		
 		void Button6Click(object sender, EventArgs e){
+			try{
+				model.RemoveAnimal(model.Client, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+			}catch(InvalidCastException){
+				view.DisplayError("It is not the number!");
+			}catch(FormatException){
+				view.DisplayError("It is not the number!");
+			}
+			model.Notify();
 		}
 		
 		void Button7Click(object sender, EventArgs e){
+			model.BuyAllAnimals();
+			model.Notify();
 		}
 	}
 }

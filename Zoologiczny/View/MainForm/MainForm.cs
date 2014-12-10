@@ -75,7 +75,7 @@ namespace Zoologiczny{
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(16, 119);
+			this.button4.Location = new System.Drawing.Point(16, 148);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(145, 23);
 			this.button4.TabIndex = 4;
@@ -84,7 +84,7 @@ namespace Zoologiczny{
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(16, 148);
+			this.button3.Location = new System.Drawing.Point(17, 119);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(145, 23);
 			this.button3.TabIndex = 5;
@@ -259,7 +259,7 @@ namespace Zoologiczny{
 		}
 		
 		public string GetPrice(){
-			return this.textBox2.Text;
+			return this.textBox3.Text;
 		}
 		
 		

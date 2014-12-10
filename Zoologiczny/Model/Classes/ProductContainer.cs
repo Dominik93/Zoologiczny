@@ -28,7 +28,7 @@ namespace Zoologiczny{
 		public void Add(string race, Animal animal){
 			try{
 				instance.Add(race, animal);
-			}catch(KeyNotFoundException){
+			}catch(ArgumentException){
 				
 			}
 		}

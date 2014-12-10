@@ -50,7 +50,7 @@ namespace Zoologiczny{
 		/*
 		 * Change price
 		 */
-		public void ChangeAnimalPrice(string key, int price){
+		public void ChangeAnimalPrice(string key, double price){
 			try{
 				warehouse.Instance[key].Price = price;
 			}catch(KeyNotFoundException){
@@ -107,7 +107,7 @@ namespace Zoologiczny{
 		 *  Add animal to client's basket only if list don't have animal with this type
 		 */
 		public void AddAnimalToClient(string key, int number){
-			if(warehouse.Instance[key].Number > number){
+			if(warehouse.Instance[key].Number >= number){
 				Animal animal = (Animal)warehouse.Instance[key].Clone();
 				animal.Number = number;
 				warehouse.Instance[key].Number -= number;

@@ -31,20 +31,20 @@ namespace Zoologiczny{
 			Console.Clear();
 		}
 		
-		public override int EnterOption(){
-			return Convert.ToInt32(Console.ReadLine());
+		public override string EnterOption(){
+			return Console.ReadLine();
 		}
 		
-		public override int EnterAnimalNumber(){
-			return Convert.ToInt32(Console.ReadLine());
+		public override string EnterAnimalNumber(){
+			return Console.ReadLine();
 		}
 		
 		public override string EnterAnimal(){
 			return Console.ReadLine();
 		}
 		
-		public override double EnterPrice(){
-			return Convert.ToDouble(Console.ReadLine());
+		public override string EnterPrice(){
+			return Console.ReadLine();
 		}
 		
 		public override void DisplayAvailableAnimals(){
