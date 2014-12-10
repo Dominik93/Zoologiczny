@@ -33,7 +33,8 @@ namespace Zoologiczny{
 		}
 		
 		public override void Update(Model model){
-			mainForm.SetText(this.DisplayWarehouseStatus());
+			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
+			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
 		}
 		
 		public override void WaitAndClear(){
@@ -74,12 +75,27 @@ namespace Zoologiczny{
 		}
 		
 		public override void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list){
+			string s = "Warehouse status:";
+			foreach(Animal animal in list){
+				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
+				mainForm.SetTextWarehouse(s);
+			}
 		}
-		
 		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum){
+			string s  = "Client basket:";
+			foreach(Animal animal in list){
+				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
+			}
+			s +="Price " + sum;
+			mainForm.SetTextClient(s);
 		}
 		
 		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list){
+			string s  = "Client basket:";
+			foreach(Animal animal in list){
+				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
+			}
+			mainForm.SetTextClient(s);
 		}
 	}
 }

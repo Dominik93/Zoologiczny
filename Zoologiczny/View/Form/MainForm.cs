@@ -13,17 +13,6 @@ using System.Windows.Forms;
 
 namespace Zoologiczny{
 	public class MainForm : Form{
-		
-		private Label label1;
-		private Label label2;
-		private Button button1;
-		private Button button2;
-		private Button button3;
-		private Button button4;
-		private Button button5;
-		private Button button6;
-		private Button button7;
-		
 		public MainForm(){
 			InitializeComponent();
 		}
@@ -38,71 +27,133 @@ namespace Zoologiczny{
 			base.Dispose(disposing);
 		}
 		
-		private void InitializeComponent(){
+		private void InitializeComponent()
+		{
+			this.label1 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button5 = new System.Windows.Forms.Button();
+			this.button6 = new System.Windows.Forms.Button();
+			this.button7 = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.SuspendLayout();
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(12, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(104, 110);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "label1";
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(133, 9);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 1;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(133, 38);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 2;
+			this.button2.Text = "button2";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this.button4.Location = new System.Drawing.Point(133, 67);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(75, 23);
+			this.button4.TabIndex = 4;
+			this.button4.Text = "button4";
+			this.button4.UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(133, 96);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
+			this.button3.TabIndex = 5;
+			this.button3.Text = "button3";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this.button5.Location = new System.Drawing.Point(133, 144);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(75, 23);
+			this.button5.TabIndex = 6;
+			this.button5.Text = "button5";
+			this.button5.UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this.button6.Location = new System.Drawing.Point(133, 173);
+			this.button6.Name = "button6";
+			this.button6.Size = new System.Drawing.Size(75, 23);
+			this.button6.TabIndex = 7;
+			this.button6.Text = "button6";
+			this.button6.UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this.button7.Location = new System.Drawing.Point(133, 202);
+			this.button7.Name = "button7";
+			this.button7.Size = new System.Drawing.Size(75, 23);
+			this.button7.TabIndex = 8;
+			this.button7.Text = "button7";
+			this.button7.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(12, 144);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(104, 81);
+			this.label2.TabIndex = 9;
+			this.label2.Text = "label2";
+			// 
+			// MainForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Size = new Size(300, 350);
-			this.Text = "Win app";
+			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.button7);
+			this.Controls.Add(this.button6);
+			this.Controls.Add(this.button5);
+			this.Controls.Add(this.button3);
+			this.Controls.Add(this.button4);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.label1);
 			this.Name = "MainForm";
-			
-			label1 = new Label();
-		    label1.Text = "Warehouse";
-		    label1.Location = new Point(20, 30);
-		    label1.Size = new Size(70, 120);
-		    
-			label2 = new Label();
-		    label2.Text = "Basket";
-		    label2.Location = new Point(20, 170);
-		    label2.Size = new Size(70, 120);
-		    
-		    button1 = new Button();
-		    button1.Text = "Add animal to warehouse";
-		    button1.Location = new Point(100, 30);
-		    button1.Size = new Size(80,30);
-		    
-		    button2 = new Button();
-		    button2.Text = "Remove animal form werehouse";
-		    button2.Location = new Point(100, 60);
-		    button2.Size = new Size(80,30);
-		    
-		    button3 = new Button();
-		    button3.Text = "Change price";
-		    button3.Location = new Point(100, 90);
-		    button3.Size = new Size(80,30);
-		    
-		    button4 = new Button();
-		    button4.Text = "Change number";
-		    button4.Location = new Point(100, 120);
-		    button4.Size = new Size(80,30);
-		    
-		    button5 = new Button();
-		    button5.Text = "Add animal to basket";
-		    button5.Location = new Point(100, 180);
-		    button5.Size = new Size(80,30);
-		    
-		    button6 = new Button();
-		    button6.Text = "Remove Animal from basket";
-		    button6.Location = new Point(100, 210);
-		    button6.Size = new Size(80,30);
-		    
-		    button7 = new Button();
-		    button7.Text = "Buy";
-		    button7.Location = new Point(100, 240);
-		    button7.Size = new Size(80,30);
-		    
-		    Controls.Add(label1);
-		    Controls.Add(label2);
-		    
-		    Controls.Add(button1);
-			Controls.Add(button2);
-			Controls.Add(button3);
-			Controls.Add(button4);
-			Controls.Add(button5);
-			Controls.Add(button6);
-			Controls.Add(button7);
+			this.Text = "Win app";
+			this.ResumeLayout(false);
+		}
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button button1;
+		
+		
+		public void SetTextWarehouse(string text){
+			this.label1.Text = text;
 		}
 		
-		public void SetText(string text){
-			label1.Text = text;
+		public void SetTextClient(string text){
+			this.label2.Text = text;
 		}
 	}
 }

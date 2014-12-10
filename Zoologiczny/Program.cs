@@ -13,13 +13,14 @@ namespace Zoologiczny{
 			Strategy strategy;
 			Controller controller;
 			
-			view = new ConsoleView();
+			//view = new ConsoleView();
 			view = new WinAppView();
 			
 			model = new Model();
 			
-			strategy = new ConsoleStrategy();
+			//strategy = new ConsoleStrategy();
 			strategy = new WinAppStrategy();
+			
 			controller = new Controller(model, view, strategy);
 			controller.Model.Attach(view);
 			controller.Start();

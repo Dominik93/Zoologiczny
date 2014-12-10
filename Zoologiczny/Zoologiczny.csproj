@@ -58,9 +58,9 @@
     <Compile Include="Observer\Observer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strategy\ConsoleStrategy.cs" />
-    <Compile Include="Strategy\Strategy.cs" />
-    <Compile Include="Strategy\WinAppStrategy.cs" />
+    <Compile Include="Controller\Strategy\ConsoleStrategy.cs" />
+    <Compile Include="Controller\Strategy\Strategy.cs" />
+    <Compile Include="Controller\Strategy\WinAppStrategy.cs" />
     <Compile Include="View\ConsoleView.cs" />
     <Compile Include="View\Form\MainForm.cs" />
     <Compile Include="View\View.cs" />
@@ -74,7 +74,7 @@
     <Folder Include="Builder" />
     <Folder Include="Model\Classes" />
     <Folder Include="Factory" />
-    <Folder Include="Strategy" />
+    <Folder Include="Controller\Strategy" />
     <Folder Include="Observer" />
     <Folder Include="View" />
     <Folder Include="Controller" />
