@@ -46,6 +46,7 @@
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Builder\Builders.cs" />
     <Compile Include="Builder\Director.cs" />
+    <Compile Include="Controller\Strategy\BaseStrategy.cs" />
     <Compile Include="Factory\Factory.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Classes\Animal.cs" />
@@ -62,7 +63,7 @@
     <Compile Include="Controller\Strategy\Strategy.cs" />
     <Compile Include="Controller\Strategy\WinAppStrategy.cs" />
     <Compile Include="View\ConsoleView.cs" />
-    <Compile Include="View\Form\MainForm.cs" />
+    <Compile Include="View\MainForm\MainForm.cs" />
     <Compile Include="View\View.cs" />
     <Compile Include="View\WinAppView.cs" />
   </ItemGroup>
@@ -78,7 +79,12 @@
     <Folder Include="Observer" />
     <Folder Include="View" />
     <Folder Include="Controller" />
-    <Folder Include="View\Form" />
+    <Folder Include="View\MainForm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\MainForm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -34,7 +34,8 @@ namespace Zoologiczny{
 		}
 		
 		public void Start(){
-			strategy.Start(model, view);
+			strategy.InitModelAndView(model, view);
+			strategy.Start();
 		}
 	}
 }

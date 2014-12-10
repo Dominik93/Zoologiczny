@@ -10,6 +10,7 @@ using System;
 
 namespace Zoologiczny{
 	public interface Strategy{
-		void Start(Model model, View view);
+		void InitModelAndView(Model model, View view);
+		void Start();
 	}
 }

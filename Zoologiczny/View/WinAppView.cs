@@ -16,19 +16,14 @@ using System.Threading.Tasks;
 namespace Zoologiczny{
 	
 	public class WinAppView : View{
-		MainForm mainForm;
-		
-		public MainForm MainForm{
-			get { return mainForm; }
-		}
-		
-		public WinAppView(){
+
+		public override void InitComponent(){
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			mainForm = new MainForm();
 		}
 		
-		public override void InitComponent(){
+		public override void StartApplication(){
 			Application.Run(mainForm);
 		}
 		
@@ -37,25 +32,16 @@ namespace Zoologiczny{
 			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
 		}
 		
-		public override void WaitAndClear(){
+		public override int EnterAnimalNumber(){
+			return Convert.ToInt32(mainForm.GetNumber());
 		}
 		
-		public override int EnterIntNumber(){
-			return 0;
+		public override string EnterAnimal(){
+			return mainForm.GetAnimal();
 		}
 		
-		public override string EnterString(){
-			return "";
-		}
-		
-		public override double EnterDoubleNumber(){
-			return 0.0;
-		}
-		
-		public override void DisplayAvailableAnimals(){
-		}
-		
-		public override void DisplayMainOptions(){
+		public override double EnterPrice(){
+			return Convert.ToDouble(mainForm.GetPrice());
 		}
 		
 		public override void DisplayError(string error){
@@ -81,6 +67,7 @@ namespace Zoologiczny{
 				mainForm.SetTextWarehouse(s);
 			}
 		}
+		
 		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum){
 			string s  = "Client basket:";
 			foreach(Animal animal in list){
@@ -96,6 +83,26 @@ namespace Zoologiczny{
 				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
 			mainForm.SetTextClient(s);
+		}
+		
+		public override void DisplayAvailableAnimals(){
+			string s = "";
+			foreach(Animals element in Enum.GetValues(typeof(Animals))){
+				s += element.ToString();
+			}
+			MessageBox.Show(s,
+			                "Avalible animals",
+			                MessageBoxButtons.OK,
+			                MessageBoxIcon.Exclamation,
+			                MessageBoxDefaultButton.Button1);
+		}
+		
+		public override void DisplayMainOptions(){	}
+		
+		public override void WaitAndClear(){	}
+		
+		public override int EnterOption(){
+			return 0;
 		}
 	}
 }

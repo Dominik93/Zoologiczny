@@ -15,8 +15,10 @@ using System.Threading.Tasks;
 namespace Zoologiczny{
 	public class ConsoleView : View{
 		
-		public override void InitComponent(){
+		public override void InitComponent(){ }
 		
+		public override void StartApplication(){
+			Console.WriteLine("Start");
 		}
 		
 		public override void Update(Model model){
@@ -29,15 +31,19 @@ namespace Zoologiczny{
 			Console.Clear();
 		}
 		
-		public override int EnterIntNumber(){
+		public override int EnterOption(){
 			return Convert.ToInt32(Console.ReadLine());
 		}
 		
-		public override string EnterString(){
+		public override int EnterAnimalNumber(){
+			return Convert.ToInt32(Console.ReadLine());
+		}
+		
+		public override string EnterAnimal(){
 			return Console.ReadLine();
 		}
 		
-		public override double EnterDoubleNumber(){
+		public override double EnterPrice(){
 			return Convert.ToDouble(Console.ReadLine());
 		}
 		
