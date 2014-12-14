@@ -9,63 +9,63 @@
 using System;
 
 namespace Zoologiczny{
+	/*
+	 * director to create dog : builder pattern
+	 */
 	class DogBreeder{
 		private DogBuilder dogBuilder;
-		
+		/*
+		 * getter and setter for dog builder
+		 */
 		public DogBuilder DogBuilder{
-	        get { return dogBuilder; } 
-	        set { dogBuilder = value; }
-    	}
-		
-		public Dog Dog { 
-			get { return dogBuilder.Dog; } 
+			get { return dogBuilder; }
+			set { dogBuilder = value; }
 		}
- 
-	    public void ConstructDog(int number, double price){
-	        dogBuilder.CreateNewDog();
-	        dogBuilder.BuildNumber(number);
-	        dogBuilder.BuildPrice(price);
-	        dogBuilder.BuildSpecies();
-	        dogBuilder.BuildRace();
-	    }
-	}
-	
-	class CatBreeder{
-		private CatBuilder catBuilder;
-		
-		public CatBuilder CatBuilder{
-	        get { return catBuilder; } 
-	        set { catBuilder = value; }
-    	}
-		
-		public Cat Cat { 
-			get { return catBuilder.Cat; } 
+		/*
+		 * getter for dog
+		 */
+		public Dog Dog {
+			get { return dogBuilder.Dog; }
 		}
- 
-	    public void ConstructCat(int number, double price){
-	        catBuilder.CreateNewCat();
-	        catBuilder.BuildNumber(number);
-	        catBuilder.BuildPrice(price);
-	        catBuilder.BuildSpecies();
-	        catBuilder.BuildRace();
-	    }
+		/*
+		 * method to create dog by part
+		 */
+		public void ConstructDog(int number, double price){
+			dogBuilder.CreateNewDog();
+			dogBuilder.BuildNumber(number);
+			dogBuilder.BuildPrice(price);
+			dogBuilder.BuildSpecies();
+			dogBuilder.BuildRace();
+		}
 	}
 	
 	/*
-	class AnimalBreeder{
-		private AnimalBuilder animalBuilder;
-		
-		public AnimalBuilder AnimalBuilder{
-	        get { return animalBuilder; } 
-	        set { animalBuilder = value; }
-    	}
- 
-	    public void ConstructAnimal(int number, double price){
-	        animalBuilder.CreateNewAnimal();
-	        animalBuilder.BuildNumber(number);
-	        animalBuilder.BuildPrice(price);
-	        animalBuilder.BuildSpecies();
-	        animalBuilder.BuildRace();
-	    }
-	}*/
+	 * director to create cat : builder pattern
+	 */
+	class CatBreeder{
+		private CatBuilder catBuilder;
+		/*
+		 * getter and setter for cat builder
+		 */
+		public CatBuilder CatBuilder{
+			get { return catBuilder; }
+			set { catBuilder = value; }
+		}
+		/*
+		 * getter for cat
+		 */
+		public Cat Cat {
+			get { return catBuilder.Cat; }
+		}
+		/*
+		 * method to create cat by part
+		 */
+		public void ConstructCat(int number, double price){
+			catBuilder.CreateNewCat();
+			catBuilder.BuildNumber(number);
+			catBuilder.BuildPrice(price);
+			catBuilder.BuildSpecies();
+			catBuilder.BuildRace();
+		}
+	}
 }

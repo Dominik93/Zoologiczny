@@ -9,6 +9,9 @@
 using System;
 
 namespace Zoologiczny{
+	/*
+	 * classes to create Farm animal : factory method pattern
+	 */ 
 	public class Cow : Farm{
 	    protected string race;
 		

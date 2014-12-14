@@ -8,21 +8,24 @@ namespace Zoologiczny{
 	
 	class Program{
 		static void Main(string[] args){
+			// declaration view, model, controller and strategy for controller 
 			View view;
 			Model model;
 			Strategy strategy;
 			Controller controller;
-			
-			//view = new ConsoleView();
-			view = new WinAppView();
-			
+			// create view
+			view = new ConsoleView();
+			//view = new WinAppView();
+			// create model
 			model = new Model();
-			
-			//strategy = new ConsoleStrategy();
-			strategy = new WinAppStrategy();
-			
+			//strategy
+			strategy = new ConsoleStrategy();
+			//strategy = new WinAppStrategy();
+			// create controller with model, view and strategy
 			controller = new Controller(model, view, strategy);
+			// attach view to model : observer pattern
 			controller.Model.Attach(view);
+			// start applivation
 			controller.Start();
 			
 		}

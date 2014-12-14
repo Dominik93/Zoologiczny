@@ -50,7 +50,7 @@ namespace Zoologiczny{
 									try{
 										// cat builder
 										CatBreeder catBreeder = new CatBreeder();
-										catBreeder.CatBuilder = new PersianCatBuilder();
+										catBreeder.CatBuilder = new CatCatBuilder();
 										catBreeder.CatBuilder.CreateNewCat();
 										catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 										

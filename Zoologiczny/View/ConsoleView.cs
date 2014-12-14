@@ -23,6 +23,8 @@ namespace Zoologiczny{
 		
 		public override void Update(Model model){
 			Console.WriteLine("View was updated");
+			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
+			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
 		}
 		
 		public override void WaitAndClear(){
@@ -48,9 +50,8 @@ namespace Zoologiczny{
 		}
 		
 		public override void DisplayAvailableAnimals(){
-			int i = 0;
 			foreach(Animals element in Enum.GetValues(typeof(Animals))){
-				Console.WriteLine(i++ + " - " + element.ToString());
+				Console.WriteLine(element.ToString());
 			}
 		}
 		

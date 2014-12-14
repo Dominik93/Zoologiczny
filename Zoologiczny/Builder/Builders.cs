@@ -10,77 +10,15 @@ using System;
 
 namespace Zoologiczny{
 	/*
-	abstract class AnimalBuilder{
-		protected Animal animal;
-		
-		public Animal Animal{
-			get{ return animal; }
-		}
-		
-		public void CreateNewAnimal() { 
-			animal = new Animal();
-		}
-		
-		public abstract void BuildNumber(int number);
-		public abstract void BuildPrice(double price);
-		
-		public abstract void BuildSpecies();
-		
-		public abstract void BuildRace();
-	}
-	
-	abstract class PetBuilder : AnimalBuilder{
-		
-	}
-	
-	class DogBuilder : PetBuilder{
-		
-		public override void BuildRace() {
-			animal.Race = "Labrador";
-		}
-		
-		public override void BuildNumber(int number) { 
-			animal.Number = number; 
-		}
-		
-		public override void BuildPrice(double price) {
-			animal.Price = price; 
-		}
-		
-		public override void BuildSpecies() { 
-			animal.Species = "Dog"; 
-		}
-	}
-
-	class CatBuilder: PetBuilder{
-		
-		public void Cast(){
-			animal = (Cat)animal;
-		}
-		public override void BuildRace() {
-			animal.Race = "Persian";
-		}
-		
-		public override void BuildNumber(int number) { 
-			animal.Number = number; 
-		}
-		
-		public override void BuildPrice(double price) {
-			animal.Price = price; 
-		}
-		
-		public override void BuildSpecies() { 
-			animal.Species = "Cat"; 
-		}
-	}
-	*/
+	 * abstract Dog builder, base for creating dog : builder pattern
+	 */
 	abstract class DogBuilder{
 		protected Dog dog;
 		public Dog Dog{
-		get{ return dog; }
+			get{ return dog; }
 		}
 		public void CreateNewDog() {
-		dog = new Dog();
+			dog = new Dog();
 		}
 		public abstract void BuildNumber(int number);
 		public abstract void BuildPrice(double price);
@@ -88,21 +26,24 @@ namespace Zoologiczny{
 		public abstract void BuildRace();
 	}
 	
+	/*
+	 * dog builders : builder pattern
+	 */
 	class DogDogBuilder : DogBuilder{
 		public override void BuildRace() {
 			dog.Race = "Dog";
 		}
 		
-		public override void BuildNumber(int number) { 
-			dog.Number = number; 
+		public override void BuildNumber(int number) {
+			dog.Number = number;
 		}
 		
 		public override void BuildPrice(double price) {
-			dog.Price = price; 
+			dog.Price = price;
 		}
 		
-		public override void BuildSpecies() { 
-			dog.Species = "Pet"; 
+		public override void BuildSpecies() {
+			dog.Species = "Pet";
 		}
 	}
 	
@@ -111,16 +52,16 @@ namespace Zoologiczny{
 			dog.Race = "Labrador";
 		}
 		
-		public override void BuildNumber(int number) { 
-			dog.Number = number; 
+		public override void BuildNumber(int number) {
+			dog.Number = number;
 		}
 		
 		public override void BuildPrice(double price) {
-			dog.Price = price; 
+			dog.Price = price;
 		}
 		
-		public override void BuildSpecies() { 
-			dog.Species = "Pet"; 
+		public override void BuildSpecies() {
+			dog.Species = "Pet";
 		}
 	}
 	
@@ -129,23 +70,26 @@ namespace Zoologiczny{
 			dog.Race = "Dog";
 		}
 		
-		public override void BuildNumber(int number) { 
-			dog.Number = number; 
+		public override void BuildNumber(int number) {
+			dog.Number = number;
 		}
 		
 		public override void BuildPrice(double price) {
-			dog.Price = price; 
+			dog.Price = price;
 		}
 		
 		public override void BuildSpecies() {
-			dog.Species = "Pet"; 
+			dog.Species = "Pet";
 		}
 	}
 	
+	/*
+	 * abstract Cat builder, base for creating cat : builder pattern
+	 */
 	abstract class CatBuilder{
 		protected Cat cat;
 		public Cat Cat{
-		get{ return cat; }
+			get{ return cat; }
 		}
 		public void CreateNewCat() {
 			cat = new Cat();
@@ -156,21 +100,42 @@ namespace Zoologiczny{
 		public abstract void BuildRace();
 	}
 	
+	/*
+	 * cat builders : builder pattern
+	 */
+	class CatCatBuilder : CatBuilder{
+		public override void BuildRace() {
+			cat.Race = "Cat";
+		}
+		
+		public override void BuildNumber(int number) {
+			cat.Number = number;
+		}
+		
+		public override void BuildPrice(double price) {
+			cat.Price = price;
+		}
+		
+		public override void BuildSpecies() {
+			cat.Species = "Pet";
+		}
+	}
+	
 	class PersianCatBuilder : CatBuilder{
 		public override void BuildRace() {
 			cat.Race = "Cat";
 		}
 		
-		public override void BuildNumber(int number) { 
-			cat.Number = number; 
+		public override void BuildNumber(int number) {
+			cat.Number = number;
 		}
 		
 		public override void BuildPrice(double price) {
-			cat.Price = price; 
+			cat.Price = price;
 		}
 		
-		public override void BuildSpecies() { 
-			cat.Species = "Pet"; 
+		public override void BuildSpecies() {
+			cat.Species = "Pet";
 		}
 	}
 	
@@ -179,16 +144,16 @@ namespace Zoologiczny{
 			cat.Race = "Cat ";
 		}
 		
-		public override void BuildNumber(int number) { 
-			cat.Number = number; 
+		public override void BuildNumber(int number) {
+			cat.Number = number;
 		}
 		
 		public override void BuildPrice(double price) {
-			cat.Price = price; 
+			cat.Price = price;
 		}
 		
 		public override void BuildSpecies() {
-			cat.Species = "Pet"; 
+			cat.Species = "Pet";
 		}
 	}
 

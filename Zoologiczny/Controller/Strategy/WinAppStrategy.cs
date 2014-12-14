@@ -20,7 +20,9 @@ namespace Zoologiczny{
 		}
 		
 		public override void Start(){
+			// iniciation components
 			view.InitComponent();
+			// register event handler for button
 			view.MainForm.RegisterButton1EventHandler(new System.EventHandler(this.Button1Click));
 			view.MainForm.RegisterButton2EventHandler(new System.EventHandler(this.Button2Click));
 			view.MainForm.RegisterButton3EventHandler(new System.EventHandler(this.Button3Click));
@@ -50,7 +52,7 @@ namespace Zoologiczny{
 					try{
 						// cat builder
 						CatBreeder catBreeder = new CatBreeder();
-						catBreeder.CatBuilder = new PersianCatBuilder();
+						catBreeder.CatBuilder = new CatCatBuilder();
 						catBreeder.CatBuilder.CreateNewCat();
 						catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 						

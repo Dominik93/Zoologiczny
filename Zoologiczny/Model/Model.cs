@@ -104,11 +104,11 @@ namespace Zoologiczny{
 		}
 		
 		/*
-		 *  Add animal to client's basket only if list don't have animal with this type
+		 *  Add animal to client's basket only if list don't have animal with this type : prototype pattern
 		 */
 		public void AddAnimalToClient(string key, int number){
 			if(warehouse.Instance[key].Number >= number){
-				Animal animal = (Animal)warehouse.Instance[key].Clone();
+				Animal animal = (Animal)warehouse.Instance[key].Clone(); 
 				animal.Number = number;
 				warehouse.Instance[key].Number -= number;
 				client.Add(key, animal);
