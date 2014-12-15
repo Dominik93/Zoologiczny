@@ -48,6 +48,8 @@
     <Compile Include="Builder\Director.cs" />
     <Compile Include="Controller\Strategy\BaseStrategy.cs" />
     <Compile Include="Factory\Factory.cs" />
+    <Compile Include="Model\Classes\Logs.cs" />
+    <Compile Include="Model\Classes\Registry.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Classes\Animal.cs" />
     <Compile Include="Model\Classes\AnimalSpecies.cs" />

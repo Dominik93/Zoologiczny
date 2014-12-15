@@ -25,6 +25,7 @@ namespace Zoologiczny{
 			Console.WriteLine("View was updated");
 			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
 			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
+			this.DisplayLogs(model.Logs);
 		}
 		
 		public override void WaitAndClear(){
@@ -32,6 +33,16 @@ namespace Zoologiczny{
 			Console.ReadKey();
 			Console.Clear();
 		}
+		
+		public override void DisplayLogs(Logs logs){
+            foreach(Registry registry in logs.List){
+                Console.WriteLine("Logs:");
+                foreach (Animal animal in registry.List){
+                	Console.WriteLine("I'm " + animal.GetType() + " number " + animal.Number + " price " + animal.Price + "\n");
+                }
+                Console.WriteLine("Data "+ registry.Date);
+            }
+        }
 		
 		public override string EnterOption(){
 			return Console.ReadLine();

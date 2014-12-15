@@ -45,6 +45,7 @@ namespace Zoologiczny{
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -171,11 +172,20 @@ namespace Zoologiczny{
 			this.textBox3.Size = new System.Drawing.Size(100, 20);
 			this.textBox3.TabIndex = 15;
 			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(167, 299);
+			this.label6.Name = "Logs";
+			this.label6.Size = new System.Drawing.Size(265, 65);
+			this.label6.TabIndex = 16;
+			this.label6.Text = "label6";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(504, 319);
+			this.ClientSize = new System.Drawing.Size(489, 404);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.textBox1);
@@ -196,6 +206,7 @@ namespace Zoologiczny{
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label6;
 		
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.TextBox textBox2;
@@ -248,6 +259,10 @@ namespace Zoologiczny{
 		
 		public void SetTextClient(string text){
 			this.label2.Text = text;
+		}
+		
+		public void SetTextLogs(string text){
+			this.label6.Text = text;
 		}
 		
 		public string GetAnimal(){

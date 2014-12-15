@@ -13,7 +13,6 @@ namespace Zoologiczny{
 	public class Controller{
 		Strategy strategy;
 		
-		
  	 	Model model;
 		View view;
 		

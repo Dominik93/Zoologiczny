@@ -15,12 +15,12 @@ namespace Zoologiczny{
 			Controller controller;
 			// create view
 			view = new ConsoleView();
-			//view = new WinAppView();
+			view = new WinAppView();
 			// create model
 			model = new Model();
 			//strategy
 			strategy = new ConsoleStrategy();
-			//strategy = new WinAppStrategy();
+			strategy = new WinAppStrategy();
 			// create controller with model, view and strategy
 			controller = new Controller(model, view, strategy);
 			// attach view to model : observer pattern

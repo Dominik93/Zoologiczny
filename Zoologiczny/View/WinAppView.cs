@@ -30,6 +30,7 @@ namespace Zoologiczny{
 		public override void Update(Model model){
 			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
 			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
+			this.DisplayLogs(model.Logs);
 		}
 		
 		public override string EnterAnimalNumber(){
@@ -42,6 +43,17 @@ namespace Zoologiczny{
 		
 		public override string EnterPrice(){
 			return mainForm.GetPrice();
+		}
+		
+		public override void DisplayLogs(Logs logs){
+			string s = "Logs:\n";
+			foreach (Registry registry in logs.List){
+				foreach (Animal animal in registry.List){
+					s += "I'm " + animal.GetType() + " number " + animal.Number + " price " + animal.Price + "\n";
+				}
+				s += "Data " + registry.Date + "\n";
+			}
+			mainForm.SetTextLogs(s);
 		}
 		
 		public override void DisplayError(string error){

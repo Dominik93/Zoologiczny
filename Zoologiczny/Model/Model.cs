@@ -17,17 +17,24 @@ namespace Zoologiczny{
 	public class Model : Observable {
 		Client client;
 		Warehouse warehouse;
+		Logs logs;
 		
 		private readonly List<View> views = new List<View>();
 		
 		public Model(){
 			client = new Client();
 			warehouse = new Warehouse();
+			logs = new Logs();
 		}
 		
 		public Client Client{
 			get { return client; }
 			set { client = value; }
+		}
+		
+		public Logs Logs{
+			get { return logs; }
+			set { logs = value; }
 		}
 		
 		public Warehouse Warehouse{
@@ -122,6 +129,7 @@ namespace Zoologiczny{
 		 * Create new list for client
 		 */
 		public void BuyAllAnimals(){
+			logs.addRegistry(new Registry(client.Instance.Values.ToList<Animal>()));
 			List<string> list;
 			list = new List<string>();
 			foreach(string s in client.GetKeys())

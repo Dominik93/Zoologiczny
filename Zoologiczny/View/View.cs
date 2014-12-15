@@ -31,7 +31,7 @@ namespace Zoologiczny{
 		public abstract void DisplayMasage(string msg);
 		public abstract void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list);
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum);
-		
+		public abstract void DisplayLogs(Logs logs);
 		public abstract void WaitAndClear();
 		public abstract string EnterOption();
 		public abstract string EnterAnimalNumber();
