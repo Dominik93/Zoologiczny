@@ -17,14 +17,16 @@ namespace Zoologiczny{
 	
 	public class WinAppView : View{
 
+
+			
 		public override void InitComponent(){
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			mainForm = new MainForm();
+			this.Instance = new MainForm();
 		}
 		
 		public override void StartApplication(){
-			Application.Run(mainForm);
+			Application.Run((MainForm)Instance);
 		}
 		
 		public override void Update(Model model){
@@ -34,15 +36,15 @@ namespace Zoologiczny{
 		}
 		
 		public override string EnterAnimalNumber(){
-			return mainForm.GetNumber();
+			return ((MainForm)Instance).GetNumber();
 		}
 		
 		public override string EnterAnimal(){
-			return mainForm.GetAnimal();
+			return ((MainForm)Instance).GetAnimal();
 		}
 		
 		public override string EnterPrice(){
-			return mainForm.GetPrice();
+			return ((MainForm)Instance).GetPrice();
 		}
 		
 		public override void DisplayLogs(Logs logs){
@@ -53,7 +55,7 @@ namespace Zoologiczny{
 				}
 				s += "Data " + registry.Date + "\n";
 			}
-			mainForm.SetTextLogs(s);
+			((MainForm)Instance).SetTextLogs(s);
 		}
 		
 		public override void DisplayError(string error){
@@ -76,7 +78,7 @@ namespace Zoologiczny{
 			string s = "Warehouse status:";
 			foreach(Animal animal in list){
 				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
-				mainForm.SetTextWarehouse(s);
+				((MainForm)Instance).SetTextWarehouse(s);
 			}
 		}
 		
@@ -86,7 +88,7 @@ namespace Zoologiczny{
 				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
 			s +="Price " + sum;
-			mainForm.SetTextClient(s);
+			((MainForm)Instance).SetTextClient(s);
 		}
 		
 		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list){
@@ -94,7 +96,7 @@ namespace Zoologiczny{
 			foreach(Animal animal in list){
 				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
-			mainForm.SetTextClient(s);
+			((MainForm)Instance).SetTextClient(s);
 		}
 		
 		public override void DisplayAvailableAnimals(){

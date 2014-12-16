@@ -17,11 +17,20 @@ namespace Zoologiczny{
 	public abstract class View : Observer{
 		
 		public enum Animals { Dog, Cat, Cow, Chicken }
+		/*
+		protected MainForm form;
 		
-		protected MainForm mainForm;
+		public MainForm Form{
+			get { return form; }
+			set { form = value; }
+		}
+		*/
 		
-		public MainForm MainForm{
-			get { return mainForm; }
+		protected Object instance;
+		
+		public Object Instance{
+			get { return instance; }
+			set { instance = value; }
 		}
 		
 		public abstract void InitComponent();

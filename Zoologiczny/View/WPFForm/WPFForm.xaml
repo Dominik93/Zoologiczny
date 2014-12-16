@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="Zoologiczny.WPFForm" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="WPFApp"
+	Height="559"
+	Width="488">
+	<Grid
+		Height="556"
+		RenderTransformOrigin="0.5,0.5"
+		Width="478">
+		<Label
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,8,0,0"
+			Width="75"
+			Height="27"
+			Content="Animal" />
+		<Button
+			Content="Add animal to werehouse"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,63,0,0"
+			Width="166"
+			Height="23" />
+		<TextBox
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,35,0,0"
+			Width="75"
+			Height="20" />
+		<Button
+			Content="Remove animal from werehouse"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,94,0,0"
+			Width="166"
+			Height="23" />
+		<Button
+			RenderTransformOrigin="0.5,0.5"
+			Content="Change number of animals"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,125,0,0"
+			Width="166"
+			Height="23" />
+		<Button
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Bottom"
+			Margin="8,0,0,334"
+			Width="166"
+			Height="23"
+			Content="Add to basket" />
+		<Button
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Bottom"
+			Margin="8,0,0,303"
+			Width="166"
+			Height="23"
+			Content="Remove from basket" />
+		<Button
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Bottom"
+			Margin="8,0,0,272"
+			Width="166"
+			Height="23"
+			x:Name="button1"
+			Content="Buy" />
+		<Button
+			RenderTransformOrigin="0.5,0.587"
+			Content="Change price"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,156,0,0"
+			Width="166"
+			Height="23" />
+		<Label
+			Content="Werehouse"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,63,8,0"
+			Width="172"
+			Height="120" />
+		<Label
+			Content="Client's basket"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			Margin="0,0,8,237"
+			Width="172"
+			Height="120" />
+		<Label
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Bottom"
+			Margin="8,0,0,109"
+			Width="271"
+			Height="120"
+			Content="Logs" />
+		<Label
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="91,8,0,0"
+			Width="75"
+			Height="27"
+			RenderTransformOrigin="0.5,0.5"
+			Content="Number" />
+		<Label
+			Content="Price"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,8,229,0"
+			Width="75"
+			Height="27" />
+		<TextBox
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="91,35,0,0"
+			Width="75"
+			Height="20" />
+		<TextBox
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="174,35,0,0"
+			Width="75"
+			Height="20" />
+		<Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+	</Grid>
+</Window>

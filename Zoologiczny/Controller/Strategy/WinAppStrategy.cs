@@ -23,15 +23,15 @@ namespace Zoologiczny{
 			// iniciation components
 			view.InitComponent();
 			// register event handler for button
-			view.MainForm.RegisterButton1EventHandler(new System.EventHandler(this.Button1Click));
-			view.MainForm.RegisterButton2EventHandler(new System.EventHandler(this.Button2Click));
-			view.MainForm.RegisterButton3EventHandler(new System.EventHandler(this.Button3Click));
-			view.MainForm.RegisterButton4EventHandler(new System.EventHandler(this.Button4Click));
-			view.MainForm.RegisterButton5EventHandler(new System.EventHandler(this.Button5Click));
-			view.MainForm.RegisterButton6EventHandler(new System.EventHandler(this.Button6Click));
-			view.MainForm.RegisterButton7EventHandler(new System.EventHandler(this.Button7Click));
+			((MainForm)view.Instance).RegisterButton1EventHandler(new System.EventHandler(this.Button1Click));
+			((MainForm)view.Instance).RegisterButton2EventHandler(new System.EventHandler(this.Button2Click));
+			((MainForm)view.Instance).RegisterButton3EventHandler(new System.EventHandler(this.Button3Click));
+			((MainForm)view.Instance).RegisterButton4EventHandler(new System.EventHandler(this.Button4Click));
+			((MainForm)view.Instance).RegisterButton5EventHandler(new System.EventHandler(this.Button5Click));
+			((MainForm)view.Instance).RegisterButton6EventHandler(new System.EventHandler(this.Button6Click));
+			((MainForm)view.Instance).RegisterButton7EventHandler(new System.EventHandler(this.Button7Click));
 			view.StartApplication();
-		}
+	     }
 		
 		void Button1Click(object sender, EventArgs e){
 			switch(view.EnterAnimal()){

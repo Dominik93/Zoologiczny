@@ -175,10 +175,10 @@ namespace Zoologiczny{
 			// label6
 			// 
 			this.label6.Location = new System.Drawing.Point(167, 299);
-			this.label6.Name = "Logs";
+			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(265, 65);
 			this.label6.TabIndex = 16;
-			this.label6.Text = "label6";
+			this.label6.Text = "Logs";
 			// 
 			// MainForm
 			// 
