@@ -34,6 +34,7 @@ namespace Zoologiczny{
 			Console.Clear();
 		}
 		
+		
 		public override void DisplayLogs(Logs logs){
             foreach(Registry registry in logs.List){
                 Console.WriteLine("Logs:");
@@ -44,9 +45,11 @@ namespace Zoologiczny{
             }
         }
 		
+		
 		public override string EnterOption(){
 			return Console.ReadLine();
 		}
+		
 		
 		public override string EnterAnimalNumber(){
 			return Console.ReadLine();

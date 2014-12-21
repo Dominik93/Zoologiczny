@@ -15,16 +15,13 @@ using System.Threading.Tasks;
 namespace Zoologiczny{
 	public class ProductContainer{
 		
-		protected  Dictionary<string, Animal> instance = new Dictionary<string, Animal>();
-		
-		public Dictionary<string, Animal> GetInstance(object key){
-			return instance;
-		}
+		protected Dictionary<string, Animal> instance = new Dictionary<string, Animal>();
 		
 		public Dictionary<string, Animal> Instance{
-			get {return instance;}
+			get { return instance; }
+			set { instance = value; }
 		}
-			
+		
 		public void Add(string race, Animal animal){
 			try{
 				instance.Add(race, animal);
@@ -40,5 +37,7 @@ namespace Zoologiczny{
 		public Dictionary<string, Animal>.KeyCollection GetKeys(){
 			return instance.Keys;
 		}
+		
 	}
+	
 }

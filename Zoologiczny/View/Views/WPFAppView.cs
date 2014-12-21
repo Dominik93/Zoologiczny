@@ -1,8 +1,8 @@
 ﻿/*
  * Created by SharpDevelop.
  * User: Dominik
- * Date: 2014-12-09
- * Time: 18:56
+ * Date: 12/16/2014
+ * Time: 00:04
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
@@ -12,21 +12,23 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Zoologiczny{
 	
-	public class WinAppView : View{
-
-
-			
+	public class WPFAppView : View{
 		public override void InitComponent(){
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			this.Instance = new MainForm();
+			this.Form = new WPFForm();
 		}
 		
 		public override void StartApplication(){
-			Application.Run((MainForm)Instance);
+			Zoologiczny.App app = new Zoologiczny.App();
+			app.Run((WPFForm)this.Form);
 		}
 		
 		public override void Update(Model model){
@@ -36,67 +38,60 @@ namespace Zoologiczny{
 		}
 		
 		public override string EnterAnimalNumber(){
-			return ((MainForm)Instance).GetNumber();
+			return ((WPFForm)Form).GetNumber();
 		}
 		
 		public override string EnterAnimal(){
-			return ((MainForm)Instance).GetAnimal();
+			return ((WPFForm)Form).GetAnimal();
 		}
 		
 		public override string EnterPrice(){
-			return ((MainForm)Instance).GetPrice();
+			return ((WPFForm)Form).GetPrice();
 		}
 		
 		public override void DisplayLogs(Logs logs){
 			string s = "Logs:\n";
+			
 			foreach (Registry registry in logs.List){
 				foreach (Animal animal in registry.List){
-					s += "I'm " + animal.GetType() + " number " + animal.Number + " price " + animal.Price + "\n";
+					s +=  animal.Name() + " number " + animal.Number + " price " + animal.Price + " " + "\n";
 				}
-				s += "Data " + registry.Date + "\n";
+				s += "Sum = "+ registry.Sum +"\nDate " + registry.Date + "\n--------------------\n";
 			}
-			((MainForm)Instance).SetTextLogs(s);
+			((WPFForm)Form).SetTextLogs(s);
 		}
 		
 		public override void DisplayError(string error){
-			MessageBox.Show(error,
-			                "Error",
-			                MessageBoxButtons.OK,
-			                MessageBoxIcon.Exclamation,
-			                MessageBoxDefaultButton.Button1);
+			MessageBoxResult result = System.Windows.MessageBox.Show(error, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 		}
 		
 		public override void DisplayMasage(string msg){
-			MessageBox.Show(msg,
-			                "Message",
-			                MessageBoxButtons.OK,
-			                MessageBoxIcon.Exclamation,
-			                MessageBoxDefaultButton.Button1);
+			MessageBoxResult result = System.Windows.MessageBox.Show(msg, "Massage", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 		
 		public override void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list){
-			string s = "Warehouse status:";
+			string s = "Warehouse status:\n";
 			foreach(Animal animal in list){
-				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
-				((MainForm)Instance).SetTextWarehouse(s);
+				s += animal.Name() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
+			((WPFForm)Form).SetTextWarehouse(s);
 		}
 		
 		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum){
-			string s  = "Client basket:";
+			string s  = "Client basket:\n";
 			foreach(Animal animal in list){
-				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
+				s += animal.Name() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
 			s +="Price " + sum;
-			((MainForm)Instance).SetTextClient(s);
+			((WPFForm)Form).SetTextClient(s);
 		}
 		
 		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list){
-			string s  = "Client basket:";
+			string s  = "Client basket:\n";
 			foreach(Animal animal in list){
-				s += "I'm " + animal.GetType() +  " number " + animal.Number + " price " + animal.Price + "\n";
+				s += animal.Name() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
-			((MainForm)Instance).SetTextClient(s);
+			((WPFForm)Form).SetTextClient(s);
 		}
 		
 		public override void DisplayAvailableAnimals(){
@@ -104,16 +99,13 @@ namespace Zoologiczny{
 			foreach(Animals element in Enum.GetValues(typeof(Animals))){
 				s += element.ToString();
 			}
-			MessageBox.Show(s,
-			                "Avalible animals",
-			                MessageBoxButtons.OK,
-			                MessageBoxIcon.Exclamation,
-			                MessageBoxDefaultButton.Button1);
 		}
 		
-		public override void DisplayMainOptions(){	}
+		public override void DisplayMainOptions(){
+		}
 		
-		public override void WaitAndClear(){	}
+		public override void WaitAndClear(){
+		}
 		
 		public override string EnterOption(){
 			return "";

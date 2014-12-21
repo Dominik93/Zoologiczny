@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Zoologiczny{
-	public class Logs{
+	public class Logs {
 		List<Registry> list;
 
         internal List<Registry> List{

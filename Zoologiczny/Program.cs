@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-	
+
 namespace Zoologiczny{
+	
+	
+	/* Wzorce:
+	 * 1. Singleton - in Warehouse class
+	 * 2. Multiton - in ProducktContainter class
+	 * 3. MVC - all project is MVC
+	 * 4. Strategy - in controller
+	 * 5. Observer - in model and view
+	 * 6. Prototype - in Animal class
+	 * 7. Builder - in Pet class
+	 * 8. Factory method - in Farm class
+	 * 9. Mediator - in Client
+	 * 10. Decorator - in Animal and childs classes
+	 * Use Windows Form and WPF for windows
+	 */
 	
 	class Program{
 		[STAThread]
 		static void Main(string[] args){
-			// declaration view, model, controller and strategy for controller 
+			// declaration view, model, controller and strategy for controller
 			View view;
 			Model model;
 			Strategy strategy;
@@ -34,9 +49,8 @@ namespace Zoologiczny{
 			// attach view to model : observer pattern
 			controller.Model.Attach(view);
 			
-			// start applivation
+			// start application
 			controller.Start();
-			
 		}
 	}
 }

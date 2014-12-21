@@ -14,7 +14,18 @@ using System.Threading.Tasks;
 
 namespace Zoologiczny{
 	public class Warehouse: ProductContainer {
-
-        public Warehouse() {}
-    }
+		
+		private static Warehouse instanceWarehouse;
+		
+		private Warehouse() {}
+		
+		public static Warehouse InstanceWarehouse{
+			get {
+				if (instanceWarehouse == null){
+					instanceWarehouse = new Warehouse();
+				}
+				return instanceWarehouse;
+			}
+		}
+	}
 }

@@ -19,11 +19,11 @@ namespace Zoologiczny{
 		Warehouse warehouse;
 		Logs logs;
 		
-		private readonly List<View> views = new List<View>();
+		readonly List<View> views = new List<View>();
 		
 		public Model(){
 			client = new Client();
-			warehouse = new Warehouse();
+			warehouse = Warehouse.InstanceWarehouse;
 			logs = new Logs();
 		}
 		
@@ -41,7 +41,9 @@ namespace Zoologiczny{
 			get { return warehouse; }
 			set { warehouse = value; }
 		}
-		
+		/*
+		 * Observator pattern
+		 */ 
 		public void Attach(View view){
 			views.Add(view);
 		}
@@ -129,7 +131,8 @@ namespace Zoologiczny{
 		 * Create new list for client
 		 */
 		public void BuyAllAnimals(){
-			logs.addRegistry(new Registry(client.Instance.Values.ToList<Animal>()));
+			// mediator pattern
+			logs.addRegistry(new Registry(client.Instance.Values.ToList<Animal>(), Client.Sum));
 			List<string> list;
 			list = new List<string>();
 			foreach(string s in client.GetKeys())

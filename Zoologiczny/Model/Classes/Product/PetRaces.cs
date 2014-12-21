@@ -18,6 +18,12 @@ namespace Zoologiczny{
 			get {return race;}
 			set {race = value;}
 		}
+		
+		public override string Name()
+		{
+			return "Dog";
+		}
+		
 	}
 	
 	public class Cat : Pet{
@@ -28,6 +34,11 @@ namespace Zoologiczny{
 		public string Race{
 			get {return race;}
 			set {race = value;}
+		}
+		
+		public override string Name()
+		{
+			return "Cat";
 		}
 	}
 }

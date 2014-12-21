@@ -17,20 +17,12 @@ namespace Zoologiczny{
 	public abstract class View : Observer{
 		
 		public enum Animals { Dog, Cat, Cow, Chicken }
-		/*
-		protected MainForm form;
+
+		protected Object form;
 		
-		public MainForm Form{
+		public Object Form{
 			get { return form; }
 			set { form = value; }
-		}
-		*/
-		
-		protected Object instance;
-		
-		public Object Instance{
-			get { return instance; }
-			set { instance = value; }
 		}
 		
 		public abstract void InitComponent();
@@ -41,13 +33,13 @@ namespace Zoologiczny{
 		public abstract void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list);
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum);
 		public abstract void DisplayLogs(Logs logs);
-		public abstract void WaitAndClear();
+		public abstract void DisplayAvailableAnimals();
+		public abstract void DisplayMainOptions();
+		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);
 		public abstract string EnterOption();
 		public abstract string EnterAnimalNumber();
 		public abstract string EnterAnimal();
 		public abstract string EnterPrice();
-		public abstract void DisplayAvailableAnimals();
-		public abstract void DisplayMainOptions();
-		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);
+		public abstract void WaitAndClear();
 	}
 }

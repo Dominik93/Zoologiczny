@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 namespace Zoologiczny{
 	public class Registry{
 		List<Animal> list;
+		double sum;
         DateTime date;
 
         public List<Animal> List{
@@ -29,9 +30,16 @@ namespace Zoologiczny{
             set { date = value; }
         }
 
-        public Registry(List<Animal> list){
+        public double Sum{
+            get { return sum; }
+            set { sum = value; }
+        }
+
+        
+        public Registry(List<Animal> list, double sum){
             this.list = list;
             this.date = DateTime.Now;
+            this.sum = sum;
         }
 	}
 }
