@@ -7,9 +7,12 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using PetShop.M;
+using PetShop.C.Strategy.StrategyInterface;
+using PetShop.V;
 
-namespace Zoologiczny{
-	public abstract class BaseStrategy : Strategy{
+namespace PetShop.C.Strategy{
+	public abstract class BaseStrategy : IStrategy{
 		protected Model model;
 		protected View view;
 		

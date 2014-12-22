@@ -11,8 +11,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetShop.M.Classes.Mediator;
+using PetShop.M.Classes.Product;
+using PetShop.M;
 
-namespace Zoologiczny{
+namespace PetShop.V.Views{
 	public class ConsoleView : View{
 		
 		public override void InitComponent(){ }

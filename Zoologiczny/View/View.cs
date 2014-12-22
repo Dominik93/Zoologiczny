@@ -11,10 +11,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetShop.Observer;
+using PetShop.M.Classes.Product;
+using PetShop.M;
+using PetShop.M.Classes.Mediator;
 
-namespace Zoologiczny{
+namespace PetShop.V{
 	
-	public abstract class View : Observer{
+	public abstract class View : IObserver{
 		
 		public enum Animals { Dog, Cat, Cow, Chicken }
 

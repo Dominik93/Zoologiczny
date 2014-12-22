@@ -12,7 +12,7 @@ using System.Data;
 using System.Xml;
 using System.Configuration;
 
-namespace Zoologiczny
+namespace PetShop
 {
 	/// <summary>
 	/// Description of App.

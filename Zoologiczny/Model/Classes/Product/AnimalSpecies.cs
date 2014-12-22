@@ -7,8 +7,9 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using PetShop.Factory;
 
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Product{
 	public abstract class Pet : Animal{
 		protected string species;
 		

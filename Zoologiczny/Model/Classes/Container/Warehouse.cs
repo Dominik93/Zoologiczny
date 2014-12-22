@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Container{
 	public class Warehouse: ProductContainer {
 		
 		private static Warehouse instanceWarehouse;

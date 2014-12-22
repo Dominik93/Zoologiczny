@@ -11,9 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetShop.M.Classes.Product;
 
-
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Mediator{
 	public class Registry{
 		List<Animal> list;
 		double sum;

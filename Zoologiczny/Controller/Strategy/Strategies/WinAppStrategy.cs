@@ -7,14 +7,19 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-
 using System.Windows.Forms;
+using PetShop.Builder.Director;
+using PetShop.Builder.Builders;
+using PetShop.M;
+using PetShop.M.Classes.Product;
+using PetShop.V;
+using PetShop.V.WindowsApp;
 
-namespace Zoologiczny{
+namespace PetShop.C.Strategy.Strategies{
 	
 	public class WinAppStrategy : BaseStrategy{
 		
-		public override void InitModelAndView(Model model, View view){
+		public override void InitModelAndView(Model model, PetShop.V.View view){
 			this.model = model;
 			this.view = view;
 		}

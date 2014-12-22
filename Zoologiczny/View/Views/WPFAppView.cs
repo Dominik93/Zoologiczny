@@ -18,8 +18,12 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using PetShop.M.Classes.Product;
+using PetShop.M;
+using PetShop.M.Classes.Mediator;
+using PetShop.V.WindowsApp;
 
-namespace Zoologiczny{
+namespace PetShop.V.Views{
 	
 	public class WPFAppView : View{
 		public override void InitComponent(){
@@ -27,7 +31,7 @@ namespace Zoologiczny{
 		}
 		
 		public override void StartApplication(){
-			Zoologiczny.App app = new Zoologiczny.App();
+			PetShop.App app = new PetShop.App();
 			app.Run((WPFForm)this.Form);
 		}
 		

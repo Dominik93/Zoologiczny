@@ -7,8 +7,10 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-
-namespace Zoologiczny{
+using PetShop.Builder.Builders;
+using PetShop.M.Classes.Product;
+	
+namespace PetShop.Builder.Director{
 	/*
 	 * director to create dog : builder pattern
 	 */

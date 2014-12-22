@@ -12,8 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using PetShop.M;
+using PetShop.M.Classes.Product;
+using PetShop.M.Classes.Mediator;
+using PetShop.V;
+using PetShop.V.WindowsApp;
 
-namespace Zoologiczny{
+namespace PetShop.V.Views{
 	
 	public class WinAppView : View{
 

@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Product{
 	
 	public abstract class Animal : ICloneable {
 		protected int number;

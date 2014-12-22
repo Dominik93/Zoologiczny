@@ -15,8 +15,9 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using PetShop.V.WindowsApp;
 
-namespace Zoologiczny{
+namespace PetShop.V.WindowsApp{
 	public partial class WPFForm : Window{
 		public WPFForm(){
 			InitializeComponent();

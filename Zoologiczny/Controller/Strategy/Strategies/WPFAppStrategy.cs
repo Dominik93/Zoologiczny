@@ -13,9 +13,15 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using PetShop.Builder.Director;
+using PetShop.Builder.Builders;
+using PetShop.M;
+using PetShop.M.Classes.Product;
+using PetShop.C.Strategy;
+using PetShop.V;
+using PetShop.V.WindowsApp;
 
-
-namespace Zoologiczny{
+namespace PetShop.C.Strategy.Strategies{
 	public class WPFAppStrategy : BaseStrategy{
 		public override void InitModelAndView(Model model, View view){
 			this.model = model;

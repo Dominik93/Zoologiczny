@@ -7,16 +7,18 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-
-namespace Zoologiczny{
+using PetShop.M;
+using PetShop.C.Strategy.StrategyInterface;
+using PetShop.V;
+namespace PetShop.C{
 	
 	public class Controller{
-		Strategy strategy;
+		IStrategy strategy;
 		
  	 	Model model;
 		View view;
 		
-		public Strategy Strategy{
+		public IStrategy Strategy{
 			get { return strategy; }
 		}
 		
@@ -28,7 +30,7 @@ namespace Zoologiczny{
 			get { return view; }
 		}
 		
-		public Controller(Model model, View view, Strategy strategy){
+		public Controller(Model model, View view, IStrategy strategy){
 			this.model = model;
 			this.view = view;
 			this.strategy = strategy;

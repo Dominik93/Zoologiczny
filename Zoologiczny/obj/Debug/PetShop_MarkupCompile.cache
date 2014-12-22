@@ -1,4 +1,4 @@
-﻿Zoologiczny
+﻿PetShop
 
 
 winexe
@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-218343944
+2456085419
 
-32-1923660142
+321982231081
 141012385901
-App.xaml;View\Form\WPFForm\WPFForm.xaml;
+App.xaml;View\Windows\WPF\WPFForm.xaml;
 
 False
 

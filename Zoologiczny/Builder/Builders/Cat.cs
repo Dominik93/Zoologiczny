@@ -7,8 +7,9 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using PetShop.M.Classes.Product;
 
-namespace Zoologiczny{
+namespace PetShop.Builder.Builders{
 	
 	/*
 	 * abstract Cat builder, base for creating cat : builder pattern

@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetShop.C;
+using PetShop.C.Strategy.StrategyInterface;
+using PetShop.C.Strategy.Strategies;
+using PetShop.M;
+using PetShop.V;
+using PetShop.V.Views;
 
-namespace Zoologiczny{
-	
-	
+namespace PetShop{
+
 	/* Wzorce:
 	 * 1. Singleton - in Warehouse class
 	 * 2. Multiton - in ProducktContainter class
@@ -27,7 +32,7 @@ namespace Zoologiczny{
 			// declaration view, model, controller and strategy for controller
 			View view;
 			Model model;
-			Strategy strategy;
+			IStrategy strategy;
 			Controller controller;
 			
 			// create view

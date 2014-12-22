@@ -11,8 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetShop.M.Classes.Product;
 
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Container{
 	public class Client : ProductContainer{
         double sum;
 

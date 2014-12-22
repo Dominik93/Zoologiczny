@@ -1,0 +1,14 @@
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop.csprojResolveAssemblyReference.cache
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\App.baml
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\App.g.cs
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop_MarkupCompile.cache
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop.g.resources
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop.csproj.GenerateResource.Cache
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Debug\PetShop.exe.config
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Debug\PetShop.exe
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Debug\PetShop.pdb
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop.exe
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop.pdb
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\View\Windows\WPF\WPFForm.baml
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\View\Windows\WPF\WPFForm.g.cs
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\PetShop.V.WindowsApp.MainForm.resources

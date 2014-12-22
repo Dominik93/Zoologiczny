@@ -7,11 +7,10 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using PetShop.M;
 
-namespace Zoologiczny{
-	public interface Observable{
-		void Attach(View view);
-		void Detach(View view);
-		void Notify();
+namespace PetShop.Observer{
+	public interface IObserver{
+		void Update(Model model);
 	}
 }

@@ -11,10 +11,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetShop.Observer;
+using PetShop.M.Classes.Container;
+using PetShop.M.Classes.Mediator;
+using PetShop.M.Classes.Product;
+using PetShop.V;
 
-namespace Zoologiczny{
+namespace PetShop.M{
 	
-	public class Model : Observable {
+	public class Model : IObservable {
 		Client client;
 		Warehouse warehouse;
 		Logs logs;

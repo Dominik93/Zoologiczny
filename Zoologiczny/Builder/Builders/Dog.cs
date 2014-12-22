@@ -6,7 +6,9 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace Zoologiczny{
+using PetShop.M.Classes.Product;
+ 
+namespace PetShop.Builder.Builders{
 	/*
 	 * abstract Dog builder, base for creating dog : builder pattern
 	 */

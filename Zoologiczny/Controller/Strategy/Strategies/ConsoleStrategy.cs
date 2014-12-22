@@ -7,8 +7,13 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using PetShop.Builder.Director;
+using PetShop.Builder.Builders;
+using PetShop.M;
+using PetShop.M.Classes.Product;
+using PetShop.V;
 
-namespace Zoologiczny{
+namespace PetShop.C.Strategy.Strategies{
 	
 	public class ConsoleStrategy : BaseStrategy	{
 		

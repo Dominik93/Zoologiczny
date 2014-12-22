@@ -8,7 +8,7 @@
  */
 using System;
 
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Product{
 	public class Dog : Pet{
 		protected string race;
 			
