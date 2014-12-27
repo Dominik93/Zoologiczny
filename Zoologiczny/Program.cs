@@ -15,7 +15,7 @@ namespace PetShop{
 	/* Wzorce:
 	 * 1. Singleton - in Warehouse class
 	 * 2. Multiton - in ProducktContainter class
-	 * 3. MVC - all project is MVC
+	 * 3. MVC - all project
 	 * 4. Strategy - in controller
 	 * 5. Observer - in model and view
 	 * 6. Prototype - in Animal class
@@ -23,6 +23,8 @@ namespace PetShop{
 	 * 8. Factory method - in Farm class
 	 * 9. Mediator - in Client
 	 * 10. Decorator - in Animal and childs classes
+	 * 11. Facade - teoretical controller is facade, model, view is subsytems
+	 * 12. State - in Client, if client is disactive he cant do anything
 	 * Use Windows Form and WPF for windows
 	 */
 	

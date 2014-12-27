@@ -39,6 +39,25 @@ namespace PetShop.M.Classes.Container{
 			return instance.Keys;
 		}
 		
+		/*
+		 * Remove item form warehouse/client
+		 */
+		public void RemoveAnimal(ProductContainer pc, string key, int number){
+			try{
+				if(pc.Instance[key].Number >= number){
+					if (pc.Instance[key].Number != 0){
+						pc.Instance[key].Number -= number;
+					}else{
+						//Console.WriteLine("Cannot remove more");
+					}
+				}else{
+					//Console.WriteLine("To many number to remove");
+				}
+			}catch(KeyNotFoundException){
+				
+			}
+		}
+		
 	}
 	
 }

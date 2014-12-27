@@ -12,26 +12,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PetShop.M.Classes.Product;
+using PetShop.M.Classes.Mediator;
 
 namespace PetShop.M.Classes.Container{
 	public class Client : ProductContainer{
         double sum;
+        string state;
 
         public Client(){
-        	sum = 0;
+        	this.sum = 0;
+        	this.state = "active";
         }
         
-        public double Sum
-        {
+        public double Sum{
             get { return sum; }
             set { sum = value; }
         }
         
+        public string State{
+            get { return state; }
+            set { state = value; }
+        }
+        
         public void CalculateSum(){
-        	this.sum = 0;
-        	foreach(Animal animal in instance.Values){
-        		this.sum = this.sum + ( animal.Number * animal.Price);
+        	if(this.State.Equals("active")){
+	        	this.sum = 0;
+	        	foreach(Animal animal in instance.Values){
+	        		this.sum = this.sum + (animal.Number * animal.Price);
+	        	}
         	}
         }
+		
+		/*
+		 *  Add animal to client's basket only if list don't have animal with this type : prototype pattern
+		 */
+		public void AddAnimalToClient(Warehouse warehouse,string key, int number){
+			if(this.State.Equals("active")){
+				if(warehouse.Instance[key].Number >= number){
+					Animal animal = (Animal)warehouse.Instance[key].Clone(); 
+					animal.Number = number;
+					warehouse.Instance[key].Number -= number;
+					this.Add(key, animal);
+					this.CalculateSum();
+				}else{
+					//Console.WriteLine("Cannot add to basket");
+				}
+			}
+		}
+		
+		/*
+		 * Create new list for client
+		 */
+		public void BuyAllAnimals(Logs logs){
+			if(this.State.Equals("active")){
+				// mediator pattern
+				logs.addRegistry(new Registry(this.Instance.Values.ToList<Animal>(), this.Sum));
+				List<string> list;
+				list = new List<string>();
+				foreach(string s in this.GetKeys())
+					list.Add(s);
+				foreach(string s in list)
+					this.Instance.Remove(s);
+				this.CalculateSum();
+			}
+		}
     }
 }

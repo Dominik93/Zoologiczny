@@ -45,7 +45,7 @@ namespace PetShop.C.Strategy.Strategies{
 										dogBreeder.DogBuilder.CreateNewDog();
 										dogBreeder.ConstructDog(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 										
-										model.AddAnimalToWarehouse(dogBreeder.Dog.Race, dogBreeder.Dog);
+										model.Warehouse.AddAnimalToWarehouse(dogBreeder.Dog.Race, dogBreeder.Dog);
 										dogBreeder = null;
 									}catch(InvalidCastException){
 									}
@@ -59,7 +59,7 @@ namespace PetShop.C.Strategy.Strategies{
 										catBreeder.CatBuilder.CreateNewCat();
 										catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
 										
-										model.AddAnimalToWarehouse(catBreeder.Cat.Race,catBreeder.Cat);
+										model.Warehouse.AddAnimalToWarehouse(catBreeder.Cat.Race,catBreeder.Cat);
 										catBreeder = null;
 									}catch(InvalidCastException){
 										view.DisplayError("It is not the number!");
@@ -69,7 +69,7 @@ namespace PetShop.C.Strategy.Strategies{
 									view.DisplayMasage("Enter number and price");
 									try{
 										// factory method
-										model.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, Convert.ToInt32(view.EnterAnimalNumber()),  Convert.ToDouble(view.EnterPrice())));
+										model.Warehouse.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, Convert.ToInt32(view.EnterAnimalNumber()),  Convert.ToDouble(view.EnterPrice())));
 									}catch(InvalidCastException){
 										view.DisplayError("It is not the number!");
 									}
@@ -78,7 +78,7 @@ namespace PetShop.C.Strategy.Strategies{
 									view.DisplayMasage("Enter number and price");
 									try{
 										// factory method
-										model.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, Convert.ToInt32(view.EnterAnimalNumber()),  Convert.ToDouble(view.EnterPrice())));
+										model.Warehouse.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, Convert.ToInt32(view.EnterAnimalNumber()),  Convert.ToDouble(view.EnterPrice())));
 									}catch(InvalidCastException){
 										view.DisplayError("It is not the number!");
 									}
@@ -98,7 +98,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Enter animals to remove");
-								model.RemoveAnimal(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Warehouse.RemoveAnimal(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -109,7 +109,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("What animal you want to buy and how many?");
-								model.AddAnimalToClient(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Client.AddAnimalToClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -124,7 +124,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayClientStatus(model.Client.GetValues());
 							try{
 								view.DisplayMasage("Chose animal and enter number of animals to remove");
-								model.RemoveAnimal(model.Client, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Client.RemoveAnimal(model.Client, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -135,7 +135,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Which animal you want to change price?");
-								model.ChangeAnimalPrice(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Warehouse.ChangeAnimalPrice(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -146,7 +146,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Which animal you want to change number?");
-								model.ChangeAnimalNumber(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Warehouse.ChangeAnimalNumber(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -155,7 +155,7 @@ namespace PetShop.C.Strategy.Strategies{
 							break;
 						case 9: // buy animals, clear all basket
 							view.DisplayMasage("Buy all animals");
-							model.BuyAllAnimals();
+							model.Client.BuyAllAnimals(model.Logs);
 							model.Notify();
 							view.WaitAndClear();
 							break;
