@@ -16,3 +16,11 @@ C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\bin\Deb
 C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.csprojResolveAssemblyReference.cache
 C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.exe
 C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.pdb
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny_MarkupCompile.cache
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.g.resources
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.MainForm.resources
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\Zoologiczny.csproj.GenerateResource.Cache
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\App.baml
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\App.g.cs
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\View\Form\WPFForm\WPFForm.baml
+C:\Users\Dominik\Documents\SharpDevelop Projects\Zoologiczny\Zoologiczny\obj\Debug\View\Form\WPFForm\WPFForm.g.cs

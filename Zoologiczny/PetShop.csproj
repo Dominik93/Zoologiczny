@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{963971A7-F101-4AA4-8F11-40F0EABC0744}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zoologiczny</RootNamespace>
+    <AssemblyName>PetShop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Dominik\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <StartupObject>PetShop.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <Prefer32Bit>True</Prefer32Bit>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Builder\Builders\Cat.cs" />
+    <Compile Include="Builder\Builders\Dog.cs" />
+    <Compile Include="Builder\Director\Director.cs" />
+    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\Strategy\BaseStrategy.cs" />
+    <Compile Include="Controller\Strategy\Strategies\ConsoleStrategy.cs" />
+    <Compile Include="Controller\Strategy\Strategies\WinAppStrategy.cs" />
+    <Compile Include="Controller\Strategy\Strategies\WPFAppStrategy.cs" />
+    <Compile Include="Controller\Strategy\StrategyInterface\IStrategy.cs" />
+    <Compile Include="Factory\Cow.cs" />
+    <Compile Include="Factory\Chicken.cs" />
+    <Compile Include="Model\Classes\Container\Client.cs" />
+    <Compile Include="Model\Classes\Container\ProductContainer.cs" />
+    <Compile Include="Model\Classes\Container\Warehouse.cs" />
+    <Compile Include="Model\Classes\Mediator\Logs.cs" />
+    <Compile Include="Model\Classes\Mediator\Registry.cs" />
+    <Compile Include="Model\Classes\Product\Animal.cs" />
+    <Compile Include="Model\Classes\Product\AnimalSpecies.cs" />
+    <Compile Include="Model\Classes\Product\PetRaces.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Observer\IObservable.cs" />
+    <Compile Include="Observer\IObserver.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="View\Windows\Form\MainForm.cs" />
+    <Compile Include="View\View.cs" />
+    <Compile Include="View\Views\ConsoleView.cs" />
+    <Compile Include="View\Views\WinAppView.cs" />
+    <Compile Include="View\Views\WPFAppView.cs" />
+    <Compile Include="View\Windows\WPF\WPFForm.xaml.cs">
+      <DependentUpon>WPFForm.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Builder\Director" />
+    <Folder Include="Builder\Builders" />
+    <Folder Include="Controller\Strategy\StrategyInterface" />
+    <Folder Include="Controller\Strategy\Strategies" />
+    <Folder Include="Model" />
+    <Folder Include="Builder" />
+    <Folder Include="Model\Classes" />
+    <Folder Include="Factory" />
+    <Folder Include="Controller\Strategy" />
+    <Folder Include="Model\Classes\Mediator" />
+    <Folder Include="Model\Classes\Container" />
+    <Folder Include="Model\Classes\Product" />
+    <Folder Include="Observer" />
+    <Folder Include="View" />
+    <Folder Include="Controller" />
+    <Folder Include="View\Windows\Form" />
+    <Folder Include="View\Windows" />
+    <Folder Include="View\Views" />
+    <Folder Include="View\Windows\WPF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml" />
+    <Page Include="View\Windows\WPF\WPFForm.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Windows\Form\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

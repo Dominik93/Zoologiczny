@@ -7,8 +7,13 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Zoologiczny{
+namespace PetShop.M.Classes.Product{
+	
 	public abstract class Animal : ICloneable {
 		protected int number;
 		protected double price;
@@ -26,10 +31,11 @@ namespace Zoologiczny{
 			get {return price;}
 			set {price = value;}
 		}
-	
-		public object Clone(){
-	        return this.MemberwiseClone();
-	    }
 		
+		public abstract string Name();
+		
+		public object Clone(){
+			return this.MemberwiseClone();
+		}
 	}
 }
