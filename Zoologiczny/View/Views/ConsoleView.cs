@@ -37,6 +37,9 @@ namespace PetShop.V.Views{
 			Console.Clear();
 		}
 		
+		public override void DisplayTest(string text){
+		
+		}
 		
 		public override void DisplayLogs(Logs logs){
             foreach(Registry registry in logs.List){
@@ -48,6 +51,9 @@ namespace PetShop.V.Views{
             }
         }
 		
+		public override string GetState(){
+			return "";
+		}
 		
 		public override string EnterOption(){
 			return Console.ReadLine();

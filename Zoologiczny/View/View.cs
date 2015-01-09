@@ -40,10 +40,12 @@ namespace PetShop.V{
 		public abstract void DisplayAvailableAnimals();
 		public abstract void DisplayMainOptions();
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);
+		public abstract void DisplayTest(string text);
 		public abstract string EnterOption();
 		public abstract string EnterAnimalNumber();
 		public abstract string EnterAnimal();
 		public abstract string EnterPrice();
+		public abstract string GetState();
 		public abstract void WaitAndClear();
 	}
 }

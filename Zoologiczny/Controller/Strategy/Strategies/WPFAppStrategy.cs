@@ -38,7 +38,7 @@ namespace PetShop.C.Strategy.Strategies{
 			((WPFForm)view.Form).RegisterButton5EventHandler(new System.Windows.RoutedEventHandler(this.Button5Click));
 			((WPFForm)view.Form).RegisterButton6EventHandler(new System.Windows.RoutedEventHandler(this.Button6Click));
 			((WPFForm)view.Form).RegisterButton7EventHandler(new System.Windows.RoutedEventHandler(this.Button7Click));
-			
+			((WPFForm)view.Form).RegisterButton8EventHandler(new System.Windows.RoutedEventHandler(this.Button8Click));
 			view.StartApplication();
 		}
 		
@@ -157,6 +157,12 @@ namespace PetShop.C.Strategy.Strategies{
 		
 		void Button7Click(object sender, EventArgs e){
 			model.Client.BuyAllAnimals(model.Logs);
+			model.Notify();
+		}
+		
+		void Button8Click(object sender, EventArgs e){
+			model.Client.State = view.GetState();
+			view.DisplayTest(model.Client.State);
 			model.Notify();
 		}
 

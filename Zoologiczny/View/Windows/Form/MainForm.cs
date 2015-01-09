@@ -46,6 +46,8 @@ namespace PetShop.V.WindowsApp{
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -94,7 +96,7 @@ namespace PetShop.V.WindowsApp{
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(16, 196);
+			this.button5.Location = new System.Drawing.Point(16, 205);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(146, 23);
 			this.button5.TabIndex = 6;
@@ -103,7 +105,7 @@ namespace PetShop.V.WindowsApp{
 			// 
 			// button6
 			// 
-			this.button6.Location = new System.Drawing.Point(16, 225);
+			this.button6.Location = new System.Drawing.Point(16, 234);
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(146, 23);
 			this.button6.TabIndex = 7;
@@ -112,7 +114,7 @@ namespace PetShop.V.WindowsApp{
 			// 
 			// button7
 			// 
-			this.button7.Location = new System.Drawing.Point(16, 254);
+			this.button7.Location = new System.Drawing.Point(16, 263);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(146, 23);
 			this.button7.TabIndex = 8;
@@ -180,11 +182,32 @@ namespace PetShop.V.WindowsApp{
 			this.label6.TabIndex = 16;
 			this.label6.Text = "Logs";
 			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Items.AddRange(new object[] {
+									"Active",
+									"Disactive"});
+			this.comboBox1.Location = new System.Drawing.Point(17, 177);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(121, 21);
+			this.comboBox1.TabIndex = 17;
+			// 
+			// label7
+			// 
+			this.label7.Location = new System.Drawing.Point(17, 299);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(120, 44);
+			this.label7.TabIndex = 18;
+			this.label7.Text = "label7";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(489, 404);
+			this.Controls.Add(this.label7);
+			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.textBox2);
@@ -206,6 +229,8 @@ namespace PetShop.V.WindowsApp{
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label label6;
 		
 		private System.Windows.Forms.TextBox textBox3;
@@ -253,6 +278,10 @@ namespace PetShop.V.WindowsApp{
 			this.button7.Click += new System.EventHandler(eventHandler);
 		}
 		
+		public void RegisterComboBox1SelectionChanged(System.EventHandler eventHandler){
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(eventHandler);
+		}
+		
 		public void SetTextWarehouse(string text){
 			this.label1.Text = text;
 		}
@@ -263,6 +292,10 @@ namespace PetShop.V.WindowsApp{
 		
 		public void SetTextLogs(string text){
 			this.label6.Text = text;
+		}
+		
+		public void SetTest(string text){
+			this.label7.Text = text;
 		}
 		
 		public string GetAnimal(){
@@ -277,6 +310,9 @@ namespace PetShop.V.WindowsApp{
 			return this.textBox3.Text;
 		}
 		
+		public string GetState(){
+			return this.comboBox1.Text;
+		}
 		
 	}
 }

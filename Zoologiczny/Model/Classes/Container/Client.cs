@@ -21,7 +21,7 @@ namespace PetShop.M.Classes.Container{
 
         public Client(){
         	this.sum = 0;
-        	this.state = "active";
+        	this.state = "Active";
         }
         
         public double Sum{
@@ -35,7 +35,7 @@ namespace PetShop.M.Classes.Container{
         }
         
         public void CalculateSum(){
-        	if(this.State.Equals("active")){
+        	if(this.State.Equals("Active")){
 	        	this.sum = 0;
 	        	foreach(Animal animal in instance.Values){
 	        		this.sum = this.sum + (animal.Number * animal.Price);
@@ -47,7 +47,7 @@ namespace PetShop.M.Classes.Container{
 		 *  Add animal to client's basket only if list don't have animal with this type : prototype pattern
 		 */
 		public void AddAnimalToClient(Warehouse warehouse,string key, int number){
-			if(this.State.Equals("active")){
+			if(this.State.Equals("Active")){
 				if(warehouse.Instance[key].Number >= number){
 					Animal animal = (Animal)warehouse.Instance[key].Clone(); 
 					animal.Number = number;
@@ -64,7 +64,7 @@ namespace PetShop.M.Classes.Container{
 		 * Create new list for client
 		 */
 		public void BuyAllAnimals(Logs logs){
-			if(this.State.Equals("active")){
+			if(this.State.Equals("Active")){
 				// mediator pattern
 				logs.addRegistry(new Registry(this.Instance.Values.ToList<Animal>(), this.Sum));
 				List<string> list;

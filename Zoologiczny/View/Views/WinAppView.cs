@@ -38,6 +38,13 @@ namespace PetShop.V.Views{
 			this.DisplayLogs(model.Logs);
 		}
 		
+		public override void DisplayTest(string text){
+			((MainForm)Form).SetTest(text);
+		}
+		
+		public override string GetState(){
+			return ((MainForm)Form).GetState();
+		}
 		
 		public override string EnterAnimalNumber(){
 			return ((MainForm)Form).GetNumber();

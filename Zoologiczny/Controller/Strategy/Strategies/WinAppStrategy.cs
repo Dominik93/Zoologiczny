@@ -35,6 +35,8 @@ namespace PetShop.C.Strategy.Strategies{
 			((MainForm)view.Form).RegisterButton5EventHandler(new System.EventHandler(this.Button5Click));
 			((MainForm)view.Form).RegisterButton6EventHandler(new System.EventHandler(this.Button6Click));
 			((MainForm)view.Form).RegisterButton7EventHandler(new System.EventHandler(this.Button7Click));
+			((MainForm)view.Form).RegisterComboBox1SelectionChanged(new System.EventHandler(this.ComboBox1SelectionChanged));
+			
 			view.StartApplication();
 	     }
 		
@@ -154,6 +156,11 @@ namespace PetShop.C.Strategy.Strategies{
 		void Button7Click(object sender, EventArgs e){
 			model.Client.BuyAllAnimals(model.Logs);
 			model.Notify();
+		}
+		
+		void ComboBox1SelectionChanged(object sender, EventArgs e){
+			view.DisplayTest(view.GetState());
+			model.Client.State = view.GetState();
 		}
 	}
 }

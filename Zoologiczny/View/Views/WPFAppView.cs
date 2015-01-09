@@ -41,6 +41,14 @@ namespace PetShop.V.Views{
 			this.DisplayLogs(model.Logs);
 		}
 		
+		public override string GetState(){
+			return ((WPFForm)Form).GetState();
+		}
+		
+		public override void DisplayTest(string text){
+			((WPFForm)Form).SetTest(text);
+		}
+		
 		public override string EnterAnimalNumber(){
 			return ((WPFForm)Form).GetNumber();
 		}

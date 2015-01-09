@@ -51,6 +51,10 @@ namespace PetShop.V.WindowsApp{
 			this.Buy.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
+		public void RegisterButton8EventHandler(System.Windows.RoutedEventHandler eventHandler){
+			this.StateButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
+		}
+		
 		public void SetTextWarehouse(string text){
 			this.Warehouse.Content = text;
 		}
@@ -61,6 +65,10 @@ namespace PetShop.V.WindowsApp{
 		
 		public void SetTextLogs(string text){
 			this.Logs.Content = text;
+		}
+		
+		public void SetTest(string text){
+			this.Test.Content = text;
 		}
 		
 		public string GetAnimal(){
@@ -74,5 +82,10 @@ namespace PetShop.V.WindowsApp{
 		public string GetPrice(){
 			return this.Price.Text;
 		}
+		
+		public string GetState(){
+			return this.State.Text;
+		}
+		
 	}
 }
