@@ -102,7 +102,7 @@ namespace PetShop.C.Strategy.Strategies{
 		
 		void Button2Click(object sender, EventArgs e){
 			try{
-				model.Warehouse.RemoveAnimal(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+				model.Warehouse.RemoveAnimalFromWarehouse(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 			}catch(InvalidCastException){
 				view.DisplayError("It is not the number!");
 			}catch(FormatException){
@@ -146,7 +146,7 @@ namespace PetShop.C.Strategy.Strategies{
 		
 		void Button6Click(object sender, EventArgs e){
 			try{
-				model.Warehouse.RemoveAnimal(model.Client, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+				model.Client.RemoveAnimalFromClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 			}catch(InvalidCastException){
 				view.DisplayError("It is not the number!");
 			}catch(FormatException){

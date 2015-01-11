@@ -98,7 +98,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
 							try{
 								view.DisplayMasage("Enter animals to remove");
-								model.Warehouse.RemoveAnimal(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Warehouse.RemoveAnimalFromWarehouse(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
@@ -124,7 +124,7 @@ namespace PetShop.C.Strategy.Strategies{
 							view.DisplayClientStatus(model.Client.GetValues());
 							try{
 								view.DisplayMasage("Chose animal and enter number of animals to remove");
-								model.Client.RemoveAnimal(model.Client, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+								model.Client.RemoveAnimalFromClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 							}catch(InvalidCastException){
 								view.DisplayError("It is not the number!");
 							}
