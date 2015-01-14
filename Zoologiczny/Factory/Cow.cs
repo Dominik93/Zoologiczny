@@ -16,7 +16,12 @@ namespace PetShop.Factory{
 	public class Cow : Farm{
 	    protected string race;
 		
-	    public Cow(int number, double price, string spacies, string race){
+	    public string Race{
+			get {return race;}
+			set {race = value;}
+		}
+	    
+	    public Cow(int number, double price, string species, string race){
 	    	this.number = number;
 	    	this.price = price;
 	    	this.species = species;

@@ -35,14 +35,14 @@ namespace PetShop.V{
 		public abstract void DisplayError(string error);
 		public abstract void DisplayMasage(string msg);
 		public abstract void DisplayWarehouseStatus(Dictionary<string, Animal>.ValueCollection list);
-		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum);
+		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum, double credit);
 		public abstract void DisplayLogs(Logs logs);
 		public abstract void DisplayAvailableAnimals();
 		public abstract void DisplayMainOptions();
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);
-		public abstract void DisplayTest(string text);
 		public abstract string EnterOption();
-		public abstract string EnterAnimalNumber();
+		public abstract string EnterAnimalNumberWerehouse();
+		public abstract string EnterAnimalNumberClient();
 		public abstract string EnterAnimal();
 		public abstract string EnterPrice();
 		public abstract string GetState();

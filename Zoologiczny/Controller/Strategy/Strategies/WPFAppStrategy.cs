@@ -18,6 +18,7 @@ using PetShop.Builder.Builders;
 using PetShop.M;
 using PetShop.M.Classes.Product;
 using PetShop.C.Strategy;
+using PetShop.Factory;
 using PetShop.V;
 using PetShop.V.WindowsApp;
 
@@ -38,7 +39,11 @@ namespace PetShop.C.Strategy.Strategies{
 			((WPFForm)view.Form).RegisterButton5EventHandler(new System.Windows.RoutedEventHandler(this.Button5Click));
 			((WPFForm)view.Form).RegisterButton6EventHandler(new System.Windows.RoutedEventHandler(this.Button6Click));
 			((WPFForm)view.Form).RegisterButton7EventHandler(new System.Windows.RoutedEventHandler(this.Button7Click));
-			((WPFForm)view.Form).RegisterButton8EventHandler(new System.Windows.RoutedEventHandler(this.Button8Click));
+			((WPFForm)view.Form).RegisterComboBox1EventHendler(new System.Windows.Controls.SelectionChangedEventHandler(this.ComboBox1Change));
+			((WPFForm)view.Form).RegisterComboBox2EventHendler(new System.Windows.Controls.SelectionChangedEventHandler(this.ComboBox2Change));
+			((WPFForm)view.Form).RegisterComboBox3EventHendler(new System.Windows.Controls.SelectionChangedEventHandler(this.ComboBox3Change));
+			((WPFForm)view.Form).RegisterComboBox4EventHendler(new System.Windows.Controls.SelectionChangedEventHandler(this.ComboBox4Change));
+			((WPFForm)view.Form).RegisterComboBox5EventHendler(new System.Windows.Controls.SelectionChangedEventHandler(this.ComboBox5Change));
 			view.StartApplication();
 		}
 		
@@ -50,7 +55,7 @@ namespace PetShop.C.Strategy.Strategies{
 						DogBreeder dogBreeder = new DogBreeder();
 						dogBreeder.DogBuilder = new DogDogBuilder();
 						dogBreeder.DogBuilder.CreateNewDog();
-						dogBreeder.ConstructDog(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
+						dogBreeder.ConstructDog(Convert.ToInt32(view.EnterAnimalNumberWerehouse()), Convert.ToDouble(view.EnterPrice()));
 						
 						model.Warehouse.AddAnimalToWarehouse(dogBreeder.Dog.Race, dogBreeder.Dog);
 						dogBreeder = null;
@@ -63,7 +68,7 @@ namespace PetShop.C.Strategy.Strategies{
 						CatBreeder catBreeder = new CatBreeder();
 						catBreeder.CatBuilder = new CatCatBuilder();
 						catBreeder.CatBuilder.CreateNewCat();
-						catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice()));
+						catBreeder.ConstructCat(Convert.ToInt32(view.EnterAnimalNumberWerehouse()), Convert.ToDouble(view.EnterPrice()));
 						
 						model.Warehouse.AddAnimalToWarehouse(catBreeder.Cat.Race,catBreeder.Cat);
 						catBreeder = null;
@@ -76,7 +81,7 @@ namespace PetShop.C.Strategy.Strategies{
 				case("Cow"): // add cow
 					try{
 						// factory method
-						model.Warehouse.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice())));
+						model.Warehouse.AddAnimalToWarehouse("Cow", Farm.FarmFactory(Animal.Animals.Cow, Convert.ToInt32(view.EnterAnimalNumberWerehouse()), Convert.ToDouble(view.EnterPrice())));
 					}catch(InvalidCastException){
 						view.DisplayError("It is not the number!");
 					}catch(FormatException){
@@ -86,7 +91,7 @@ namespace PetShop.C.Strategy.Strategies{
 				case("Chicken"): // add Chicken
 					try{
 						// factory method
-						model.Warehouse.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, Convert.ToInt32(view.EnterAnimalNumber()), Convert.ToDouble(view.EnterPrice())));
+						model.Warehouse.AddAnimalToWarehouse("Chicken", Farm.FarmFactory(Animal.Animals.Chicken, Convert.ToInt32(view.EnterAnimalNumberWerehouse()), Convert.ToDouble(view.EnterPrice())));
 					}catch(InvalidCastException){
 						view.DisplayError("It is not the number!");
 					}catch(FormatException){
@@ -102,7 +107,7 @@ namespace PetShop.C.Strategy.Strategies{
 		
 		void Button2Click(object sender, EventArgs e){
 			try{
-				model.Warehouse.RemoveAnimalFromWarehouse(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+				model.Warehouse.RemoveAnimalFromWarehouse(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumberWerehouse()));
 			}catch(InvalidCastException){
 				view.DisplayError("It is not the number!");
 			}catch(FormatException){
@@ -113,7 +118,7 @@ namespace PetShop.C.Strategy.Strategies{
 		
 		void Button3Click(object sender, EventArgs e){
 			try{
-				model.Warehouse.ChangeAnimalNumber(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+				model.Warehouse.ChangeAnimalNumber(view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumberWerehouse()));
 			}catch(InvalidCastException){
 				view.DisplayError("It is not the number!");
 			}catch(FormatException){
@@ -134,19 +139,27 @@ namespace PetShop.C.Strategy.Strategies{
 		}
 		
 		void Button5Click(object sender, EventArgs e){
+			/*
 			try{
 				model.Client.AddAnimalToClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
 			}catch(InvalidCastException){
 				view.DisplayError("It is not the number!");
 			}catch(FormatException){
 				view.DisplayError("It is not the number!");
+			}*/
+			try{
+			model.Client.AddAnimalToClient(model.Warehouse,
+			                               ((Animal)((WPFForm)view.Form).WGrid.SelectedItem).Name(),
+			                               Convert.ToInt32(view.EnterAnimalNumberClient()));
+			}catch(Exception){
+				view.DisplayError("Animal is not chose!");
 			}
 			model.Notify();
 		}
 		
 		void Button6Click(object sender, EventArgs e){
 			try{
-				model.Client.RemoveAnimalFromClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
+				model.Client.RemoveAnimalFromClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumberClient()));
 			}catch(InvalidCastException){
 				view.DisplayError("It is not the number!");
 			}catch(FormatException){
@@ -160,11 +173,82 @@ namespace PetShop.C.Strategy.Strategies{
 			model.Notify();
 		}
 		
-		void Button8Click(object sender, EventArgs e){
-			model.Client.State = view.GetState();
-			view.DisplayTest(model.Client.State);
+		void ComboBox5Change(object sender, EventArgs e){
+			var comboBox = sender as ComboBox;
+			if(comboBox.SelectedIndex == 0){
+				model.Client.State = "Active";
+			}
+			else if(comboBox.SelectedIndex == 1){
+				model.Client.State = "Disactive";
+			}
 			model.Notify();
 		}
 
+		void ComboBox1Change(object sender, EventArgs e){
+			var comboBox = sender as ComboBox;
+			if(comboBox.SelectedIndex == 0){
+				((WPFForm)view.Form).SpeciesComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
+			}
+			else if(comboBox.SelectedIndex == 1){
+				((WPFForm)view.Form).SpeciesComboBox.Visibility = Visibility.Visible;
+				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Animal>();
+			}
+			model.Notify();
+		}
+		
+		void ComboBox2Change(object sender, EventArgs e){
+			var comboBox = sender as ComboBox;
+			if(comboBox.SelectedIndex == 0){
+				((WPFForm)view.Form).SpeciesComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Animal>();
+			}
+			else if(comboBox.SelectedIndex == 1){
+				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Visible;
+				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Pet>();
+			}
+			else if(comboBox.SelectedIndex == 2){
+				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Visible;
+				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Farm>();
+			}
+			model.Notify();
+		}
+		
+		void ComboBox3Change(object sender, EventArgs e){
+			var comboBox = sender as ComboBox;
+			if(comboBox.SelectedIndex == 0){
+				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Pet>();
+			}
+			else if(comboBox.SelectedIndex == 1){
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cat>();
+			}
+			else if(comboBox.SelectedIndex == 2){
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Dog>();
+			}
+			model.Notify();
+		}
+		
+		void ComboBox4Change(object sender, EventArgs e){
+			var comboBox = sender as ComboBox;
+			if(comboBox.SelectedIndex == 0){
+				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Farm>();
+			}
+			else if(comboBox.SelectedIndex == 1){
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cow>();
+			}
+			else if(comboBox.SelectedIndex == 2){
+				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Chicken>();
+			}
+			model.Notify();
+		}
 	}	
 }

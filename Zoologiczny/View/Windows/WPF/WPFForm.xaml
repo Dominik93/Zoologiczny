@@ -66,7 +66,7 @@
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Bottom"
-			Margin="8,0,0,312"
+			Margin="8,0,0,299"
 			Width="166"
 			Height="23" />
 		<Button
@@ -76,7 +76,7 @@
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Bottom"
-			Margin="8,0,0,281"
+			Margin="8,0,0,268"
 			Width="166"
 			Height="23" />
 		<Button
@@ -86,7 +86,7 @@
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Bottom"
-			Margin="8,0,0,250"
+			Margin="8,0,0,237"
 			Width="166"
 			Height="23" />
 		<Button
@@ -102,23 +102,24 @@
 			Height="23" />
 		<Label
 			x:Name="Warehouse"
-			Height="120"
-			Margin="182,63,8,0"
-			VerticalAlignment="Top"
-			HorizontalAlignment="Stretch"
-			Grid.Row="0"
+			Content="Warehouse"
 			Grid.Column="0"
-			Content="Warehouse" />
+			Grid.Row="0"
+			VerticalAlignment="Top"
+			Height="120"
+			Width="373"
+			HorizontalAlignment="Left"
+			Margin="182,63,0,0" />
 		<Label
 			Content="Client's basket"
 			x:Name="Basket"
+			RenderTransformOrigin="0.5,0.5"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Stretch"
-			RenderTransformOrigin="0.5,0.5"
-			Height="120"
 			VerticalAlignment="Top"
-			Margin="182,312,8,0"></Label>
+			Margin="272,327,8,0"
+			Height="105"></Label>
 		<Label
 			Content="Logs"
 			x:Name="Logs"
@@ -169,14 +170,14 @@
 			Height="28" />
 		<ComboBox
 			x:Name="State"
+			BorderBrush="#FF707070"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="8,306,0,0"
+			Margin="8,319,0,0"
 			Width="166"
-			Height="20"
-			BorderBrush="#FF707070">
+			Height="20">
 			<ComboBoxItem
 				Content="Active"
 				IsSelected="True"
@@ -185,26 +186,119 @@
 				Content="Disactive"
 				x:Name="Disactive" />
 		</ComboBox>
+		<ComboBox
+			x:Name="AnimalComboBox"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,233,215,0"
+			Width="120"
+			Height="20">
+			<ComboBoxItem
+				Content=" "
+				x:Name="EmptyCBI" />
+			<ComboBoxItem
+				Content="Animal"
+				x:Name="AnimalCBI" />
+		</ComboBox>
+		<ComboBox
+			x:Name="SpeciesComboBox"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,253,215,0"
+			Width="120"
+			Height="20"
+			Visibility="Hidden">
+			<ComboBoxItem
+				Content="Back"
+				x:Name="BackSpeciesCBI" />
+			<ComboBoxItem
+				Content="Pet"
+				x:Name="PetCBI" />
+			<ComboBoxItem
+				Content="Farm"
+				x:Name="FarmCBI" />
+		</ComboBox>
+		<ComboBox
+			x:Name="RacesPetComboBox"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Width="120"
+			Height="20"
+			Visibility="Hidden"
+			Margin="453,273,0,0"
+			Grid.Column="0">
+			<ComboBoxItem
+				Content="Back"
+				x:Name="BackRecesPetCBI" />
+			<ComboBoxItem
+				Content="Cat"
+				x:Name="CatCBI" />
+			<ComboBoxItem
+				Content="Dog"
+				x:Name="DogCBI" />
+		</ComboBox>
+		<ComboBox
+			x:Name="RacesFarmComboBox"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,273,215,0"
+			Width="120"
+			Height="20"
+			Visibility="Hidden">
+			<ComboBoxItem
+				Content="Back"
+				x:Name="BackRecesFarmCBI" />
+			<ComboBoxItem
+				Content="Cow"
+				x:Name="CowCBI" />
+			<ComboBoxItem
+				Content="Chicken"
+				x:Name="ChickenCBI" />
+		</ComboBox>
+		<DataGrid
+			x:Name="WGrid"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,231,0,0"
+			Width="430"
+			Height="80" />
 		<Label
+			RenderTransformOrigin="0.5,0.5"
+			Content="--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Top"
+			Margin="8,209,8,0"
+			Height="24" />
+		<TextBox
+			x:Name="NumberClient"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="291,16,0,0"
-			Width="141"
-			Height="39"
-			Content="Test"
-			x:Name="Test" />
-		<Button
+			Margin="182,350,0,0"
+			Width="75"
+			Height="28" />
+		<Label
+			RenderTransformOrigin="0.5,0.5"
+			Content="Number"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="8,427,0,0"
-			Width="166"
-			Height="23"
-			Content="Save state"
-			x:Name="StateButton" />
+			Margin="182,323,0,0"
+			Width="75"
+			Height="27" />
 		<Grid.ColumnDefinitions></Grid.ColumnDefinitions>
 	</Grid>
 </Window>

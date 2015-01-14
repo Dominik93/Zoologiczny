@@ -26,11 +26,15 @@ namespace PetShop{
 	 * 11. Facade - teoretical controller is facade, model, view is subsytems
 	 * 12. State - in Client, if client is disactive he cant do anything
 	 * Use Windows Form and WPF for windows
+	 * 
+	 * combobox- 3 comboboxy na sobie jak wybieramy 1 przechodzimy do następnego i chowamy poprzedni 1 element jest powrotem
+	 * 
 	 */
 	
 	class Program{
 		[STAThread]
 		static void Main(string[] args){
+			
 			// declaration view, model, controller and strategy for controller
 			View view;
 			Model model;
@@ -38,16 +42,16 @@ namespace PetShop{
 			Controller controller;
 			
 			// create view
-			view = new ConsoleView();
-			view = new WinAppView();
+			//view = new ConsoleView(); not supported
+			//view = new WinAppView(); not supported
 			view = new WPFAppView();
 			
 			// create model
 			model = new Model();
 			
 			// create strategy
-			strategy = new ConsoleStrategy();
-			strategy = new WinAppStrategy();
+			//strategy = new ConsoleStrategy(); not supported
+			//strategy = new WinAppStrategy(); not supported
 			strategy = new WPFAppStrategy();
 			
 			// create controller with model, view and strategy

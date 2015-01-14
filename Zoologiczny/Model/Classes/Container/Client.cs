@@ -18,10 +18,17 @@ namespace PetShop.M.Classes.Container{
 	public class Client : ProductContainer{
         double sum;
         string state;
+        double credit;
 
         public Client(){
         	this.sum = 0;
         	this.state = "Active";
+        	this.credit = 1000;
+        }
+        
+        public double Credit{
+            get { return credit; }
+            set { credit = value; }
         }
         
         public double Sum{
@@ -34,11 +41,22 @@ namespace PetShop.M.Classes.Container{
             set { state = value; }
         }
         
+        private Boolean CanBuy(int number, double price){
+        	if(this.State.Equals("Active")){
+        		if(this.Credit < (number * price)){
+        			return false;
+        		}
+        	}
+        	return true;
+        }
+        
         public void CalculateSum(){
         	if(this.State.Equals("Active")){
 	        	this.sum = 0;
+	        	this.credit = 1000;
 	        	foreach(Animal animal in instance.Values){
 	        		this.sum = this.sum + (animal.Number * animal.Price);
+	        		this.credit -= (animal.Number * animal.Price);
 	        	}
         	}
         }
@@ -46,14 +64,21 @@ namespace PetShop.M.Classes.Container{
 		/*
 		 *  Add animal to client's basket only if list don't have animal with this type : prototype pattern
 		 */
-		public void AddAnimalToClient(Warehouse warehouse,string key, int number){
+		public void AddAnimalToClient(Warehouse warehouse, string key, int number){
 			if(this.State.Equals("Active")){
 				if(warehouse.Instance[key].Number >= number){
-					Animal animal = (Animal)warehouse.Instance[key].Clone(); 
-					animal.Number = number;
-					warehouse.Instance[key].Number -= number;
-					this.Add(key, animal);
-					this.CalculateSum();
+					if(this.CanBuy(number, warehouse.Instance[key].Price)){
+						Animal animal = (Animal)warehouse.Instance[key].Clone(); 
+						animal.Number = number;
+						warehouse.Instance[key].Number -= number;
+						if(this.Instance.ContainsKey(key)){
+							this.Instance[key].Number += number;
+						}
+						else{
+							this.Add(key, animal);
+						}
+						this.CalculateSum();
+					}
 				}else{
 					//Console.WriteLine("Cannot add to basket");
 				}

@@ -84,5 +84,25 @@ namespace PetShop.M.Classes.Container{
 				
 			}
 		}
+		/*
+		public List<Animal> getAnimal(){
+            List<Animal> list = new List<Animal>();
+            foreach (KeyValuePair<string, Animal> animal in this.Instance){
+            	list.Add(animal.Value);
+            }
+            return list;
+        }*/
+		
+		public List<T> getAnimal<T>(){
+            List<T> list = new List<T>();
+            foreach (KeyValuePair<string, Animal> animal in this.Instance){
+            	if (typeof(T) == animal.Value.GetType() ||
+            	    typeof(T) == animal.Value.GetType().BaseType ||
+            	    typeof(T) == animal.Value.GetType().BaseType.BaseType){
+            			list.Add((T)(object)animal.Value);
+            	}
+            }
+            return list;
+        }
 	}
 }

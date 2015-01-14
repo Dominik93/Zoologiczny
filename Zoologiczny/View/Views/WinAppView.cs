@@ -34,19 +34,19 @@ namespace PetShop.V.Views{
 		
 		public override void Update(Model model){
 			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
-			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
+			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum, model.Client.Credit);
 			this.DisplayLogs(model.Logs);
-		}
-		
-		public override void DisplayTest(string text){
-			((MainForm)Form).SetTest(text);
 		}
 		
 		public override string GetState(){
 			return ((MainForm)Form).GetState();
 		}
 		
-		public override string EnterAnimalNumber(){
+		public override string EnterAnimalNumberWerehouse(){
+			return ((MainForm)Form).GetNumber();
+		}
+		
+		public override string EnterAnimalNumberClient(){
 			return ((MainForm)Form).GetNumber();
 		}
 		
@@ -93,7 +93,7 @@ namespace PetShop.V.Views{
 			((MainForm)Form).SetTextWarehouse(s);
 		}
 		
-		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum){
+		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum, double credit){
 			string s  = "Client basket:\n";
 			foreach(Animal animal in list){
 				s +=  animal.Name() +  " number " + animal.Number + " price " + animal.Price + "\n";

@@ -22,6 +22,7 @@ using PetShop.M.Classes.Product;
 using PetShop.M;
 using PetShop.M.Classes.Mediator;
 using PetShop.V.WindowsApp;
+using PetShop.Factory;
 
 namespace PetShop.V.Views{
 	
@@ -37,20 +38,45 @@ namespace PetShop.V.Views{
 		
 		public override void Update(Model model){
 			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
-			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum);
+			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum, model.Client.Credit);
 			this.DisplayLogs(model.Logs);
+			switch(((WPFForm)Form).GetSelectedComboBox()){
+				case 0:
+					break;
+				case 1:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Animal>();
+					break;
+				case 2:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Pet>();
+					break;
+				case 3:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Farm>();
+					break;
+				case 4:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cat>();
+					break;	
+				case 5:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Dog>();
+					break;
+				case 6:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cow>();
+					break;	
+				case 7:
+					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Chicken>();
+					break;	
+			}
 		}
 		
 		public override string GetState(){
-			return ((WPFForm)Form).GetState();
+			return "";
 		}
 		
-		public override void DisplayTest(string text){
-			((WPFForm)Form).SetTest(text);
+		public override string EnterAnimalNumberWerehouse(){
+			return ((WPFForm)Form).GetNumberWerehouse();
 		}
 		
-		public override string EnterAnimalNumber(){
-			return ((WPFForm)Form).GetNumber();
+		public override string EnterAnimalNumberClient(){
+			return ((WPFForm)Form).GetNumberClient();
 		}
 		
 		public override string EnterAnimal(){
@@ -89,8 +115,8 @@ namespace PetShop.V.Views{
 			((WPFForm)Form).SetTextWarehouse(s);
 		}
 		
-		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum){
-			string s  = "Client basket:\n";
+		public override void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list, double sum, double credit){
+			string s  = "Credit = "+ credit +"\nClient basket:\n";
 			foreach(Animal animal in list){
 				s += animal.Name() +  " number " + animal.Number + " price " + animal.Price + "\n";
 			}
