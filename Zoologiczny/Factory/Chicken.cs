@@ -13,6 +13,11 @@ namespace PetShop.Factory{
 	public class Chicken : Farm{
 	    protected string race;
 		
+	    public string Race{
+			get {return race;}
+			set {race = value;}
+		}
+	    
 	    public Chicken(int number, double price, string species, string race){
 	    	this.number = number;
 	    	this.price = price;
