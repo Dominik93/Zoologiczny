@@ -20,6 +20,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using PetShop.M.Classes.Product;
 using PetShop.M;
+using PetShop.M.Classes.Container;
 using PetShop.M.Classes.Mediator;
 using PetShop.V.WindowsApp;
 using PetShop.Factory;
@@ -40,29 +41,62 @@ namespace PetShop.V.Views{
 			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
 			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum, model.Client.Credit);
 			this.DisplayLogs(model.Logs);
+			this.DisplayWGrid(model.Warehouse);
+			this.DisplayCGrid(model.Client);
+		}
+		
+		public void DisplayWGrid(Warehouse warehouse){
 			switch(((WPFForm)Form).GetSelectedComboBox()){
 				case 0:
 					break;
 				case 1:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Animal>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Animal>();
 					break;
 				case 2:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Pet>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Pet>();
 					break;
 				case 3:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Farm>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Farm>();
 					break;
 				case 4:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cat>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Cat>();
 					break;	
 				case 5:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Dog>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Dog>();
 					break;
 				case 6:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cow>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Cow>();
 					break;	
 				case 7:
-					((WPFForm)Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Chicken>();
+					((WPFForm)Form).GetWGrid().ItemsSource = warehouse.getAnimal<Chicken>();
+					break;	
+			}
+		}
+		
+		public void DisplayCGrid(Client client){
+			switch(((WPFForm)Form).GetSelectedComboBox()){
+				case 0:
+					break;
+				case 1:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Animal>();
+					break;
+				case 2:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Pet>();
+					break;
+				case 3:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Farm>();
+					break;
+				case 4:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Cat>();
+					break;	
+				case 5:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Dog>();
+					break;
+				case 6:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Cow>();
+					break;	
+				case 7:
+					((WPFForm)Form).GetCGrid().ItemsSource = client.getAnimal<Chicken>();
 					break;	
 			}
 		}

@@ -38,25 +38,18 @@ namespace PetShop.M.Classes.Container{
 		public Dictionary<string, Animal>.KeyCollection GetKeys(){
 			return instance.Keys;
 		}
-//		
-//		/*
-//		 * Remove item form warehouse/client
-//		 */
-//		public void RemoveAnimal(ProductContainer pc, string key, int number){
-//			try{
-//				if(pc.Instance[key].Number >= number){
-//					if (pc.Instance[key].Number != 0){
-//						pc.Instance[key].Number -= number;
-//					}else{
-//						//Console.WriteLine("Cannot remove more");
-//					}
-//				}else{
-//					//Console.WriteLine("To many number to remove");
-//				}
-//			}catch(KeyNotFoundException){
-//				
-//			}
-//		}
+		
+		public List<T> getAnimal<T>(){
+            List<T> list = new List<T>();
+            foreach (KeyValuePair<string, Animal> animal in this.Instance){
+            	if (typeof(T) == animal.Value.GetType() ||
+            	    typeof(T) == animal.Value.GetType().BaseType ||
+            	    typeof(T) == animal.Value.GetType().BaseType.BaseType){
+            			list.Add((T)(object)animal.Value);
+            	}
+            }
+            return list;
+        }
 		
 	}
 	

@@ -17,11 +17,13 @@
 			Margin="8,8,0,0"
 			Width="75"
 			Height="27"
-			Content="Animal" />
+			Content="Animal"
+			x:Name="AnimalLabel" />
 		<Button
 			Content="Add animal to warehouse"
 			RenderTransformOrigin="0.5,0.5"
-			x:Name="AddAnimalToWarehouse"
+			x:Name="AddAnimalToWarehouseButton"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -30,7 +32,8 @@
 			Width="166"
 			Height="23" />
 		<TextBox
-			x:Name="Animal"
+			x:Name="AnimalTextBox"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -40,7 +43,8 @@
 			Height="28" />
 		<Button
 			Content="Remove animal from warehouse"
-			x:Name="RemoveAnimalFromWarehouse"
+			x:Name="RemoveAnimalFromWarehouseButton"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -51,7 +55,8 @@
 		<Button
 			RenderTransformOrigin="0.5,0.5"
 			Content="Change number of animals"
-			x:Name="ChangeNumber"
+			x:Name="ChangeNumberButton"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -61,7 +66,8 @@
 			Height="23" />
 		<Button
 			Content="Add to basket"
-			x:Name="AddToBasket"
+			x:Name="AddToBasketButton"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -71,7 +77,8 @@
 			Height="23" />
 		<Button
 			Content="Remove from basket"
-			x:Name="RemoveFromBasket"
+			x:Name="RemoveFromBasketButton"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -80,8 +87,9 @@
 			Width="166"
 			Height="23" />
 		<Button
-			x:Name="Buy"
+			x:Name="BuyButton"
 			Content="Buy"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -92,7 +100,8 @@
 		<Button
 			RenderTransformOrigin="0.5,0.587"
 			Content="Change price"
-			x:Name="ChangePrice"
+			x:FieldModifier="private"
+			x:Name="ChangePriceButton"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -101,8 +110,9 @@
 			Width="166"
 			Height="23" />
 		<Label
-			x:Name="Warehouse"
+			x:Name="WarehouseLabel"
 			Content="Warehouse"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			VerticalAlignment="Top"
@@ -112,7 +122,8 @@
 			Margin="182,63,0,0" />
 		<Label
 			Content="Client's basket"
-			x:Name="Basket"
+			x:FieldModifier="private"
+			x:Name="BasketLabel"
 			RenderTransformOrigin="0.5,0.5"
 			Grid.Column="0"
 			Grid.Row="0"
@@ -122,14 +133,15 @@
 			Height="105"></Label>
 		<Label
 			Content="Logs"
-			x:Name="Logs"
+			x:FieldModifier="private"
+			x:Name="LogsLabel"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Bottom"
-			Margin="8,0,0,57"
+			Margin="8,0,0,7.89999999999998"
 			Width="320"
-			Height="148" />
+			Height="130.10000000000002" />
 		<Label
 			Grid.Column="0"
 			Grid.Row="0"
@@ -139,18 +151,23 @@
 			Width="75"
 			Height="27"
 			RenderTransformOrigin="0.5,0.5"
-			Content="Number" />
+			Content="Number"
+			x:Name="NumberLabel"
+			x:FieldModifier="private" />
 		<Label
 			Content="Price"
+			x:Name="PriceLabel"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			VerticalAlignment="Top"
 			Height="27"
 			Width="75"
-			HorizontalAlignment="Left"
-			Margin="174,8,0,0" />
+			HorizontalAlignment="Right"
+			Margin="0,8,539,0" />
 		<TextBox
-			x:Name="Number"
+			x:Name="NumberTextBox"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -159,7 +176,8 @@
 			Width="75"
 			Height="28" />
 		<TextBox
-			x:Name="Price"
+			x:Name="PriceTextBox"
+			x:FieldModifier="private"
 			Text=""
 			Grid.Column="0"
 			Grid.Row="0"
@@ -169,7 +187,7 @@
 			Width="75"
 			Height="28" />
 		<ComboBox
-			x:Name="State"
+			x:Name="StateComboBox"
 			BorderBrush="#FF707070"
 			Grid.Column="0"
 			Grid.Row="0"
@@ -270,9 +288,12 @@
 			VerticalAlignment="Top"
 			Margin="8,231,0,0"
 			Width="430"
-			Height="80" />
+			Height="80"
+			x:FieldModifier="private" />
 		<Label
 			RenderTransformOrigin="0.5,0.5"
+			x:FieldModifier="private"
+			x:Name="Split"
 			Content="--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 			Grid.Column="0"
 			Grid.Row="0"
@@ -281,7 +302,7 @@
 			Margin="8,209,8,0"
 			Height="24" />
 		<TextBox
-			x:Name="NumberClient"
+			x:Name="NumberClientTextBox"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -292,6 +313,8 @@
 		<Label
 			RenderTransformOrigin="0.5,0.5"
 			Content="Number"
+			x:Name="NumberC"
+			x:FieldModifier="private"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
@@ -299,6 +322,16 @@
 			Margin="182,323,0,0"
 			Width="75"
 			Height="27" />
+		<DataGrid
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,440,0,0"
+			Width="430"
+			Height="78"
+			x:Name="CGrid"
+			x:FieldModifier="private" />
 		<Grid.ColumnDefinitions></Grid.ColumnDefinitions>
 	</Grid>
 </Window>
