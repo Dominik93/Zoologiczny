@@ -225,7 +225,7 @@ namespace PetShop.V.WindowsApp{
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label1);
 			this.Name = "MainForm";
-			this.Text = "Win app";
+			this.Text = "Ślusarz Dominik";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
