@@ -124,8 +124,6 @@ namespace PetShop.V.Views{
 		
 		public override void DisplayMainOptions(){	}
 		
-		public override void WaitAndClear(){	}
-		
 		public override string EnterOption(){
 			return "";
 		}

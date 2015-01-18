@@ -31,7 +31,9 @@ namespace PetShop.V{
 		
 		public abstract void InitComponent();
 		public abstract void StartApplication();
+		
 		public abstract void Update(Model model);
+		
 		public abstract void DisplayError(string error);
 		public abstract void DisplayMasage(string msg);
 		
@@ -43,12 +45,13 @@ namespace PetShop.V{
 		public abstract void DisplayAvailableAnimals();
 		public abstract void DisplayMainOptions();
 		public abstract void DisplayClientStatus(Dictionary<string, Animal>.ValueCollection list);
+		
 		public abstract string EnterOption();
 		public abstract string EnterAnimalNumberWerehouse();
 		public abstract string EnterAnimalNumberClient();
 		public abstract string EnterAnimal();
 		public abstract string EnterPrice();
+		
 		public abstract string GetState();
-		public abstract void WaitAndClear();
 	}
 }

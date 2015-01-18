@@ -13,7 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PetShop.M.Classes.Product{
-	
+	/*
+	 * Main abstract class, prototype pattern use
+	 */
 	public abstract class Animal : ICloneable {
 		protected int number;
 		protected double price;
@@ -21,7 +23,6 @@ namespace PetShop.M.Classes.Product{
 		public enum Animals { Dog, Cat, Cow, Chicken }
 		
 		public Animal(){ }
-
 		public int Number{
 			get {return number;}
 			set {number = value;}
@@ -33,7 +34,7 @@ namespace PetShop.M.Classes.Product{
 		}
 		
 		public abstract string Name();
-		
+		// method to clone object
 		public object Clone(){
 			return this.MemberwiseClone();
 		}

@@ -17,7 +17,7 @@ namespace PetShop.C{
 		
  	 	Model model;
 		View view;
-		
+		//stratefy pattern
 		public IStrategy Strategy{
 			get { return strategy; }
 		}

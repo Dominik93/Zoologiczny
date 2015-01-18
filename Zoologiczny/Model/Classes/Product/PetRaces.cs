@@ -19,8 +19,7 @@ namespace PetShop.M.Classes.Product{
 			set {race = value;}
 		}
 		
-		public override string Name()
-		{
+		public override string Name(){
 			return "Dog";
 		}
 		
@@ -36,8 +35,7 @@ namespace PetShop.M.Classes.Product{
 			set {race = value;}
 		}
 		
-		public override string Name()
-		{
+		public override string Name(){
 			return "Cat";
 		}
 	}

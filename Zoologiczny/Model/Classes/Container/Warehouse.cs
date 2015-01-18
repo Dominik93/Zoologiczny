@@ -19,7 +19,7 @@ namespace PetShop.M.Classes.Container{
 		private static Warehouse instanceWarehouse;
 		
 		private Warehouse() {}
-		
+		// singleton pattern
 		public static Warehouse InstanceWarehouse{
 			get {
 				if (instanceWarehouse == null){
@@ -45,18 +45,14 @@ namespace PetShop.M.Classes.Container{
 		}
 		
 		/*
-		 * Remove item form warehouse/client
+		 * Remove item form warehouse
 		 */
 		public void RemoveAnimalFromWarehouse(string key, int number){
 			try{
 				if(this.Instance[key].Number >= number){
 					if (this.Instance[key].Number != 0){
 						this.Instance[key].Number -= number;
-					}else{
-						//Console.WriteLine("Cannot remove more");
 					}
-				}else{
-					//Console.WriteLine("To many number to remove");
 				}
 			}catch(KeyNotFoundException){
 				

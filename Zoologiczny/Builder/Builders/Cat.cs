@@ -50,40 +50,4 @@ namespace PetShop.Builder.Builders{
 		}
 	}
 	
-	class PersianCatBuilder : CatBuilder{
-		public override void BuildRace() {
-			cat.Race = "Cat";
-		}
-		
-		public override void BuildNumber(int number) {
-			cat.Number = number;
-		}
-		
-		public override void BuildPrice(double price) {
-			cat.Price = price;
-		}
-		
-		public override void BuildSpecies() {
-			cat.Species = "Pet";
-		}
-	}
-	
-	class SiameseCatBuilder : CatBuilder{
-		public override void BuildRace() {
-			cat.Race = "Cat ";
-		}
-		
-		public override void BuildNumber(int number) {
-			cat.Number = number;
-		}
-		
-		public override void BuildPrice(double price) {
-			cat.Price = price;
-		}
-		
-		public override void BuildSpecies() {
-			cat.Species = "Pet";
-		}
-	}
-
 }

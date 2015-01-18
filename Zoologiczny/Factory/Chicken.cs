@@ -25,8 +25,7 @@ namespace PetShop.Factory{
 	    	this.race = race;
 	    }
 	    
-	    public override string Name()
-		{
+	    public override string Name(){
 			return "Chicken";
 		}
 	}
