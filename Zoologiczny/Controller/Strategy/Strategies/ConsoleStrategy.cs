@@ -31,7 +31,7 @@ namespace PetShop.C.Strategy.Strategies{
 							break;
 						case 0: // exit
 							view.DisplayMasage("Exit");
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							return;
 						case 1: // add animal to werehouse
 							view.DisplayAvailableAnimals();
@@ -88,11 +88,11 @@ namespace PetShop.C.Strategy.Strategies{
 									break;
 							}
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 2: // Display warehouse
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 3: // remove number of animals form warehouse
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
@@ -103,7 +103,7 @@ namespace PetShop.C.Strategy.Strategies{
 								view.DisplayError("It is not the number!");
 							}
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 4: // add to basket
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
@@ -114,11 +114,11 @@ namespace PetShop.C.Strategy.Strategies{
 								view.DisplayError("It is not the number!");
 							}
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 5: // Display client's basket
 							view.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum, model.Client.Credit);
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 6: // remove number of animals form client's basket
 							view.DisplayClientStatus(model.Client.GetValues());
@@ -129,7 +129,7 @@ namespace PetShop.C.Strategy.Strategies{
 								view.DisplayError("It is not the number!");
 							}
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 7: // change price
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
@@ -140,7 +140,7 @@ namespace PetShop.C.Strategy.Strategies{
 								view.DisplayError("It is not the number!");
 							}
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 8: // change number of animal
 							view.DisplayWarehouseStatus(model.Warehouse.GetValues());
@@ -151,26 +151,32 @@ namespace PetShop.C.Strategy.Strategies{
 								view.DisplayError("It is not the number!");
 							}
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 						case 9: // buy animals, clear all basket
 							view.DisplayMasage("Buy all animals");
 							model.Client.BuyAllAnimals(model.Logs);
 							model.Notify();
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
+						case 10: // change state
+							view.DisplayMasage("Change state of client: Active or Disactive?");
+							model.Client.State = view.GetState();
+							model.Notify();
+							//view.WaitAndClear();
+							break;	
 						default:
 							view.DisplayError("Wrong choise");
-							view.WaitAndClear();
+							//view.WaitAndClear();
 							break;
 					}
 				}catch(InvalidCastException){
 					view.DisplayError("It is not the number!");
-					view.WaitAndClear();
+					//view.WaitAndClear();
 				}
 				catch(FormatException){
 					view.DisplayError("It is not the number!");
-					view.WaitAndClear();
+					//view.WaitAndClear();
 				}
 			}
 			

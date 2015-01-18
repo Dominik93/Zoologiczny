@@ -139,17 +139,9 @@ namespace PetShop.C.Strategy.Strategies{
 		}
 		
 		void Button5Click(object sender, EventArgs e){
-			/*
-			try{
-				model.Client.AddAnimalToClient(model.Warehouse, view.EnterAnimal(), Convert.ToInt32(view.EnterAnimalNumber()));
-			}catch(InvalidCastException){
-				view.DisplayError("It is not the number!");
-			}catch(FormatException){
-				view.DisplayError("It is not the number!");
-			}*/
 			try{
 			model.Client.AddAnimalToClient(model.Warehouse,
-			                               ((Animal)((WPFForm)view.Form).WGrid.SelectedItem).Name(),
+			                               ((Animal)((WPFForm)view.Form).GetWGrid().SelectedItem).Name(),
 			                               Convert.ToInt32(view.EnterAnimalNumberClient()));
 			}catch(Exception){
 				view.DisplayError("Animal is not chose!");
@@ -195,7 +187,6 @@ namespace PetShop.C.Strategy.Strategies{
 				((WPFForm)view.Form).SpeciesComboBox.Visibility = Visibility.Visible;
 				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
 				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Animal>();
 			}
 			model.Notify();
 		}
@@ -206,17 +197,14 @@ namespace PetShop.C.Strategy.Strategies{
 				((WPFForm)view.Form).SpeciesComboBox.Visibility = Visibility.Hidden;
 				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
 				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Animal>();
 			}
 			else if(comboBox.SelectedIndex == 1){
 				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Visible;
 				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Pet>();
 			}
 			else if(comboBox.SelectedIndex == 2){
 				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Visible;
 				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Farm>();
 			}
 			model.Notify();
 		}
@@ -225,13 +213,6 @@ namespace PetShop.C.Strategy.Strategies{
 			var comboBox = sender as ComboBox;
 			if(comboBox.SelectedIndex == 0){
 				((WPFForm)view.Form).RacesPetComboBox.Visibility = Visibility.Hidden;
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Pet>();
-			}
-			else if(comboBox.SelectedIndex == 1){
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cat>();
-			}
-			else if(comboBox.SelectedIndex == 2){
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Dog>();
 			}
 			model.Notify();
 		}
@@ -240,13 +221,6 @@ namespace PetShop.C.Strategy.Strategies{
 			var comboBox = sender as ComboBox;
 			if(comboBox.SelectedIndex == 0){
 				((WPFForm)view.Form).RacesFarmComboBox.Visibility = Visibility.Hidden;
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Farm>();
-			}
-			else if(comboBox.SelectedIndex == 1){
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Cow>();
-			}
-			else if(comboBox.SelectedIndex == 2){
-				((WPFForm)view.Form).WGrid.ItemsSource = model.Warehouse.getAnimal<Chicken>();
 			}
 			model.Notify();
 		}

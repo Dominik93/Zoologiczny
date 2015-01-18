@@ -35,12 +35,14 @@ namespace PetShop.M.Classes.Container{
             get { return sum; }
             set { sum = value; }
         }
-        
+        // state, state pattern
         public string State{
             get { return state; }
             set { state = value; }
         }
-        
+        /*
+         * method to chack client can buy than amount of product with given price
+         */ 
         private Boolean CanBuy(int number, double price){
         	if(this.State.Equals("Active")){
         		if(this.Credit < (number * price)){
@@ -49,7 +51,9 @@ namespace PetShop.M.Classes.Container{
         	}
         	return true;
         }
-        
+        /*
+         * calculate sum, add credit when buy items
+         */ 
         public void CalculateSum(){
         	if(this.State.Equals("Active")){
 	        	this.sum = 0;
@@ -79,14 +83,12 @@ namespace PetShop.M.Classes.Container{
 						}
 						this.CalculateSum();
 					}
-				}else{
-					//Console.WriteLine("Cannot add to basket");
 				}
 			}
 		}
 		
 		/*
-		 * Remove item form warehouse/client
+		 * Remove item form client
 		 */
 		public void RemoveAnimalFromClient(ProductContainer pc, string key, int number){
 			try{
@@ -94,11 +96,7 @@ namespace PetShop.M.Classes.Container{
 					if (this.Instance[key].Number != 0){
 						this.Instance[key].Number -= number;
 						pc.Instance[key].Number += number;
-					}else{
-						//Console.WriteLine("Cannot remove more");
 					}
-				}else{
-					//Console.WriteLine("To many number to remove");
 				}
 			}catch(KeyNotFoundException){
 				

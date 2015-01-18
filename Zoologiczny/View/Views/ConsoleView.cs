@@ -21,7 +21,7 @@ namespace PetShop.V.Views{
 		public override void InitComponent(){ }
 		
 		public override void StartApplication(){
-			Console.WriteLine("Start");
+			Console.WriteLine("Start: Dominik Ślusarz");
 		}
 		
 		public override void Update(Model model){
@@ -29,9 +29,10 @@ namespace PetShop.V.Views{
 			this.DisplayWarehouseStatus(model.Warehouse.GetValues());
 			this.DisplayClientStatus(model.Client.GetValues(), model.Client.Sum,model.Client.Credit);
 			this.DisplayLogs(model.Logs);
+			this.WaitAndClear();
 		}
 		
-		public override void WaitAndClear(){
+		private void WaitAndClear(){
 			Console.WriteLine("Press any key");
 			Console.ReadKey();
 			Console.Clear();
@@ -48,7 +49,7 @@ namespace PetShop.V.Views{
         }
 		
 		public override string GetState(){
-			return "";
+			return Console.ReadLine();
 		}
 		
 		public override string EnterOption(){
@@ -79,8 +80,17 @@ namespace PetShop.V.Views{
 		}
 		
 		public override void DisplayMainOptions(){
-			Console.WriteLine("0 - Exit\n1 - Add animal to warehouse\n2 - Show warehouse status\n3 - Remove from warehouse\n" +
-			                  "4 - Add to basket\n5 - Display basket\n6 - Remove from basket\n7 - Change price\n8 - Change number\n9 - Buy");
+			Console.WriteLine("0 - Exit\n" +
+			                  "1 - Add animal to warehouse\n" +
+			                  "2 - Show warehouse status\n" +
+			                  "3 - Remove from warehouse\n" +
+			                  "4 - Add to basket\n" +
+			                  "5 - Display basket\n" +
+			                  "6 - Remove from basket\n" +
+			                  "7 - Change price\n" +
+			                  "8 - Change number\n" +
+			                  "9 - Buy\n" +
+			                  "10 - Change state");
 		}
 		
 		public override void DisplayError(string error){

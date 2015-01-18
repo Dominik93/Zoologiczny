@@ -13,22 +13,19 @@ using PetShop.V.Views;
 namespace PetShop{
 
 	/* Wzorce:
-	 * 1. Singleton - in Warehouse class
-	 * 2. Multiton - in ProducktContainter class
+	 * 1. Singleton - in Warehouse class, creating only one global warehouse
+	 * 2. Multiton - in ProducktContainter class, cant add existed product
 	 * 3. MVC - all project
-	 * 4. Strategy - in controller
-	 * 5. Observer - in model and view
-	 * 6. Prototype - in Animal class
-	 * 7. Builder - in Pet class
-	 * 8. Factory method - in Farm class
-	 * 9. Mediator - in Client
-	 * 10. Decorator - in Animal and childs classes
-	 * 11. Facade - teoretical controller is facade, model, view is subsytems
+	 * 4. Strategy - in controller, controller can change strategy, 3 avaible strategy: Console, WPF, Form
+	 * 5. Observer - in model and view, model notify view when it change state, data
+	 * 6. Prototype - in Animal class, clone product couse c# work with references
+	 * 7. Builder - in Pet class, creating a Dog, Cat object
+	 * 8. Factory method - in Farm class, creating a Cow, Chicken object
+	 * 9. Mediator - in Client, sent a massage from client to logs about what he bought 
+	 * 10. Decorator - in Animal and childs classes, decorating each animal
+	 * 11. Facade - teoretical: controller is facade; model, view is subsytems, client have access to method in strategy
 	 * 12. State - in Client, if client is disactive he cant do anything
 	 * Use Windows Form and WPF for windows
-	 * 
-	 * combobox- 3 comboboxy na sobie jak wybieramy 1 przechodzimy do następnego i chowamy poprzedni 1 element jest powrotem
-	 * 
 	 */
 	
 	class Program{
@@ -42,17 +39,17 @@ namespace PetShop{
 			Controller controller;
 			
 			// create view
-			//view = new ConsoleView(); not supported
-			//view = new WinAppView(); not supported
-			view = new WPFAppView();
+			view = new ConsoleView();
+			//view = new WinAppView(); // dont support all functionality
+			//view = new WPFAppView();
 			
 			// create model
 			model = new Model();
 			
 			// create strategy
-			//strategy = new ConsoleStrategy(); not supported
-			//strategy = new WinAppStrategy(); not supported
-			strategy = new WPFAppStrategy();
+			strategy = new ConsoleStrategy(); 
+			//strategy = new WinAppStrategy(); // dont supported all functionality
+			//strategy = new WPFAppStrategy();
 			
 			// create controller with model, view and strategy
 			controller = new Controller(model, view, strategy);

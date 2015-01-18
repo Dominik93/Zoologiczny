@@ -24,31 +24,31 @@ namespace PetShop.V.WindowsApp{
 		}
 		
 		public void RegisterButton1EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.AddAnimalToWarehouse.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.AddAnimalToWarehouseButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterButton2EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.RemoveAnimalFromWarehouse.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.RemoveAnimalFromWarehouseButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterButton3EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.ChangeNumber.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.ChangeNumberButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterButton4EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.ChangePrice.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.ChangePriceButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterButton5EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.AddToBasket.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.AddToBasketButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterButton6EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.RemoveFromBasket.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.RemoveFromBasketButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterButton7EventHandler(System.Windows.RoutedEventHandler eventHandler){
-			this.Buy.Click += new System.Windows.RoutedEventHandler(eventHandler);
+			this.BuyButton.Click += new System.Windows.RoutedEventHandler(eventHandler);
 		}
 		
 		public void RegisterComboBox1EventHendler(System.Windows.Controls.SelectionChangedEventHandler eventHandler){
@@ -68,35 +68,43 @@ namespace PetShop.V.WindowsApp{
 		}
 		
 		public void RegisterComboBox5EventHendler(System.Windows.Controls.SelectionChangedEventHandler eventHandler){
-			this.State.SelectionChanged += new SelectionChangedEventHandler(eventHandler);
+			this.StateComboBox.SelectionChanged += new SelectionChangedEventHandler(eventHandler);
 		}
 		
 		public void SetTextWarehouse(string text){
-			this.Warehouse.Content = text;
+			this.WarehouseLabel.Content = text;
 		}
 				
 		public void SetTextClient(string text){
-			this.Basket.Content = text;
+			this.BasketLabel.Content = text;
 		}
 		
 		public void SetTextLogs(string text){
-			this.Logs.Content = text;
+			this.LogsLabel.Content = text;
 		}
 		
 		public string GetAnimal(){
-			return this.Animal.Text;
+			return this.AnimalTextBox.Text;
 		}
 		
 		public string GetNumberWerehouse(){
-			return this.Number.Text;
+			return this.NumberTextBox.Text;
 		}
 		
 		public string GetNumberClient(){
-			return this.NumberClient.Text;
+			return this.NumberClientTextBox.Text;
 		}
 				
 		public string GetPrice(){
-			return this.Price.Text;
+			return this.PriceTextBox.Text;
+		}
+		
+		public System.Windows.Controls.DataGrid GetCGrid(){
+			return this.CGrid;
+		}
+		
+		public System.Windows.Controls.DataGrid GetWGrid(){
+			return this.WGrid;
 		}
 		
 		public int GetSelectedComboBox(){

@@ -10,9 +10,7 @@ using System;
 using PetShop.M.Classes.Product;
 
 namespace PetShop.Factory{
-	/// <summary>
-	/// Description of Class1.
-	/// </summary>
+	
 	public class Cow : Farm{
 	    protected string race;
 		
@@ -28,8 +26,7 @@ namespace PetShop.Factory{
 	    	this.race = race;
 	    }
 	    
-	    public override string Name()
-		{
+	    public override string Name(){
 			return "Cow";
 		}
 	    
