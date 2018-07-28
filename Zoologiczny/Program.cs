@@ -62,9 +62,3 @@ namespace PetShop{
 		}
 	}
 }
-com.slusarz.dictionary.domain.sql.Sql@6c6cb480com.slusarz.dictionary.domain.sql.Sql@34e9fd99commit;
-commit;
-commit;
-commit;
-commit;
-commit;
